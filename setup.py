@@ -11,11 +11,13 @@ def menu_maker():
         
         result=result+'\t<a href="'+actual_name[i]+'.html">'+page_name[i]+"</a>\n"
         result=result+"&nbsp\n"
-        
     result=result+"\t\t<hr></hr>\n"
+    return result
+def menu_writer():
+    message=menu_maker()
     for i in range(len(page_name)):
         file=open(out_dir+"\\"+actual_name[i]+".html","a")
-        file.write(result)
+        file.write(message)
         file.close()
         
 def html_init(name):
@@ -86,13 +88,19 @@ def contain(name):
 
 
 if __name__=="__main__":
-    for i in actual_name:
-        html_init(i)
-    menu_maker()
+    try:
+        for i in actual_name:
+            html_init(i)
+        menu_writer()
     
-    for i in actual_name:
-        contain(i)
-        html_end(i)
+        for i in actual_name:
+            contain(i)
+            html_end(i)
+        print("Homepage is ready")
+        print("Upload out and image folder contains directly to your host")
+        print("Please Dont Change HTML Files Name")
+    except:
+        print ("Error In Creating HTML Files")
     
     
 
