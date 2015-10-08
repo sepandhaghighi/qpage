@@ -38,10 +38,10 @@ def html_end(name):
     file.write("\t</body>\n")
     file.write("</html>")
     file.close()
-def print_text(text_file,file):
+def print_text(text_file,file,center=False):
     text_code=""
     header_start="<h4>"
-    header_end="</h4>\n"
+    header_end="</h4>"
     space="&nbsp\n"
     for line in text_file:
         line.strip()
@@ -51,20 +51,23 @@ def print_text(text_file,file):
         else:
             if line.find("[L]")!=-1:
                 header_start="<h2>"
-                header_end="</h2>\n"
+                header_end="</h2>"
                 text=line[3:]
             elif line.find("[S]")!=-1:
                 header_start="<h5>"
-                header_end="</h5>\n"
+                header_end="</h5>"
                 text=line[3:]
             elif line.find("[M]")!=-1:
                 text=line[3:]
-            text_code=header_start+text+header_end
+        if center==True:
+            header_start="<center>"+header_start
+            header_end=header_end+"</center>"
+        text_code=header_start+text+header_end+"\n"
         file.write(text_code)
         
     file.close()
 def print_image(file,close=False):
-    image_code='<center><img src="image.jpg" , width=250px></img></center>\n'
+    image_code='<center><img src="image.jpg" , width=360px></img></center>\n'
     file.write(image_code)
     if close==True:
         file.close()
@@ -76,7 +79,7 @@ def contain(name):
         text_file=open(doc_dir+"\\"+name+".txt","r")
         if name=="index":
             print_image(file)
-            print_text(text_file,file)
+            print_text(text_file,file,center=True)
         else:
             print_text(text_file,file)
             
