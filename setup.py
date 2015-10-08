@@ -36,27 +36,48 @@ def html_end(name):
     file.write("\t</body>\n")
     file.write("</html>")
     file.close()
+def print_text(text_file,file):
+    text_code=""
+    header_start="<h4>"
+    header_end="</h4>\n"
+    space="&nbsp\n"
+    for line in text_file:
+        line.strip()
+        text=line
+        if len(line)==1:
+            text_code=space
+        else:
+            if line.find("[L]")!=-1:
+                header_start="<h2>"
+                header_end="</h2>\n"
+                text=line[3:]
+            elif line.find("[S]")!=-1:
+                header_start="<h5>"
+                header_end="</h5>\n"
+                text=line[3:]
+            elif line.find("[M]")!=-1:
+                text=line[3:]
+            text_code=header_start+text+header_end
+        file.write(text_code)
+        
+    file.close()
+def print_image(file,close=False):
+    image_code='<center><img src="image.jpg" , width=250px></img></center>\n'
+    file.write(image_code)
+    if close==True:
+        file.close()
 def contain(name):
     try:
         image_code=""
-        text_code=""
+        
         file=open(out_dir+"\\"+name+".html","a")
+        text_file=open(doc_dir+"\\"+name+".txt","r")
         if name=="index":
-            image_code=image_code+'<center><img src="image.jpg" , width=250px></img></center>\n'
-            text_file=open(doc_dir+"\\"+name+".txt","r")
-            text=text_file.read()
-            text_file.close()
-            text_code="<h3>"+text+"</h3>\n"
-            file.write(image_code)
-            file.write(text_code)
-            file.close()
+            print_image(file)
+            print_text(text_file,file)
         else:
-            text_file=open(doc_dir+"\\"+name+".txt","r")
-            text=text_file.read()
-            text_file.close()
-            text_code="<h3>"+text+"</h3>\n"
-            file.write(text_code)
-            file.close()
+            print_text(text_file,file)
+            
     except:
         print ("Error In Text File Read Of "+name.upper()+" Page")
         print(" Please Insert Text File With Page Name In doc folder ")
