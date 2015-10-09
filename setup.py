@@ -70,7 +70,6 @@ def print_text(text_file,file,center=False):
     file.close()
 def print_image(file,close=False):
     image_code='<center><img src="image.jpg" , width=360px></img></center>\n'
-    shutil.copyfile(image_dir+"\\image.jpg",out_dir+"\\image.jpg")
     file.write(image_code)
     if close==True:
         file.close()
@@ -83,26 +82,39 @@ def print_download(file,name,link,center=False,close=False):
     if close==True:
         file.close()
 def contain(name):
-        image_code=""
         file=open(out_dir+"\\"+name+".html","a")
         text_file=open(doc_dir+"\\"+name+".txt","r")
         resume_name=""
+        image_name=""
         if name=="index":
+            file_of_images=os.listdir(image_dir)
+            for i in range(len(file_of_images)):
+                if file_of_images[i].find(".jpg")!=-1:
+                    image_name=image_dir+"\\"+file_of_images[i]
+                    break
+            shutil.copyfile(image_name,out_dir+"\\image.jpg")
             print_image(file)
             print_text(text_file,file,center=True)
         elif name=="resume":
             file_of_docs=os.listdir(doc_dir)
             for i in range(len(file_of_docs)):
                 if file_of_docs[i].find(".pdf")!=-1:
-                    shutil.copyfile(resume_name,out_dir+"\\Resume.pdf")
+                    resume_name=doc_dir+"\\"+file_of_docs[i]
+                    break
+            shutil.copyfile(resume_name,out_dir+"\\Resume.pdf")        
             print_download(file,"Download Full Version","Resume.pdf",center=True)
             print_text(text_file,file)        
         else:
             print_text(text_file,file)
-
+def clear_folder(path):
+    list_of_files=os.listdir(path)
+    for file in list_of_files:
+        print
+        os.remove(path+"\\"+file)
 
 if __name__=="__main__":
         try:
+            clear_folder(out_dir)
             for i in actual_name:
                 html_init(i)
             menu_writer()
