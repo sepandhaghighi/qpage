@@ -1,17 +1,19 @@
 import os
+import shutil
 work_dir= os.getcwd()
 image_dir = work_dir+"\\image"
 doc_dir=work_dir+"\\doc"
 out_dir=work_dir+"\\output"
 page_name=["Home","Resume","Project","About Me"]
 actual_name=["index","resume","project","about"]
+break_line="<hr></hr>\n"
 def menu_maker():
     result=""
     for i in range(len(page_name)):
         
         result=result+'\t<a href="'+actual_name[i]+'.html">'+page_name[i]+"</a>\n"
         result=result+"&nbsp\n"
-    result=result+"\t\t<hr></hr>\n"
+    result=result+"\t\t"+break_line
     return result
 def menu_writer():
     message=menu_maker()
@@ -68,42 +70,55 @@ def print_text(text_file,file,center=False):
     file.close()
 def print_image(file,close=False):
     image_code='<center><img src="image.jpg" , width=360px></img></center>\n'
+    shutil.copyfile(image_dir+"\\image.jpg",out_dir+"\\image.jpg")
     file.write(image_code)
     if close==True:
         file.close()
+def print_download(file,name,link,center=False,close=False):
+    link_code="<a href="+'"'+link+'"'+">"+name+"</a>"
+    if center==True:
+        link_code="<center>"+link_code+"</center>"
+    file.write(link_code+"\n")
+    file.write(break_line)
+    if close==True:
+        file.close()
 def contain(name):
-    try:
         image_code=""
-        
         file=open(out_dir+"\\"+name+".html","a")
         text_file=open(doc_dir+"\\"+name+".txt","r")
+        resume_name=""
         if name=="index":
             print_image(file)
             print_text(text_file,file,center=True)
+        elif name=="resume":
+            file_of_docs=os.listdir(doc_dir)
+            for i in range(len(file_of_docs)):
+                if file_of_docs[i].find(".pdf")!=-1:
+                    shutil.copyfile(resume_name,out_dir+"\\Resume.pdf")
+            print_download(file,"Download Full Version","Resume.pdf",center=True)
+            print_text(text_file,file)        
         else:
             print_text(text_file,file)
-            
-    except:
-        print ("Error In Text File Read Of "+name.upper()+" Page")
-        print(" Please Insert Text File With Page Name In doc folder ")
-        
-        
 
 
 if __name__=="__main__":
-    try:
-        for i in actual_name:
-            html_init(i)
-        menu_writer()
+        try:
+            for i in actual_name:
+                html_init(i)
+            menu_writer()
     
-        for i in actual_name:
-            contain(i)
-            html_end(i)
-        print("Homepage is ready")
-        print("Upload out and image folder contains directly to your host")
-        print("Please Dont Change HTML Files Name")
-    except:
-        print ("Error In Creating HTML Files")
+            for i in actual_name:
+                contain(i)
+                html_end(i)
+            print("Homepage is ready")
+            print("Upload out and image folder contains directly to your host")
+            print("Please Dont Change HTML Files Name")
+        except FileNotFoundError:
+            print ("Some File Missed!!")
+            print ("Please Check Following :\n 1.Where Is Your Resume File? It should be in doc folder  \n 2.Where is your profile image file? it should be in image folder")
+            print (" 3.Where is each page description text file? They Should be in doc folder ")
+            
+
     
     
 
