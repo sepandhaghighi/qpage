@@ -4,7 +4,7 @@ This version of QPage has 4 default pages (Home , Project , Resume , About)
 
 1- [Download](https://www.python.org/downloads/) And Install Last Version Of Python
 
-2- [Download](https://github.com/sepandhaghighi/qpage/archive/v1.1.zip) Fasthtml
+2- [Download](https://github.com/sepandhaghighi/qpage/archive/v1.1.zip) QPage
 
 3- Put your profile picture in image folder
 
