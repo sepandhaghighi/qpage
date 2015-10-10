@@ -85,7 +85,7 @@ def print_download(file,name,link,center=False,close=False): # Create Download L
         file.close()
 def print_adv(file,close=True):
     file.write(break_line)
-    file.write("<center><a href="+'"'+homepage+'"'+">"+"Fasthtml "+version+"</a></center>")
+    file.write("<center><a href="+'"'+homepage+'"'+">"+"QPage "+version+"</a></center>")
     if close==True:
         file.close()
 def contain(name): # main fucntion That Open Each Page HTML File and call other function to write data in it

@@ -1,10 +1,10 @@
-# Fasthtml
+# QPage
 Free Project For Creating  Academic Home page
-This version of Fasthtml has 4 default pages (Home , Project , Resume , About)
+This version of QPage has 4 default pages (Home , Project , Resume , About)
 
 1- [Download](https://www.python.org/downloads/) And Install Last Version Of Python
 
-2- [Download](https://github.com/sepandhaghighi/fasthtml/archive/v1.1.zip) Fasthtml
+2- [Download](https://github.com/sepandhaghighi/qpage/archive/v1.1.zip) Fasthtml
 
 3- Put your profile picture in image folder
 
@@ -18,5 +18,5 @@ This version of Fasthtml has 4 default pages (Home , Project , Resume , About)
 
 Last Version : 1.1.0        
 
-Homepage : [Link](http://sepandhaghighi.github.io/fasthtml/page.html)
+Homepage : [Link](http://sepandhaghighi.github.io/qpage/page.html)
 
