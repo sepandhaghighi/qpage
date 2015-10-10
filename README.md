@@ -16,6 +16,7 @@ This version of Fasthtml has 4 default pages (Home , Project , Resume , About)
 
 7- Finished!!! Now you can go and upload output folder contains directly in your host
 
-Last Version : 1.1.0 
+Last Version : 1.1.0        
+
 Homepage : [Link](http://sepandhaghighi.github.io/fasthtml/page.html)
 
