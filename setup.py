@@ -7,6 +7,8 @@ out_dir=work_dir+"\\output"
 page_name=["Home","Resume","Project","About Me"] # list of Page Title In Menu Maker
 actual_name=["index","resume","project","about"] # List Of Pages Actual name like index.html
 break_line="<hr></hr>\n"
+homepage="http://sepandhaghighi.github.io/fasthtml/page.html"
+version="V1.1"
 def menu_maker(): # Top Menu Maker In each html page
     result=""
     for i in range(len(page_name)):
@@ -40,7 +42,7 @@ def html_end(name):   # Create End Of The Html file
     file.write("\t</body>\n")
     file.write("</html>")
     file.close()
-def print_text(text_file,file,center=False): # Write Text Part Of Each Page
+def print_text(text_file,file,center=False,close=False): # Write Text Part Of Each Page
     text_code=""
     header_start="<h4>"
     header_end="</h4>"
@@ -66,8 +68,8 @@ def print_text(text_file,file,center=False): # Write Text Part Of Each Page
             header_end=header_end+"</center>"
         text_code=header_start+text+header_end+"\n"
         file.write(text_code)
-        
-    file.close()
+    if close==True:   
+        file.close()
 def print_image(file,close=False): # Write Image Part OF The Page
     image_code='<center><img src="image.jpg" , width=360px></img></center>\n'
     file.write(image_code)
@@ -79,6 +81,11 @@ def print_download(file,name,link,center=False,close=False): # Create Download L
         link_code="<center>"+link_code+"</center>"
     file.write(link_code+"\n")
     file.write(break_line)
+    if close==True:
+        file.close()
+def print_adv(file,close=True):
+    file.write(break_line)
+    file.write("<center><a href="+'"'+homepage+'"'+">"+"Fasthtml "+version+"</a></center>")
     if close==True:
         file.close()
 def contain(name): # main fucntion That Open Each Page HTML File and call other function to write data in it
@@ -95,6 +102,7 @@ def contain(name): # main fucntion That Open Each Page HTML File and call other 
             shutil.copyfile(image_name,out_dir+"\\image.jpg")
             print_image(file)
             print_text(text_file,file,center=True)
+            print_adv(file)
         elif name=="resume":
             file_of_docs=os.listdir(doc_dir)
             for i in range(len(file_of_docs)):
@@ -103,7 +111,7 @@ def contain(name): # main fucntion That Open Each Page HTML File and call other 
                     break
             shutil.copyfile(resume_name,out_dir+"\\Resume.pdf")        
             print_download(file,"Download Full Version","Resume.pdf",center=True)
-            print_text(text_file,file)        
+            print_text(text_file,file)       
         else:
             print_text(text_file,file)
 def clear_folder(path): # This Function Get Path Of Foldr And Delte Its Contains
