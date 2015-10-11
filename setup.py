@@ -7,7 +7,7 @@ out_dir=work_dir+"\\output"
 page_name=["Home","Resume","Project","About Me"] # list of Page Title In Menu Maker
 actual_name=["index","resume","project","about"] # List Of Pages Actual name like index.html
 break_line="<hr></hr>\n"
-homepage="http://sepandhaghighi.github.io/fasthtml/page.html"
+homepage="http://sepandhaghighi.github.io/qpage/page.html"
 version="V1.1"
 def menu_maker(): # Top Menu Maker In each html page
     result=""
