@@ -1,0 +1,17 @@
+body{
+	
+	
+	background:gray;
+	font-family: monospace;
+	font-size:14px;
+	
+}
+.header_light:hover{
+	
+	background:yellow;
+}
+
+.header_color{
+	
+	color:purple;
+}
