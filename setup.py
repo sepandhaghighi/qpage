@@ -134,7 +134,7 @@ if __name__=="__main__":
                 contain(i)
                 html_end(i)
             print("Homepage is ready")
-            print("Upload out and image folder contains directly to your host")
+            print("Upload output folder contains directly to your host")
             print("Please Dont Change HTML Files Name")
             input("")
         except FileNotFoundError: # error exception in FileNotFound ( When Something Missed)

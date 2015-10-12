@@ -1,5 +1,6 @@
 body{
 	background : gray;
+	size:relative;
 }
 
 a{
@@ -10,4 +11,9 @@ a{
 a:hover{
 	
 	color:black;
+}
+
+img{
+	
+	border:1px solid black;
 }
