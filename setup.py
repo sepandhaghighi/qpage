@@ -9,12 +9,14 @@ actual_name=["index","resume","project","about"] # List Of Pages Actual name lik
 break_line="<hr></hr>\n"
 homepage="http://sepandhaghighi.github.io/qpage/page.html"
 version="V1.1"
+#css_classes=["menu_color"]
 def menu_maker(): # Top Menu Maker In each html page
-    result=""
+    result="<center>"
     for i in range(len(page_name)):
-        
+
         result=result+'\t<a href="'+actual_name[i]+'.html">'+page_name[i]+"</a>\n" #  Hyper Link To Each Page In HTML File
         result=result+"&nbsp\n"
+    result=result+"</center>"
     result=result+"\t\t"+break_line # Add Break line to End Of The Menu
     return result # Return All Of The Menu
 def menu_writer():  # Write menu_maker output in html file
@@ -33,6 +35,7 @@ def html_init(name): # Create Initial Form Of each Html Page Like Title And HTML
         file.write("\t\t<title>Welcome To My Homepage</title>\n")
     else:
         file.write("\t\t<title>"+name.upper()+"</title>\n")
+    file.write('<link rel="stylesheet" href="styles.css" type="text/style"/>\n')
     file.write("\t</head>\n")
     file.write("\t<body>\n")
     file.close()
@@ -117,8 +120,8 @@ def contain(name): # main fucntion That Open Each Page HTML File and call other 
 def clear_folder(path): # This Function Get Path Of Foldr And Delte Its Contains
     list_of_files=os.listdir(path)
     for file in list_of_files:
-        print
-        os.remove(path+"\\"+file)
+        if file.find(".css")==-1:
+            os.remove(path+"\\"+file)
 
 if __name__=="__main__":
         try:
