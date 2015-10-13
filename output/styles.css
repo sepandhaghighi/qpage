@@ -1,19 +1,6 @@
 body{
-	background : gray;
-	size:relative;
+background:Orange;
 }
-
-a{
-	
-	color:yellow;
-}
-
-a:hover{
-	
-	color:black;
-}
-
-img{
-	
-	border:1px solid black;
+.color_tag{
+color:Yellow;
 }

@@ -1,5 +1,6 @@
 import os 
 import shutil #Library For Work With File In High Level Like Copy
+import datetime # For Adding System Time To Homepage
 work_dir= os.getcwd() # Get Current Directory
 image_dir = work_dir+"\\image"
 doc_dir=work_dir+"\\doc"
@@ -8,7 +9,10 @@ page_name=["Home","Resume","Project","About Me"] # list of Page Title In Menu Ma
 actual_name=["index","resume","project","about"] # List Of Pages Actual name like index.html
 break_line="<hr></hr>\n"
 homepage="http://sepandhaghighi.github.io/qpage/page.html"
-version="V1.1"
+version="V1.2"
+color_box=["White","Black", "Purple", "Yellow", "Orange", "Green", "Blue"] # Color list for background and text
+today_time=str(datetime.date.today()) # Get Tody Date By datetime module
+    
 #css_classes=["menu_color"]
 def menu_maker(): # Top Menu Maker In each html page
     result="<center>"
@@ -47,7 +51,7 @@ def html_end(name):   # Create End Of The Html file
     file.close()
 def print_text(text_file,file,center=False,close=False): # Write Text Part Of Each Page
     text_code=""
-    header_start="<h4>"
+    header_start='<h4 class="color_tag">'
     header_end="</h4>"
     space="&nbsp\n"
     for line in text_file:
@@ -57,11 +61,11 @@ def print_text(text_file,file,center=False,close=False): # Write Text Part Of Ea
             text_code=space
         else:   # Detecting Font Size
             if line.find("[L]")!=-1:
-                header_start="<h2>"
+                header_start='<h2 class="color_tag">'
                 header_end="</h2>"
                 text=line[3:]
             elif line.find("[S]")!=-1:
-                header_start="<h5>"
+                header_start='<h5 class="color_tag">'
                 header_end="</h5>"
                 text=line[3:]
             elif line.find("[M]")!=-1:
@@ -88,7 +92,7 @@ def print_download(file,name,link,center=False,close=False): # Create Download L
         file.close()
 def print_adv(file,close=True):
     file.write(break_line)
-    file.write("<center><a href="+'"'+homepage+'"'+">"+"QPage "+version+"</a></center>")
+    file.write("<center><a href="+'"'+homepage+'"'+">"+"Generated "+today_time+" By"+"QPage "+version+"</a></center>")
     if close==True:
         file.close()
 def contain(name): # main fucntion That Open Each Page HTML File and call other function to write data in it
@@ -120,9 +124,21 @@ def contain(name): # main fucntion That Open Each Page HTML File and call other 
 def clear_folder(path): # This Function Get Path Of Foldr And Delte Its Contains
     list_of_files=os.listdir(path)
     for file in list_of_files:
-        if file.find(".css")==-1:
-            os.remove(path+"\\"+file)
-
+        os.remove(path+"\\"+file)
+def css_creator(): # Ask For background and text color in 
+    back_color_code=int(input("Please enter your background color : [0-White 1-Black 2-Purple 3-Yellow 4-Orange 5-Green 6-Blue] : "))
+    if back_color_code not in range(7):
+        back_color_code=0
+    text_color_code=int(input("Please enter your text color :[0-White 1-Black 2-Purple 3-Yellow 4-Orange 5-Green 6-Blue] : "))
+    if text_color_code not in range(7):
+        text_color_code=1
+    background_color=color_box[back_color_code] # convert code to color string in color_box
+    text_color=color_box[text_color_code] # convert code to color string in color_box
+    css_file=open(out_dir+"\\styles.css","w") # open css file
+    css_file.write("body{\n"+"background:"+background_color+";\n}\n") # write body tag
+    css_file.write(".color_tag{\n"+"color:"+text_color+";\n}") # write color_tag in css
+    css_file.close() # close css file
+    
 if __name__=="__main__":
         try:
             clear_folder(out_dir)
@@ -133,6 +149,7 @@ if __name__=="__main__":
             for i in actual_name:
                 contain(i)
                 html_end(i)
+            css_creator()
             print("Homepage is ready")
             print("Upload output folder contains directly to your host")
             print("Please Dont Change HTML Files Name")
