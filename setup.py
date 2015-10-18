@@ -11,6 +11,7 @@ break_line="<hr></hr>\n"
 homepage="http://sepandhaghighi.github.io/qpage/page.html"
 version="V1.2"
 color_box=["White","Black", "Purple", "Yellow", "Orange", "Green", "Blue"] # Color list for background and text
+size_box=["200px","360px","500px"]
 today_time=str(datetime.date.today()) # Get Tody Date By datetime module
     
 #css_classes=["menu_color"]
@@ -78,7 +79,11 @@ def print_text(text_file,file,center=False,close=False): # Write Text Part Of Ea
     if close==True:   
         file.close()
 def print_image(file,close=False): # Write Image Part OF The Page
-    image_code='<center><img src="image.jpg" , width=360px></img></center>\n'
+    image_size=int(input("Please Enter Profile Image Size : [0-Small 1-Medium 2-Large] ")) # Choose Profile Image Size
+    image_size_string=size_box[1] # Getting Html String From size_box list default mode (Medium)
+    if image_size>=0 and image_size<3:
+        image_size_string=size_box[image_size]
+    image_code='<center><img src="image.jpg" , width='+image_size_string+'></img></center>\n'
     file.write(image_code)
     if close==True:
         file.close()
