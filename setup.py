@@ -5,6 +5,7 @@ work_dir= os.getcwd() # Get Current Directory
 image_dir = work_dir+"\\image"
 doc_dir=work_dir+"\\doc"
 out_dir=work_dir+"\\output"
+font_dir=work_dir+"\\font"
 page_name=["Home","Resume","Project","About Me"] # list of Page Title In Menu Maker
 actual_name=["index","resume","project","about"] # List Of Pages Actual name like index.html
 break_line="<hr></hr>\n"
@@ -130,7 +131,9 @@ def clear_folder(path): # This Function Get Path Of Foldr And Delte Its Contains
     list_of_files=os.listdir(path)
     for file in list_of_files:
         os.remove(path+"\\"+file)
-def css_creator(): # Ask For background and text color in 
+def css_creator(): # Ask For background and text color in
+    font_flag=0 # 0 If there is no font file in font_folder
+    font_section=""
     back_color_code=int(input("Please enter your background color : [0-White 1-Black 2-Purple 3-Yellow 4-Orange 5-Green 6-Blue] : "))
     if back_color_code not in range(7):
         back_color_code=0
@@ -139,8 +142,16 @@ def css_creator(): # Ask For background and text color in
         text_color_code=1
     background_color=color_box[back_color_code] # convert code to color string in color_box
     text_color=color_box[text_color_code] # convert code to color string in color_box
+    font_folder=os.listdir(font_dir)
+    for i in font_folder:
+        if i.find(".ttf")!=-1: # If there is a font in font folder
+            shutil.copyfile(font_dir+"\\"+i,out_dir+"\\qpage.tff") # copy font file to output folder
+            font_flag=1 # Turn Flag On
     css_file=open(out_dir+"\\styles.css","w") # open css file
-    css_file.write("body{\n"+"background:"+background_color+";\n}\n") # write body tag
+    if font_flag==1: # check flag if it is 1
+        css_file.write("@font-face{\nfont-family:qpagefont;\nsrc:url(qpage.tff);\n}") # wrtie font-face in html
+        font_section="font-family:qpagefont;\n" # Update Font Section For Body Tag
+    css_file.write("body{\n"+"background:"+background_color+";\n"+font_section+"}\n") # write body tag
     css_file.write(".color_tag{\n"+"color:"+text_color+";\n}") # write color_tag in css
     css_file.close() # close css file
     
