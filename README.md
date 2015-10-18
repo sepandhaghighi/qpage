@@ -12,11 +12,17 @@ This version of QPage has 4 default pages (Home , Project , Resume , About)
 
 5- Put your resume file (pdf format) in doc folder
 
-6- Run setup.py
+6- Put your font file in font folder (*Optional)
 
-7- Finished!!! Now you can go and upload output folder contains directly in your host
+7- Run setup.py
 
-Last Version : 1.1.0        
+8- Choose your profile image size
+
+9- Choose your text and background color 
+
+10- Finished!!! Now you can go and upload output folder contains directly in your host
+
+Last Version : 1.3.0        
 
 Homepage : [Link](http://sepandhaghighi.github.io/qpage/page.html)
 
