@@ -1,11 +1,9 @@
 @font-face{
 font-family:qpagefont;
-src:url(qpage.ttf) format("truetype");
-}
-body{
+src:url(qpage.ttf);
+}body{
 background:White;
 font-family:qpagefont;
-
 }
 .color_tag{
 color:Black;
