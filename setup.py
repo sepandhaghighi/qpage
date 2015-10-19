@@ -1,6 +1,7 @@
 import os 
 import shutil #Library For Work With File In High Level Like Copy
 import datetime # For Adding System Time To Homepage
+
 work_dir= os.getcwd() # Get Current Directory
 image_dir = work_dir+"\\image"
 doc_dir=work_dir+"\\doc"
@@ -174,6 +175,7 @@ if __name__=="__main__":
             print ("Some File Missed!!")
             print ("Please Check Following :\n 1.Where Is Your Resume File? It should be in doc folder  \n 2.Where is your profile image file? it should be in image folder")
             print (" 3.Where is each page description text file? They Should be in doc folder ")
+            input("")
             
 
     
