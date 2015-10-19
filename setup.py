@@ -125,9 +125,11 @@ def contain(name): # main fucntion That Open Each Page HTML File and call other 
                     break
             shutil.copyfile(resume_name,out_dir+"\\Resume.pdf")        
             print_download(file,"Download Full Version","Resume.pdf",center=True)
-            print_text(text_file,file)       
+            print_text(text_file,file)
+            print_adv(file)
         else:
             print_text(text_file,file)
+            print_adv(file)
 def clear_folder(path): # This Function Get Path Of Foldr And Delte Its Contains
     list_of_files=os.listdir(path)
     for file in list_of_files:
@@ -146,11 +148,11 @@ def css_creator(): # Ask For background and text color in
     font_folder=os.listdir(font_dir)
     for i in font_folder:
         if i.find(".ttf")!=-1: # If there is a font in font folder
-            shutil.copyfile(font_dir+"\\"+i,out_dir+"\\qpage.tff") # copy font file to output folder
+            shutil.copyfile(font_dir+"\\"+i,out_dir+"\\qpage.ttf") # copy font file to output folder
             font_flag=1 # Turn Flag On
     css_file=open(out_dir+"\\styles.css","w") # open css file
     if font_flag==1: # check flag if it is 1
-        css_file.write("@font-face{\nfont-family:qpagefont;\nsrc:url(qpage.tff);\n}") # wrtie font-face in html
+        css_file.write("@font-face{\nfont-family:qpagefont;\nsrc:url(qpage.ttf);\n}") # wrtie font-face in html
         font_section="font-family:qpagefont;\n" # Update Font Section For Body Tag
     css_file.write("body{\n"+"background:"+background_color+";\n"+font_section+"}\n") # write body tag
     css_file.write(".color_tag{\n"+"color:"+text_color+";\n}") # write color_tag in css
