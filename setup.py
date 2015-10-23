@@ -13,7 +13,7 @@ break_line="<hr></hr>\n"
 homepage="http://sepandhaghighi.github.io/qpage/page.html"
 version="V1.5.1"
 color_box=["White","Black", "Purple", "Yellow", "Orange", "Green", "Blue"] # Color list for background and text
-size_box=["200px","360px","500px"] # list of size of images
+size_box=["50px","100px","200px","360px","500px"] # list of size of images
 imformat_box=["jpg","bmp","png","gif","tiff"] # list of supported image format
 today_time=str(datetime.date.today()) # Get Tody Date By datetime module
     
@@ -86,9 +86,11 @@ def print_text(text_file,file,center=False,close=False): # Write Text Part Of Ea
     if close==True:   
         file.close()
 def print_image(file,close=False,imformat="jpg"): # Write Image Part OF The Page
-    image_size=int(input("Please Enter Profile Image Size : [0-Small 1-Medium 2-Large] ")) # Choose Profile Image Size
-    image_size_string=size_box[1] # Getting Html String From size_box list default mode (Medium)
-    if image_size>=0 and image_size<3:
+    for i in range(len(size_box)):
+        print(i,"-",size_box[i])
+    image_size=int(input("Please Enter Profile Image Size : ")) # Choose Profile Image Size
+    image_size_string=size_box[2] # Getting Html String From size_box list default mode (Medium)
+    if image_size>=0 and image_size<len(size_box):
         image_size_string=size_box[image_size]
     image_code='<center><img src="image.'+imformat+'"'+ ', width='+image_size_string+'></img></center>\n'
     file.write(image_code)
