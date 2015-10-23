@@ -1,4 +1,4 @@
-[L]Hello!!
+[L]Hello!![center]
 [S]Welcome to My Homepage
 [S]I am Sepand Haghighi an Undergraduate  student of  Electronic Engineering 
 [S]at Amir Kabir University Of Technology

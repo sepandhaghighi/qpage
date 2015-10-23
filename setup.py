@@ -74,9 +74,13 @@ def print_text(text_file,file,center=False,close=False): # Write Text Part Of Ea
                 text=line[3:]
             elif line.find("[M]")!=-1:
                 text=line[3:]
-        if center==True: # Centerizes Text If Condition Is True
+        if center==True: # Centerizes Text If Condition Is True For Manual Centering
             header_start="<center>"+header_start
             header_end=header_end+"</center>"
+        if text.find("[center]")!=-1: # Find Center Tag In Each Line
+            header_start="<center>"+header_start
+            header_end=header_end+"</center>"
+            text=text[:text.find("[center]")]
         text_code=header_start+text+header_end+"\n"
         file.write(text_code)
     if close==True:   
@@ -119,7 +123,7 @@ def contain(name): # main fucntion That Open Each Page HTML File and call other 
                         break     
             shutil.copyfile(image_name,out_dir+"\\image."+imformat)
             print_image(file,imformat=imformat)
-            print_text(text_file,file,center=True)
+            print_text(text_file,file)
             print_adv(file)
         elif name=="resume":
             file_of_docs=os.listdir(doc_dir)
