@@ -22,7 +22,7 @@ This version of QPage has 4 default pages (Home , Project , Resume , About)
 
 10- Finished!!! Now you can go and upload output folder contains directly in your host
 
-Last Version : 1.5.1        
+Last Version : 1.5.3      
 
 Homepage : [Link](http://sepandhaghighi.github.io/qpage/page.html)
 
