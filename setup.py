@@ -15,6 +15,7 @@ version="V1.5.1"
 color_box=["White","Black", "Purple", "Yellow", "Orange", "Green", "Blue"] # Color list for background and text
 size_box=["50px","100px","200px","360px","500px"] # list of size of images
 imformat_box=["jpg","bmp","png","gif","tiff"] # list of supported image format
+fontstyle_box=["normal","italic","oblique"]
 today_time=str(datetime.date.today()) # Get Tody Date By datetime module
     
 #css_classes=["menu_color"]
@@ -164,6 +165,14 @@ def css_creator(): # Ask For background and text color in
     if font_flag==1: # check flag if it is 1
         css_file.write("@font-face{\nfont-family:qpagefont;\nsrc:url(qpage.ttf);\n}") # wrtie font-face in html
         font_section="font-family:qpagefont;\n" # Update Font Section For Body Tag
+        for i in range(len(fontstyle_box)):
+            print(i,"-",fontstyle_box[i])
+        font_style=int(input(" Please choose your font style "))
+        if font_style<len(fontstyle_box):
+            font_style=fontstyle_box[font_style]
+        else:
+            font_style="normal"
+        font_section=font_section+"font-style:"+font_style+";\n"
     css_file.write("body{\n"+"background:"+background_color+";\n"+font_section+"}\n") # write body tag
     css_file.write(".color_tag{\n"+"color:"+text_color+";\n}") # write color_tag in css
     css_file.close() # close css file
