@@ -1,16 +1,16 @@
-[L]Hello!![center]
-[S]Welcome to My Homepage
-[S]I am Sepand Haghighi an Undergraduate  student of  Electronic Engineering 
-[S]at Amir Kabir University Of Technology
-[S] And Research Assistant at Marlik Institute Of Innovation And Technology
+Hello!!
+Welcome to My Homepage [center]
+I am Sepand Haghighi an Undergraduate  student of  Electronic Engineering 
+at Amir Kabir University Of Technology
+ And Research Assistant at Marlik Institute Of Innovation And Technology
 
-[L]Research Interest 
+Research Interest 
 
-[S]- Machine Learning
-[S]- Neural Network
-[S]- Embedded System Design
-[S]- Robotic
+- Machine Learning
+- Neural Network
+- Embedded System Design
+- Robotic
 
-[L]Contact Me ??
+Contact Me ??
 
-[S]You can send a message to sepand.haghighi at yahoo ;-)
+You can send a message to sepand.haghighi at yahoo ;-)

@@ -4,8 +4,8 @@ src:url(qpage.ttf);
 }body{
 background:White;
 font-family:qpagefont;
-font-style:oblique;
+font-style:italic;
 }
 .color_tag{
-color:Yellow;
+color:Black;
 }
