@@ -2,10 +2,10 @@
 font-family:qpagefont;
 src:url(qpage.ttf);
 }body{
-background:Black;
+background:White;
 font-family:qpagefont;
-font-style:italic;
+font-style:oblique;
 }
 .color_tag{
-color:White;
+color:Yellow;
 }

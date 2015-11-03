@@ -16,6 +16,7 @@ color_box=["White","Black", "Purple", "Yellow", "Orange", "Green", "Blue"] # Col
 size_box=["50px","100px","200px","360px","500px"] # list of size of images
 imformat_box=["jpg","bmp","png","gif","tiff"] # list of supported image format
 fontstyle_box=["normal","italic","oblique"]
+font_format=[".ttf",".woff",".svg",".eot"]
 today_time=str(datetime.date.today()) # Get Tody Date By datetime module
     
 #css_classes=["menu_color"]
@@ -158,12 +159,14 @@ def css_creator(): # Ask For background and text color in
     text_color=color_box[text_color_code] # convert code to color string in color_box
     font_folder=os.listdir(font_dir)
     for i in font_folder:
-        if i.find(".ttf")!=-1: # If there is a font in font folder
-            shutil.copyfile(font_dir+"\\"+i,out_dir+"\\qpage.ttf") # copy font file to output folder
-            font_flag=1 # Turn Flag On
+        for j in range(len(font_format)):# search for other font format in font box
+            if i.find(font_format[j])!=-1: # If there is a font in font folder
+                shutil.copyfile(font_dir+"\\"+i,out_dir+"\\qpage"+font_format[j]) # copy font file to output folder
+                font_flag=1 # Turn Flag On
+                current_font_format=font_format[j] # font format of current selected font for css editing
     css_file=open(out_dir+"\\styles.css","w") # open css file
     if font_flag==1: # check flag if it is 1
-        css_file.write("@font-face{\nfont-family:qpagefont;\nsrc:url(qpage.ttf);\n}") # wrtie font-face in html
+        css_file.write("@font-face{\nfont-family:qpagefont;\nsrc:url(qpage"+current_font_format+");\n}") # wrtie font-face in html
         font_section="font-family:qpagefont;\n" # Update Font Section For Body Tag
         for i in range(len(fontstyle_box)):
             print(i,"-",fontstyle_box[i])
