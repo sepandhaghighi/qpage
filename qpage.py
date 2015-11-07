@@ -151,10 +151,12 @@ def clear_folder(path): # This Function Get Path Of Foldr And Delte Its Contains
 def css_creator(): # Ask For background and text color in
     font_flag=0 # 0 If there is no font file in font_folder
     font_section=""
-    back_color_code=int(input("Please enter your background color : [0-White 1-Black 2-Purple 3-Yellow 4-Orange 5-Green 6-Blue] : "))
+    for i in range(len(color_box)):
+        print(i,"-",color_box[i])
+    back_color_code=int(input("Please enter your background color : "))
     if back_color_code not in range(7):
         back_color_code=0
-    text_color_code=int(input("Please enter your text color :[0-White 1-Black 2-Purple 3-Yellow 4-Orange 5-Green 6-Blue] : "))
+    text_color_code=int(input("Please enter your text color : "))
     if text_color_code not in range(7):
         text_color_code=1
     background_color=color_box[back_color_code] # convert code to color string in color_box
