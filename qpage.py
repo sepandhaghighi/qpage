@@ -8,7 +8,7 @@ doc_dir=work_dir+"\\doc"
 out_dir=work_dir+"\\output"
 font_dir=work_dir+"\\font"
 page_name=["Home","Resume","Project","About Me"] # list of Page Title In Menu Maker
-actual_name=["index","resume","project","about"] # List Of Pages Actual name like index.html
+actual_name=["Home","Resume","Project","About"] # List Of Pages Actual name like index.html
 break_line="<hr></hr>\n"
 homepage="http://sepandhaghighi.github.io/qpage/page.html"
 version="V1.5.3"
@@ -120,7 +120,7 @@ def contain(name): # main fucntion That Open Each Page HTML File and call other 
         resume_name=""
         image_name=""
         imformat="jpg"
-        if name=="index":
+        if name=="Home":
             file_of_images=os.listdir(image_dir)
             for i in range(len(file_of_images)):
                 for form in imformat_box: 
@@ -132,7 +132,7 @@ def contain(name): # main fucntion That Open Each Page HTML File and call other 
             print_image(file,imformat=imformat)
             print_text(text_file,file)
             print_adv(file)
-        elif name=="resume":
+        elif name=="Resume":
             file_of_docs=os.listdir(doc_dir)
             for i in range(len(file_of_docs)):
                 if file_of_docs[i].find(".pdf")!=-1:
