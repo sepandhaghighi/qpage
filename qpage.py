@@ -46,8 +46,9 @@ def html_init(name): # Create Initial Form Of each Html Page Like Title And HTML
     else:
         file.write("\t\t<title>"+name.upper()+"</title>\n")
     file.write('<link rel="stylesheet" href="styles.css" type="text/style"/>\n')
+    file.write('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/style"/>\n')
     file.write("\t</head>\n")
-    file.write("\t<body>\n")
+    file.write('\t<body class="body_tag">\n')
     file.close()
 def html_end(name):   # Create End Of The Html file
     html_name= out_dir+"\\"+name+".html"
@@ -180,6 +181,6 @@ def css_creator(): # Ask For background and text color in
         else:
             font_style="normal"
         font_section=font_section+"font-style:"+font_style+";\n"
-    css_file.write("body{\n"+"background:"+background_color+";\n"+font_section+"}\n") # write body tag
+    css_file.write(".body_tag{\n"+"background:"+background_color+";\n"+font_section+"}\n") # write body tag
     css_file.write(".color_tag{\n"+"color:"+text_color+";\n}") # write color_tag in css
     css_file.close() # close css file

@@ -1,10 +1,10 @@
 @font-face{
 font-family:qpagefont;
 src:url(qpage.ttf);
-}body{
-background:Black;
+}.body_tag{
+background:White;
 font-family:qpagefont;
-font-style:italic;
+font-style:oblique;
 }
 .color_tag{
 color:Black;
