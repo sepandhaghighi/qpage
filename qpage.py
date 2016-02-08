@@ -46,7 +46,7 @@ def html_init(name): # Create Initial Form Of each Html Page Like Title And HTML
     file=open(html_name,"w")
     file.write("<html>\n")
     file.write("\t<head>\n")
-    if name=="Home":
+    if name=="index":
         file.write("\t\t<title>Welcome To My Homepage</title>\n")
     else:
         file.write("\t\t<title>"+name.upper()+"</title>\n")

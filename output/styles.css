@@ -1,0 +1,11 @@
+@font-face{
+font-family:qpagefont;
+src:url(qpage.ttf);
+}.body_tag{
+background:Purple;
+font-family:qpagefont;
+font-style:italic;
+}
+.color_tag{
+color:Black;
+}
