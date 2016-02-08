@@ -7,11 +7,11 @@ image_dir = work_dir+"\\image"
 doc_dir=work_dir+"\\doc"
 out_dir=work_dir+"\\output"
 font_dir=work_dir+"\\font"
-page_name=["Home","Resume","Project","About Me"] # list of Page Title In Menu Maker
-actual_name=["Home","Resume","Project","About"] # List Of Pages Actual name like index.html
+page_name=["Home"] # list of default Homepage Name
+actual_name=["Home"] # List of Actual Name Like Home.Html
 break_line="<hr></hr>\n"
 homepage="http://sepandhaghighi.github.io/qpage/page.html"
-version="V1.5.3"
+version="V1.5.5"
 color_box=["White","Black", "Purple", "Yellow", "Orange", "Green", "Blue"] # Color list for background and text
 size_box=["50px","100px","200px","360px","500px"] # list of size of images
 imformat_box=["jpg","bmp","png","gif","tiff"] # list of supported image format
@@ -20,6 +20,12 @@ font_format=[".ttf",".woff",".svg",".eot"]
 today_time=str(datetime.date.today()) # Get Tody Date By datetime module
     
 #css_classes=["menu_color"]
+def page_name_update(): # This Function Update Page Names
+    for i in os.listdir(doc_dir):
+        if i.find(".txt")!=-1 and i[:-4].upper()!="HOME":
+            actual_name.append(i[:-4])
+            page_name.append(i[:-4])
+            
 def menu_maker(): # Top Menu Maker In each html page
     result="<center>"
     for i in range(len(page_name)):
@@ -41,7 +47,7 @@ def html_init(name): # Create Initial Form Of each Html Page Like Title And HTML
     file=open(html_name,"w")
     file.write("<html>\n")
     file.write("\t<head>\n")
-    if name=="index":
+    if name=="Home":
         file.write("\t\t<title>Welcome To My Homepage</title>\n")
     else:
         file.write("\t\t<title>"+name.upper()+"</title>\n")
@@ -141,10 +147,10 @@ def contain(name): # main fucntion That Open Each Page HTML File and call other 
             shutil.copyfile(resume_name,out_dir+"\\Resume.pdf")        
             print_download(file,"Download Full Version","Resume.pdf",center=True)
             print_text(text_file,file)
-            print_adv(file)
+            #print_adv(file)
         else:
             print_text(text_file,file)
-            print_adv(file)
+            #print_adv(file)
 def clear_folder(path): # This Function Get Path Of Foldr And Delte Its Contains
     list_of_files=os.listdir(path)
     for file in list_of_files:

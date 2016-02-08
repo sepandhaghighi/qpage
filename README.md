@@ -1,14 +1,14 @@
 # QPage
 Free Project For Creating  Academic Home page
-This version of QPage has 4 default pages (Home , Project , Resume , About)
+						                                                                     
 
 1- [Download](https://www.python.org/downloads/) And Install Last Version Of Python ( * or use exe folder and skip this step * )
 
-2- [Download](https://github.com/sepandhaghighi/qpage/archive/v1.5.4.zip) QPage
+2- [Download](https://github.com/sepandhaghighi/qpage/archive/v1.5.5.zip) QPage
 
 3- Put your profile picture in image folder (jpg , bmp , tiff , gif , png)
 
-4- Put your each page detail in a text file with page name in doc folder (* In this step you can use [M] , [S] or [L] at the start and [center] at the end of each line to control font size and alignment )
+4- Put each page details in a text file with page name in doc folder (* In this step you can use [M] , [S] or [L] at the start and [center] at the end of each line to control font size and alignment )
 
 5- Put your resume file (pdf format) in doc folder
 
@@ -22,7 +22,7 @@ This version of QPage has 4 default pages (Home , Project , Resume , About)
 
 10- Finished!!! Now you can go and upload output folder contains directly in your host
 
-Last Version : 1.5.4     
+Last Version : 1.5.5     
 
 Homepage : [Link](http://sepandhaghighi.github.io/qpage/page.html)
 

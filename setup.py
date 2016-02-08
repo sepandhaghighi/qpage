@@ -1,15 +1,16 @@
 from qpage import *  
 if __name__=="__main__":
         try:
-            clear_folder(out_dir)
+            clear_folder(out_dir) # clear all of files in output directory
+            page_name_update() # update page names
             for i in actual_name:
-                html_init(i)
-            menu_writer()
+                html_init(i) # create pages html files
+            menu_writer() # write menu for each html file
     
             for i in actual_name:
-                contain(i)
-                html_end(i)
-            css_creator()
+                contain(i) # write contains of each page
+                html_end(i) # end tags of each page
+            css_creator() # create css file
             print("Homepage is ready")
             print("Upload output folder contains directly to your host")
             print("Please Dont Change HTML Files Name")
