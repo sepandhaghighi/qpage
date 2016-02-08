@@ -8,7 +8,7 @@ doc_dir=work_dir+"\\doc"
 out_dir=work_dir+"\\output"
 font_dir=work_dir+"\\font"
 page_name=["Home"] # list of default Homepage Name
-actual_name=["Home"] # List of Actual Name Like Home.Html
+actual_name=["index"] # List of Actual Name Like Home.Html
 break_line="<hr></hr>\n"
 homepage="http://sepandhaghighi.github.io/qpage/page.html"
 version="V1.5.5"
@@ -22,14 +22,13 @@ today_time=str(datetime.date.today()) # Get Tody Date By datetime module
 #css_classes=["menu_color"]
 def page_name_update(): # This Function Update Page Names
     for i in os.listdir(doc_dir):
-        if i.find(".txt")!=-1 and i[:-4].upper()!="HOME":
+        if i.find(".txt")!=-1 and i[:-4].upper()!="INDEX":
             actual_name.append(i[:-4])
             page_name.append(i[:-4])
             
 def menu_maker(): # Top Menu Maker In each html page
     result="<center>"
     for i in range(len(page_name)):
-
         result=result+'\t<a href="'+actual_name[i]+'.html">'+page_name[i]+"</a>\n" #  Hyper Link To Each Page In HTML File
         result=result+"&nbsp\n"
     result=result+"</center>"
@@ -126,7 +125,7 @@ def contain(name): # main fucntion That Open Each Page HTML File and call other 
         resume_name=""
         image_name=""
         imformat="jpg"
-        if name=="Home":
+        if name=="index":
             file_of_images=os.listdir(image_dir)
             for i in range(len(file_of_images)):
                 for form in imformat_box: 

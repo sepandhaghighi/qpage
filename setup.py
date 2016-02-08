@@ -1,6 +1,8 @@
 from qpage import *  
 if __name__=="__main__":
         try:
+            print("QPAGE By Sepand Haghighi")
+            print("Version : "+version)
             clear_folder(out_dir) # clear all of files in output directory
             page_name_update() # update page names
             for i in actual_name:
