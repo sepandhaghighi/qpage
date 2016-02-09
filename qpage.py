@@ -1,7 +1,7 @@
 import os 
 import shutil #Library For Work With File In High Level Like Copy
 import datetime # For Adding System Time To Homepage
-
+import webbrowser
 work_dir= os.getcwd() # Get Current Directory
 image_dir = work_dir+"\\image"
 doc_dir=work_dir+"\\doc"
@@ -11,7 +11,7 @@ page_name=["Home"] # list of default Homepage Name
 actual_name=["index"] # List of Actual Name Like Home.Html
 break_line="<hr></hr>\n"
 homepage="http://sepandhaghighi.github.io/qpage/page.html"
-version="V1.5.5"
+version="V1.5.6"
 color_box=["White","Black", "Purple", "Yellow", "Orange", "Green", "Blue"] # Color list for background and text
 size_box=["50px","100px","200px","360px","500px"] # list of size of images
 imformat_box=["jpg","bmp","png","gif","tiff"] # list of supported image format
@@ -116,7 +116,7 @@ def print_download(file,name,link,center=False,close=False): # Create Download L
         file.close()
 def print_adv(file,close=True):
     file.write(break_line)
-    file.write("<center><a href="+'"'+homepage+'"'+">"+"Generated "+today_time+" By"+"QPage "+version+"</a></center>")
+    file.write('<center><a href='+'"'+homepage+'"'+">"+"Generated "+today_time+" By"+"QPage "+version+"</a> </center>")
     if close==True:
         file.close()
 def contain(name): # main fucntion That Open Each Page HTML File and call other function to write data in it
@@ -189,3 +189,6 @@ def css_creator(): # Ask For background and text color in
     css_file.write(".body_tag{\n"+"background:"+background_color+";\n"+font_section+"}\n") # write body tag
     css_file.write(".color_tag{\n"+"color:"+text_color+";\n}") # write color_tag in css
     css_file.close() # close css file
+def preview():
+    webbrowser.open(out_dir+"\\index.html")
+
