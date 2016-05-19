@@ -24,5 +24,5 @@ Free Project For Creating  Academic Home page
 
 Last Version : 1.5.6   
 
-Homepage : [Link](http://sepandhaghighi.github.io/qpage/page.html)
+Homepage : [Link](http://sepandhaghighi.github.io/qpage/index.html)
 
