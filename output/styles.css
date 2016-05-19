@@ -1,0 +1,11 @@
+@font-face{
+font-family:qpagefont;
+src:url(qpage.ttf);
+}.body_tag{
+background:Yellow;
+font-family:qpagefont;
+font-style:oblique;
+}
+.color_tag{
+color:Orange;
+}

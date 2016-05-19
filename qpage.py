@@ -10,13 +10,14 @@ font_dir=work_dir+"\\font"
 page_name=["Home"] # list of default Homepage Name
 actual_name=["index"] # List of Actual Name Like Home.Html
 break_line="<hr></hr>\n"
-homepage="http://sepandhaghighi.github.io/qpage/page.html"
+homepage="http://sepandhaghighi.github.io/qpage"
 version="V1.5.6"
 color_box=["White","Black", "Purple", "Yellow", "Orange", "Green", "Blue"] # Color list for background and text
 size_box=["50px","100px","200px","360px","500px"] # list of size of images
 imformat_box=["jpg","bmp","png","gif","tiff"] # list of supported image format
 fontstyle_box=["normal","italic","oblique"]
 font_format=[".ttf",".woff",".svg",".eot"]
+target_blank='target="blanl"'
 today_time=str(datetime.date.today()) # Get Tody Date By datetime module
     
 #css_classes=["menu_color"]
@@ -29,7 +30,11 @@ def page_name_update(): # This Function Update Page Names
 def menu_maker(): # Top Menu Maker In each html page
     result="<center>"
     for i in range(len(page_name)):
-        result=result+'\t<a href="'+actual_name[i]+'.html">'+page_name[i]+"</a>\n" #  Hyper Link To Each Page In HTML File
+        if page_name[i]=="Home":
+            target_blank=""
+        else:
+            target_blank='target="blank"'
+        result=result+'\t<a href="'+actual_name[i]+'.html"'+target_blank+'>'+page_name[i]+"</a>\n" #  Hyper Link To Each Page In HTML File
         result=result+"&nbsp\n"
     result=result+"</center>"
     result=result+"\t\t"+break_line # Add Break line to End Of The Menu
@@ -107,7 +112,7 @@ def print_image(file,close=False,imformat="jpg"): # Write Image Part OF The Page
     if close==True:
         file.close()
 def print_download(file,name,link,center=False,close=False): # Create Download Link In Page
-    link_code="<a href="+'"'+link+'"'+">"+name+"</a>"
+    link_code="<a href="+'"'+link+'"'+target_blank+'>'+name+"</a>"
     if center==True:
         link_code="<center>"+link_code+"</center>"
     file.write(link_code+"\n")
@@ -116,7 +121,7 @@ def print_download(file,name,link,center=False,close=False): # Create Download L
         file.close()
 def print_adv(file,close=True):
     file.write(break_line)
-    file.write('<center><a href='+'"'+homepage+'"'+">"+"Generated "+today_time+" By"+"QPage "+version+"</a> </center>")
+    file.write('<center><a href='+'"'+homepage+'"'+target_blank+'>'+"Generated "+today_time+" By"+"QPage "+version+"</a> </center>")
     if close==True:
         file.close()
 def contain(name): # main fucntion That Open Each Page HTML File and call other function to write data in it
