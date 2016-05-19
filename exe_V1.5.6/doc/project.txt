@@ -1,7 +1,0 @@
-- Etching 74HC245 Octal Bus Tranceiver 
-
-- Simple Light Audio Trasmitter
-
-- Optical Flow Implementation ( Horn-Schunck  Method )
-
-- VLSI Designing And Simulation Of 1-Bit Full Adder 
