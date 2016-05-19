@@ -4,7 +4,7 @@ Free Project For Creating  Academic Home page
 
 1- [Download](https://www.python.org/downloads/) And Install Last Version Of Python ( * or use exe folder and skip this step * )
 
-2- [Download](https://github.com/sepandhaghighi/qpage/archive/v1.5.6.zip) QPage
+2- [Download](https://github.com/sepandhaghighi/qpage/archive/v1.5.7.zip) QPage
 
 3- Put your profile picture in image folder (jpg , bmp , tiff , gif , png)
 
@@ -22,7 +22,7 @@ Free Project For Creating  Academic Home page
 
 10- Finished!!! Now you can go and upload output folder contains directly in your host
 
-Last Version : 1.5.6   
+Last Version : 1.5.7   
 
 Homepage : [Link](http://sepandhaghighi.github.io/qpage/index.html)
 

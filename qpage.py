@@ -11,7 +11,7 @@ page_name=["Home"] # list of default Homepage Name
 actual_name=["index"] # List of Actual Name Like Home.Html
 break_line="<hr></hr>\n"
 homepage="http://sepandhaghighi.github.io/qpage"
-version="V1.5.6"
+version="V1.5.7"
 color_box=["White","Black", "Purple", "Yellow", "Orange", "Green", "Blue"] # Color list for background and text
 size_box=["50px","100px","200px","360px","500px"] # list of size of images
 imformat_box=["jpg","bmp","png","gif","tiff"] # list of supported image format
@@ -181,7 +181,7 @@ def css_creator(): # Ask For background and text color in
                 current_font_format=font_format[j] # font format of current selected font for css editing
     css_file=open(out_dir+"\\styles.css","w") # open css file
     if font_flag==1: # check flag if it is 1
-        css_file.write("@font-face{\nfont-family:qpagefont;\nsrc:url(qpage"+current_font_format+");\n}") # wrtie font-face in html
+        css_file.write("@font-face{\nfont-family:qpagefont;\nsrc:url(qpage"+current_font_format+");\n}\n") # wrtie font-face in html
         font_section="font-family:qpagefont;\n" # Update Font Section For Body Tag
         for i in range(len(fontstyle_box)):
             print(i,"-",fontstyle_box[i])
