@@ -10,14 +10,14 @@ font_dir=work_dir+"\\font"
 page_name=["Home"] # list of default Homepage Name
 actual_name=["index"] # List of Actual Name Like Home.Html
 break_line="<hr></hr>\n"
-homepage="http://sepandhaghighi.github.io/qpage"
-version="V1.5.7"
+homepage="http://www.qpage.ir"
+version="V1.5.8"
 color_box=["White","Black", "Purple", "Yellow", "Orange", "Green", "Blue"] # Color list for background and text
 size_box=["50px","100px","200px","360px","500px"] # list of size of images
 imformat_box=["jpg","bmp","png","gif","tiff"] # list of supported image format
 fontstyle_box=["normal","italic","oblique"]
 font_format=[".ttf",".woff",".svg",".eot"]
-target_blank='target="blanl"'
+target_blank='target="blank"'
 today_time=str(datetime.date.today()) # Get Tody Date By datetime module
     
 #css_classes=["menu_color"]
@@ -55,7 +55,7 @@ def html_init(name): # Create Initial Form Of each Html Page Like Title And HTML
         file.write("\t\t<title>Welcome To My Homepage</title>\n")
     else:
         file.write("\t\t<title>"+name.upper()+"</title>\n")
-    file.write('<link rel="stylesheet" href="styles.css" type="text/style"/>\n')
+    file.write('<link rel="stylesheet" href="styles.css" type="text/css"/>\n')
     file.write('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/style"/>\n')
     file.write("\t</head>\n")
     file.write('\t<body class="body_tag">\n')
@@ -191,7 +191,7 @@ def css_creator(): # Ask For background and text color in
         else:
             font_style="normal"
         font_section=font_section+"font-style:"+font_style+";\n"
-    css_file.write(".body_tag{\n"+"background:"+background_color+";\n"+font_section+"}\n") # write body tag
+    css_file.write(".body_tag{\n"+"background-color:"+background_color+";\n"+font_section+"}\n") # write body tag
     css_file.write(".color_tag{\n"+"color:"+text_color+";\n}") # write color_tag in css
     css_file.close() # close css file
 def preview():
