@@ -30,6 +30,6 @@ if __name__ == "__main__":
             ' 2.Where is your profile image file? it should be in image folder')
         print(' 3.Where is each page description text file? They Should be in doc folder ')
         input("")
-    # except ValueError:
-    #     print('Bad Input')
-    #     input("")
+    except ValueError:
+        print('Bad Input')
+        input("")

@@ -2,7 +2,6 @@ import os
 import shutil  # Library For Work With File In High Level Like Copy
 import datetime  # For Adding System Time To Homepage
 import webbrowser
-import platform
 
 work_dir = os.getcwd()  # Get Current Directory
 image_dir = os.path.join(work_dir, "image")
@@ -109,10 +108,10 @@ def print_text(text_file, file, center=False, close=False):  # Write Text Part O
                 text = line[3:]
         if center:  # Centerizes Text If Condition Is True For Manual Centering
             header_start = "<center>" + header_start
-            header_end = header_end + "</center>"
+            header_end += "</center>"
         if text.find("[center]") != -1:  # Find Center Tag In Each Line
             header_start = "<center>" + header_start
-            header_end = header_end + "</center>"
+            header_end += "</center>"
             text = text[:text.find("[center]")]
         text_code = header_start + text + header_end + "\n"
         file.write(text_code)
@@ -144,6 +143,7 @@ def print_download(file, name, link, center=False, close=False):  # Create Downl
 
 
 def print_adv(file, close=True):
+
     file.write(break_line)
     file.write(
         '<center><a href=' + '"' + homepage + '"' + target_blank + '>' + "Generated " + today_time + " By" + "QPage " + version + "</a> </center>")
@@ -191,7 +191,7 @@ def clear_folder(path):  # This Function Get Path Of Foldr And Delte Its Contain
 
 
 def css_creator():  # Ask For background and text color in
-    # global current_font_format
+    global current_font_format
     font_flag = 0  # 0 If there is no font file in font_folder
     font_section = ""
     for i in range(len(color_box)):
@@ -231,7 +231,12 @@ def css_creator():  # Ask For background and text color in
     css_file.close()  # close css file
 
 
+# noinspection PyBroadException
 def preview():
 
-    b = webbrowser.get('safari')
-    b.open_new(os.path.join(out_dir, "index.html"))
+    # noinspection PyBroadException
+    try:
+        b = webbrowser.get('safari')
+        b.open_new(os.path.join(out_dir, 'index.html'))
+    except Exception:
+        webbrowser.open_new(os.path.join(out_dir, 'index.html'))
