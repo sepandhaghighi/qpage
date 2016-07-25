@@ -6,6 +6,8 @@ Free Project For Creating  Academic Home page
 
 2- [Download](https://github.com/sepandhaghighi/qpage/archive/v1.5.8.zip) QPage
 
+2.5 -[Downlaod](https://github.com/sepandhaghighi/qpage/archive/v1.6-unix.tar.gz) - unix-osx QPage (2.5)
+
 3- Put your profile picture in image folder (jpg , bmp , tiff , gif , png)
 
 4- Put each page details in a text file with page name in doc folder (* In this step you can use [M] , [S] or [L] at the start and [center] at the end of each line to control font size and alignment )
@@ -22,7 +24,7 @@ Free Project For Creating  Academic Home page
 
 10- Finished!!! Now you can go and upload output folder contains directly in your host
 
-Last Version : 1.5.8   
+Last Version : 1.6
 
 Homepage : [Link](http://www.qpage.ir)
 
