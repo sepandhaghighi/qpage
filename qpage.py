@@ -18,6 +18,11 @@ imformat_box=["jpg","bmp","png","gif","tiff"] # list of supported image format
 fontstyle_box=["normal","italic","oblique"]
 font_format=[".ttf",".woff",".svg",".eot"]
 target_blank='target="blank"'
+css_margin= '''margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    '''
 today_time=str(datetime.date.today()) # Get Tody Date By datetime module
     
 #css_classes=["menu_color"]
@@ -191,7 +196,7 @@ def css_creator(): # Ask For background and text color in
         else:
             font_style="normal"
         font_section=font_section+"font-style:"+font_style+";\n"
-    css_file.write(".body_tag{\n"+"background-color:"+background_color+";\n"+font_section+"}\n") # write body tag
+    css_file.write(".body_tag{\n"+"background-color:"+background_color+";\n"+font_section+css_margin+"}\n") # write body tag
     css_file.write(".color_tag{\n"+"color:"+text_color+";\n}") # write color_tag in css
     css_file.close() # close css file
 def preview():

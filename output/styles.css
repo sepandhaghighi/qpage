@@ -3,10 +3,14 @@ font-family:qpagefont;
 src:url(qpage.ttf);
 }
 .body_tag{
-background-color:Purple;
+background-color:Black;
 font-family:qpagefont;
-font-style:oblique;
-}
+font-style:italic;
+margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    }
 .color_tag{
-color:Yellow;
+color:White;
 }
