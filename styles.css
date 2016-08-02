@@ -10,9 +10,18 @@ body{
     margin-left: 80px;
 	
 }
+
+a:hover{
+	background: red;
+	
+}
+
+
 .header_light:hover{
 	
 	background-color:yellow;
+
+
 }
 
 .header_color{
