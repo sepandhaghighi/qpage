@@ -2,9 +2,8 @@ body{
 	
 	
 	background-color:gray;
-	font-family: monospace;
 	font-size:14px;
-	 margin-top: 100px;
+	margin-top: 100px;
     margin-bottom: 100px;
     margin-right: 150px;
     margin-left: 80px;
@@ -27,4 +26,9 @@ a:hover{
 .header_color{
 	
 	color:purple;
+}
+.link_size{
+	font-size:20px;
+	font-family: monospace;
+	color:white;
 }
