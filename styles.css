@@ -3,13 +3,14 @@ body{
 	
 	background-color:gray;
 	font-size:14px;
+	font-family: Georgia, serif;
 	margin-top: 50px;
 	margin-bottom: 50px;
 	margin-right: 50px;
 	margin-left: 50px;
 	border: 10px groove white;
 	padding-top: 10px;
-	padding-botton: 20px;
+	padding-bottom: 20px;
 	
 }
 
@@ -32,6 +33,5 @@ a:hover{
 }
 .link_size{
 	font-size:20px;
-	font-family: monospace;
 	color:white;
 }
