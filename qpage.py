@@ -11,9 +11,9 @@ font_dir = os.path.join(work_dir, "font")
 
 page_name = ["Home"]  # list of default Homepage Name
 actual_name = ["index"]  # List of Actual Name Like Home.Html
-break_line = "<hr></hr>\n"
+break_line = "<hr/></hr>\n"
 homepage = "http://www.qpage.ir"
-version = "V1.5.8"
+version = "V1.7"
 color_box = ["White", "Black", "Purple", "Yellow", "Orange", "Green", "Blue"]  # Color list for background and text
 size_box = ["50px", "100px", "200px", "360px", "500px"]  # list of size of images
 imformat_box = ["jpg", "bmp", "png", "gif", "tiff"]  # list of supported image format
@@ -21,7 +21,16 @@ fontstyle_box = ["normal", "italic", "oblique"]
 font_format = [".ttf", ".woff", ".svg", ".eot"]
 target_blank = 'target="blank"'
 today_time = str(datetime.date.today())  # Get Tody Date By datetime module
-
+css_margin= '''margin-top: 50px;
+ +    margin-bottom: 50px;
+ +    margin-right: 50px;
+ +    margin-left: 50px;
+ +    border : 10px groove white;
+ +    padding-top:10px;
+ +    padding-bottom:20px;
+ +    padding-left:10px;
+ +    padding-right:10px;
+    '''
 
 # css_classes=["menu_color"]
 
@@ -193,7 +202,7 @@ def clear_folder(path):  # This Function Get Path Of Foldr And Delte Its Contain
 def css_creator():  # Ask For background and text color in
     global current_font_format
     font_flag = 0  # 0 If there is no font file in font_folder
-    font_section = ""
+    font_section = 'font-family : Georgia , serif;\n'
     for i in range(len(color_box)):
         print(i, "-", color_box[i])
     back_color_code = int(input("Please enter your background color : "))
@@ -207,7 +216,7 @@ def css_creator():  # Ask For background and text color in
     font_folder = os.listdir(font_dir)
     for i in font_folder:
         for j in range(len(font_format)):  # search for other font format in font box
-            if i.find(font_format[j]) != -1:  # If there is a font in font folder
++            if i.lower().find(font_format[j])!=-1: # If there is a font in font folder
                 # copy font file to output folder
                 shutil.copyfile(os.path.join(font_dir, i), os.path.join(out_dir, 'qpage{0}'.format(font_format[j])))
                 font_flag = 1  # Turn Flag On
@@ -226,7 +235,7 @@ def css_creator():  # Ask For background and text color in
             font_style = "normal"
         font_section = "{0}font-style:{1};\n".format(font_section, font_style)
     css_file.write(
-        ".body_tag{\n" + "background-color:" + background_color + ";\n" + font_section + "}\n")  # write body tag
+        ".body_tag{\n" + "background-color:" + background_color + ";\n" + font_section + css_margin + "}\n")  # write body tag
     css_file.write(".color_tag{\n" + "color:" + text_color + ";\n}")  # write color_tag in css0
     css_file.close()  # close css file
 
