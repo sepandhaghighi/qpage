@@ -13,10 +13,18 @@ body{
 	padding-bottom: 20px;
 	
 }
-
+a:link{
+    text-decoration: none;
+    cursor : pointer;
+    
+}
 a:hover{
 	background: red;
 	
+}
+
+a:visited{
+    color  :darkblue ;
 }
 
 
