@@ -11,6 +11,7 @@ body{
 	border: 10px groove white;
 	padding-top: 10px;
 	padding-bottom: 20px;
+    border-radius: 25px;
 	
 }
 a:link{
