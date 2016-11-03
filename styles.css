@@ -1,8 +1,8 @@
 body{
 	
 	
-	background-color:gray;
-	font-size:14px;
+	background:linear-gradient(orange,white);	
+    font-size:14px;
 	font-family: Florence, cursive;
 	margin-top: 50px;
 	margin-bottom: 50px;
@@ -29,12 +29,7 @@ a:visited{
 }
 
 
-.header_light:hover{
-	
-	background-color:yellow;
 
-
-}
 
 .header_color{
 	
