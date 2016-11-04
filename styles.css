@@ -21,7 +21,6 @@ a:link{
 }
 a:hover{
 	background: red;
-	
 }
 
 a:visited{
@@ -41,4 +40,10 @@ a:visited{
 }
 .line_t{
     text-decoration: line-through;
+}
+#headr_break{
+    border-style: solid;
+    border-width: medium;
+    border-color: black;
+    margin: 3px 40px 3px 40px;
 }
