@@ -54,6 +54,13 @@ a:visited{
     animation-fill-mode: both;
     animation-iteration-count: infinite;
 }
+
+.qpage_animation{
+    animation-name: anim2;
+    animation-duration:7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
 @keyframes anim1{
     0%{color:red;}
     25%{color:blue;}
@@ -62,3 +69,12 @@ a:visited{
     100%{color:green;}
 
 }
+@keyframes anim2{
+    0%{opacity: 0;}
+    25%{opacity: 0.4;}
+    50%{opacity:0.5;}
+    75%{opacity:0.7;}
+    100%{opacity: 1;}
+
+}
+
