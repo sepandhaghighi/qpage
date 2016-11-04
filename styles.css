@@ -47,3 +47,18 @@ a:visited{
     border-color: black;
     margin: 3px 40px 3px 40px;
 }
+
+.header_animation{
+    animation-name: anim1;
+    animation-duration: 6s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+@keyframes anim1{
+    0%{color:red;}
+    25%{color:blue;}
+    50%{color:greenyellow;}
+    75%{color:yellow;}
+    100%{color:green;}
+
+}
