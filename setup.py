@@ -27,14 +27,18 @@ if __name__ == "__main__":
         browse = int(input("Preview Homepage?[1] or Not[2]"))
         if browse == 1:
             preview()
-
+    
     except FileNotFoundError:  # error exception in FileNotFound ( When Something Missed)
-        print("Some File Missed!!")
-        print(
-            "Please Check Following :\n"
-            " 1.Where Is Your Resume File? It should be in doc folder  \n"
-            " 2.Where is your profile image file? it should be in image folder")
-        print(" 3.Where is each page description text file? They Should be in doc folder ")
+        vector_2=error_finder()
+        error_vector=vector_2[0]
+        pass_vector=vector_2[1]
+        print(str(len(error_vector))+" Error Finds!!")
+        print("Please Check Following :\n")
+        for i in range(len(error_vector)):
+            print(str(i+1)+"-"+error_vector[i])
+        for i in range(len(pass_vector)):
+            print(str(i+len(error_vector)+1)+"-"+pass_vector[i])
+            
         input("")
     except ValueError:
         print("Bad Input")

@@ -34,9 +34,15 @@ today_time = str(datetime.date.today())  # Get Tody Date By datetime module
 
 
 # css_classes=["menu_color"]
-def create_folder():
+
+def create_folder(): # This Function Create Empty Folder At Begin
     folder_flag = 0
     list_of_folders = os.listdir(work_dir)
+    list_of_doc_files=os.listdir(doc_dir)
+    if "index.txt" not in list_of_doc_files:
+        file=open(os.path.join(doc_dir,"index.txt"),"w")
+        file.write("This is For First Page . . .")
+        file.close()
     if "doc" not in list_of_folders:
         os.mkdir("doc")
         folder_flag += 1
@@ -261,3 +267,41 @@ def css_creator():  # Ask For background and text color in
 
 def preview():
     webbrowser.open(os.path.join(out_dir, "index.html"))
+def error_finder():
+    error_vector=[]
+    pass_vector=[]
+    pdf_counter=0
+    image_counter=0
+    image_list=os.listdir(image_dir)
+    doc_list=os.listdir(doc_dir)
+    if len(image_list)==0:
+        error_vector.append("[Error] Where is your profile image file? it should be in image folder")
+    else:
+        for i in imformat_box:
+            for j in image_list:
+                if j.find(i)!=-1:
+                    image_counter=1
+                    break
+        if image_counter==1:
+            pass_vector.append("[Pass] Your profile image in OK!!")
+        else:
+            error_vector.append("[Error] Your profile image is not in correct format")
+    if len(doc_list)==0:
+        error_vector.append("[Error] There is no file in doc folder ( index.txt and .pdf file in necessary)")
+    else:
+        if "index.txt" in doc_list:
+            pass_vector.append("[Pass] index.txt file OK!")
+        else:
+            error_vector.append("[Error] index.txt is not in doc folder!")
+        for j in doc_list:
+            if j.find(".pdf")!=-1:
+                pdf_counter=1
+                break
+        if pdf_counter==0:
+            error_vector.append("[Error] Where Is Your Resume File? It should be in doc folder")
+        else:
+            pass_vector.append("[Pass] Your Resume File is OK!!")
+    return [error_vector,pass_vector]
+    
+        
+            
