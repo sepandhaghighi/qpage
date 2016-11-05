@@ -58,13 +58,13 @@ def menu_maker():  # Top Menu Maker In each html page
 def menu_writer():  # Write menu_maker output in html file
     message = menu_maker()
     for i in range(len(page_name)):
-        file = open(out_dir + "\\" + actual_name[i] + ".html", "a")
+        file = open(os.path.join(out_dir, actual_name[i] + ".html"), "a")
         file.write(message)
         file.close()
 
 
 def html_init(name):  # Create Initial Form Of each Html Page Like Title And HTML  And Body Tag
-    html_name = out_dir + "\\" + name + ".html"
+    html_name = os.path.join(out_dir, name + ".html")
     file = open(html_name, "w")
     file.write("<html>\n")
     file.write("\t<head>\n")
@@ -81,7 +81,7 @@ def html_init(name):  # Create Initial Form Of each Html Page Like Title And HTM
 
 
 def html_end(name):  # Create End Of The Html file
-    html_name = out_dir + "\\" + name + ".html"
+    html_name = os.path.join(out_dir, name + ".html")
     file = open(html_name, "a")
     file.write("\t</body>\n")
     file.write("</html>")
@@ -156,8 +156,8 @@ def print_adv(file, close=True):
 
 
 def contain(name):  # main fucntion That Open Each Page HTML File and call other function to write data in it
-    file = open(out_dir + "\\" + name + ".html", "a")
-    text_file = open(doc_dir + "\\" + name + ".txt", "r")
+    file = open(os.path.join(out_dir, name + ".html"), "a")
+    text_file = open(os.path.join(doc_dir, name + ".txt"), "r")
     resume_name = ""
     image_name = ""
     imformat = "jpg"
@@ -166,10 +166,10 @@ def contain(name):  # main fucntion That Open Each Page HTML File and call other
         for i in range(len(file_of_images)):
             for form in imformat_box:
                 if file_of_images[i].find("." + form) != -1:
-                    image_name = image_dir + "\\" + file_of_images[i]
+                    image_name = os.path.join(image_dir, file_of_images[i])
                     imformat = form
                     break
-        shutil.copyfile(image_name, out_dir + "\\image." + imformat)
+        shutil.copyfile(image_name, os.path.join(out_dir, "image." + imformat))
         print_image(file, imformat=imformat)
         print_text(text_file, file)
         print_adv(file)
@@ -177,9 +177,9 @@ def contain(name):  # main fucntion That Open Each Page HTML File and call other
         file_of_docs = os.listdir(doc_dir)
         for i in range(len(file_of_docs)):
             if file_of_docs[i].find(".pdf") != -1:
-                resume_name = doc_dir + "\\" + file_of_docs[i]
+                resume_name = os.path.join(doc_dir, file_of_docs[i])
                 break
-        shutil.copyfile(resume_name, out_dir + "\\Resume.pdf")
+        shutil.copyfile(resume_name, os.path.join(out_dir, "Resume.pdf"))
         print_download(file, "Download Full Version", "Resume.pdf", center=True)
         print_text(text_file, file)
         # print_adv(file)
@@ -189,9 +189,12 @@ def contain(name):  # main fucntion That Open Each Page HTML File and call other
 
 
 def clear_folder(path):  # This Function Get Path Of Foldr And Delte Its Contains
-    list_of_files = os.listdir(path)
-    for file in list_of_files:
-        os.remove(path + "\\" + file)
+    if os.path.exists(path):
+        list_of_files = os.listdir(path)
+        for file in list_of_files:
+            os.remove(os.path.join(path, file))
+    else :
+        os.mkdir(path)
 
 
 def css_creator():  # Ask For background and text color in
@@ -211,11 +214,11 @@ def css_creator():  # Ask For background and text color in
     for i in font_folder:
         for j in range(len(font_format)):  # search for other font format in font box
             if i.lower().find(font_format[j]) != -1:  # If there is a font in font folder
-                shutil.copyfile(font_dir + "\\" + i,
-                                out_dir + "\\qpage" + font_format[j])  # copy font file to output folder
+                shutil.copyfile(os.path.join(font_dir, i),
+                                os.path.join(out_dir, "qpage" + font_format[j]))  # copy font file to output folder
                 font_flag = 1  # Turn Flag On
                 current_font_format = font_format[j]  # font format of current selected font for css editing
-    css_file = open(out_dir + "\\styles.css", "w")  # open css file
+    css_file = open(os.path.join(out_dir, "styles.css"), "w")  # open css file
     if font_flag == 1:  # check flag if it is 1
         css_file.write(
             "@font-face{\nfont-family:qpagefont;\nsrc:url(qpage" + current_font_format + ");\n}\n")  # wrtie font-face in html
@@ -235,4 +238,4 @@ def css_creator():  # Ask For background and text color in
 
 
 def preview():
-    webbrowser.open(out_dir + "\\index.html")
+    webbrowser.open(os.path.join(out_dir, "index.html"))
