@@ -4,10 +4,10 @@ import datetime  # For Adding System Time To Homepage
 import webbrowser
 
 work_dir = os.getcwd()  # Get Current Directory
-image_dir = work_dir + "\\image"
-doc_dir = work_dir + "\\doc"
-out_dir = work_dir + "\\output"
-font_dir = work_dir + "\\font"
+image_dir = os.path.join(work_dir, 'image')
+doc_dir = os.path.join(work_dir, 'doc')
+out_dir = os.path.join(work_dir, 'output')
+font_dir = os.path.join(work_dir, 'font')
 page_name = ["Home"]  # list of default Homepage Name
 actual_name = ["index"]  # List of Actual Name Like Home.Html
 break_line = "<hr/><hr/>\n"
@@ -29,7 +29,7 @@ css_margin = '''margin-top: 50px;
     padding-left:10px;
     padding-right:10px;
     '''
-today_time = str(datetime.date.today())  # Get Tody Date By datetime module
+today_time = str(datetime.date.today())  # Get Today Date By datetime module
 
 
 # css_classes=["menu_color"]
@@ -49,8 +49,8 @@ def menu_maker():  # Top Menu Maker In each html page
             target_blank = 'target="blank"'
         result = result + '\t<a href="' + actual_name[i] + '.html"' + target_blank + '>' + page_name[
             i] + "</a>\n"  # Hyper Link To Each Page In HTML File
-        result = result + "&nbsp\n"
-    result = result + "</center>"
+        result += "&nbsp\n"
+    result += "</center>"
     result = result + "\t\t" + break_line  # Add Break line to End Of The Menu
     return result  # Return All Of The Menu
 
@@ -111,16 +111,16 @@ def print_text(text_file, file, center=False, close=False):  # Write Text Part O
                 text = line[3:]
             elif line.find("[M]") != -1:
                 text = line[3:]
-        if center == True:  # Centerizes Text If Condition Is True For Manual Centering
+        if center:  # Centerizes Text If Condition Is True For Manual Centering
             header_start = "<center>" + header_start
-            header_end = header_end + "</center>"
+            header_end += "</center>"
         if text.find("[center]") != -1:  # Find Center Tag In Each Line
             header_start = "<center>" + header_start
             header_end = header_end + "</center>"
             text = text[:text.find("[center]")]
         text_code = header_start + text + header_end + "\n"
         file.write(text_code)
-    if close == True:
+    if close:
         file.close()
 
 
@@ -129,21 +129,21 @@ def print_image(file, close=False, imformat="jpg"):  # Write Image Part OF The P
         print(i, "-", size_box[i])
     image_size = int(input("Please Enter Profile Image Size : "))  # Choose Profile Image Size
     image_size_string = size_box[2]  # Getting Html String From size_box list default mode (Medium)
-    if image_size >= 0 and image_size < len(size_box):
+    if 0 <= image_size < len(size_box):
         image_size_string = size_box[image_size]
     image_code = '<center><img src="image.' + imformat + '"' + ', width=' + image_size_string + '></img></center>\n'
     file.write(image_code)
-    if close == True:
+    if close:
         file.close()
 
 
 def print_download(file, name, link, center=False, close=False):  # Create Download Link In Page
     link_code = "<a href=" + '"' + link + '"' + target_blank + '>' + name + "</a>"
-    if center == True:
+    if center:
         link_code = "<center>" + link_code + "</center>"
     file.write(link_code + "\n")
     file.write(break_line)
-    if close == True:
+    if close:
         file.close()
 
 
@@ -151,7 +151,7 @@ def print_adv(file, close=True):
     file.write(break_line)
     file.write(
         '<center><a href=' + '"' + homepage + '"' + target_blank + '>' + "Generated " + today_time + " By" + "QPage " + version + "</a> </center>")
-    if close == True:
+    if close:
         file.close()
 
 
