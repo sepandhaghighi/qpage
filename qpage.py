@@ -29,10 +29,32 @@ css_margin = '''margin-top: 50px;
     padding-left:10px;
     padding-right:10px;
     '''
-today_time = str(datetime.date.today())  # Get Today Date By datetime module
+
+today_time = str(datetime.date.today())  # Get Tody Date By datetime module
 
 
 # css_classes=["menu_color"]
+def create_folder():
+    folder_flag = 0
+    list_of_folders = os.listdir(work_dir)
+    if "doc" not in list_of_folders:
+        os.mkdir("doc")
+        folder_flag += 1
+    if "image" not in list_of_folders:
+        os.mkdir("image")
+        folder_flag += 1
+    if "output" not in list_of_folders:
+        os.mkdir("output")
+        folder_flag += 1
+    if "font" not in list_of_folders:
+        os.mkdir("font")
+        folder_flag += 1
+    if folder_flag > 0:
+        return True
+    else:
+        return False
+
+
 def page_name_update():  # This Function Update Page Names
     for i in os.listdir(doc_dir):
         if i.find(".txt") != -1 and i[:-4].upper() != "INDEX":
@@ -193,7 +215,7 @@ def clear_folder(path):  # This Function Get Path Of Foldr And Delte Its Contain
         list_of_files = os.listdir(path)
         for file in list_of_files:
             os.remove(os.path.join(path, file))
-    else :
+    else:
         os.mkdir(path)
 
 
