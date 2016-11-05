@@ -7,7 +7,7 @@ Faculty of Electrical Engineering, Amirkabir University
 of Technology
 Education :
 2014-2015 Data Science Specialization on Coursera By Johns Hopkins University ( Credits : 9/9 , Total Grade : 95.8/100 ( 3.78/4) )
-Instructors : Dr.Roger D. Peng - Dr.Jef Leek – Dr.Brian Caffo
+Instructors : Dr.Roger D. Peng - Dr.Jef Leek ? Dr.Brian Caffo
 2011-Present Bachelor of Science in Electronic Engineering, Amirkabir University of Technology, Tehran, Iran. (Credits : 130/140 , Last Year GPA : 3.36/4 , Last Two Year GPA : 3.28/4)
 Advisor : Dr.Majid Shalchian
 2010-2011 Pre-University Degree, MirzaKoochakkhan High School, under the supervision of NODET
@@ -23,23 +23,23 @@ Research Interest:
 Awards and Honors:
 2009 Achieving the 3rd Place in 11th Khwarizmi Youth Award,Field of Electrical and Electronic Inventions,Awarded by President,Ministry of Science,Research and Technology and Ministry of Education,Tehran,Iran
 2009 Achieving the 4th Place in 11th Khwarizmi Youth Award,Field of Electrical and Electronic Inventions,Awarded by President,Ministry of Science,Research and Technology and Ministry of Education,Tehran,Iran,
-2009 Achieving the 5th Place in Junior Soccer 1 * 1 League,IranOpen2009,Iran,Qazvin,With MirzaKoochakkhan High School Team,”DIZ “
-2008 Achieving the 3rd Place in “Fekre Bartar” Guilan Science and Technology Park Idea and Invention Competition,Ministry of Science,Research And Technology
-2007 Achieving the 10th Place in Junior Extra Path Finder League,IranOpen2009,Iran,Tehran,With MirzaKoochakkhan High School Team,”Speedo”
-2006 Achieving the 10th Place in Junior Extra Path Finder League,Helli Cup,Iran,Tehran,With MirzaKoochakkhan High School Team,”Speedo”
-2006 Achieving the 1rd Place in Junior Extra Path Finder League,Helli Robosaz,Iran,Tehran,With MirzaKoochakkhan High School Team,”Speedo”
+2009 Achieving the 5th Place in Junior Soccer 1 * 1 League,IranOpen2009,Iran,Qazvin,With MirzaKoochakkhan High School Team,?DIZ ?
+2008 Achieving the 3rd Place in ?Fekre Bartar? Guilan Science and Technology Park Idea and Invention Competition,Ministry of Science,Research And Technology
+2007 Achieving the 10th Place in Junior Extra Path Finder League,IranOpen2009,Iran,Tehran,With MirzaKoochakkhan High School Team,?Speedo?
+2006 Achieving the 10th Place in Junior Extra Path Finder League,Helli Cup,Iran,Tehran,With MirzaKoochakkhan High School Team,?Speedo?
+2006 Achieving the 1rd Place in Junior Extra Path Finder League,Helli Robosaz,Iran,Tehran,With MirzaKoochakkhan High School Team,?Speedo?
 Publications:
 Papers:
-Reza Vatani,Pooyan Piredeir,Sepideh Rahmatinia,Sepand Haghighi,Seyedeh Reyhaneh Kammali, “Damash 2013 Soccer 2D Simulation Team Description Paper” RoboCup Symposium , 2013
-Sepand Haghighi,Maoud Deldar Moghadam, “Connect 4 1-Wire Temperature Sensors To 8Bit Microcontroller And Delay Approximation “ (Unofficial)
+Reza Vatani,Pooyan Piredeir,Sepideh Rahmatinia,Sepand Haghighi,Seyedeh Reyhaneh Kammali, ?Damash 2013 Soccer 2D Simulation Team Description Paper? RoboCup Symposium , 2013
+Sepand Haghighi,Maoud Deldar Moghadam, ?Connect 4 1-Wire Temperature Sensors To 8Bit Microcontroller And Delay Approximation ? (Unofficial)
 Patent:
-“Non-Polar Charger”,Pub.No:390120014,Data of Filling:Feb,10,2012,(Pending)
-“Smart Pen”,Registration No.:59831,Pub Date:May,12,2011,Data of Filling:Jul,3,2010(Registered in Iran,Certificate Of Grant of Patent) , (Jpg)
-“Optical Egg Tester”,Registration No.:59214,Pub Date:Jun,15,2009,Data of Filling:May,10,2009(Registered in Iran,Certificate Of Grant of Patent) , (Jpg)
-“AVR Wireless Programmer With Ability Of Encoding” , Registration No.:59831,Pub Date:Jul,20,2009,Data of Filling:Jun,25,2009(Registered in Iran,Certificate Of Grant of Patent) , (Jpg)
+?Non-Polar Charger?,Pub.No:390120014,Data of Filling:Feb,10,2012,(Pending)
+?Smart Pen?,Registration No.:59831,Pub Date:May,12,2011,Data of Filling:Jul,3,2010(Registered in Iran,Certificate Of Grant of Patent) , (Jpg)
+?Optical Egg Tester?,Registration No.:59214,Pub Date:Jun,15,2009,Data of Filling:May,10,2009(Registered in Iran,Certificate Of Grant of Patent) , (Jpg)
+?AVR Wireless Programmer With Ability Of Encoding? , Registration No.:59831,Pub Date:Jul,20,2009,Data of Filling:Jun,25,2009(Registered in Iran,Certificate Of Grant of Patent) , (Jpg)
 Presentation:
-Fall 2015 “Multimedia Signals Semantic Processing”, Multimedia Course Final Presentation
-Winter2014 “Thermoelectric Design and Smart Wall Design”, Research and Report Methods Final Presentation
+Fall 2015 ?Multimedia Signals Semantic Processing?, Multimedia Course Final Presentation
+Winter2014 ?Thermoelectric Design and Smart Wall Design?, Research and Report Methods Final Presentation
 Teaching Experience:
 Fall 2013 Teaching Assistant (C++ Programming ,Dr.Ali Pourmohammad) , AmirKabir University Of Technology
 14Dec 2012 Introduction to Machine Learning , SalamCup 2012, Tehran , Iran
@@ -54,17 +54,17 @@ Jun 2015-Present Researcher at Photonic Research Lab (AmirKabir University Of Te
 2009 Captain And Electronic Board Designer Of DIZ Junior Soccer Team(Participated In IranOpen 2009)
 2007-2009 Electronic Board Designer Of Spinas Junior Rescue Team(Participated In IranOpen 2008)
 2006-2009 Electronic Board Designer Of Speedo Junior Extra Path Finder Team(Participated In HelliRobosaz,HelliCup,IranOpen 2007,2008)
-2009 Scientific head of 5th Seminar of Exceptional Talents Schools, named as “Jelvehaye Sampad”
+2009 Scientific head of 5th Seminar of Exceptional Talents Schools, named as ?Jelvehaye Sampad?
 References:
 Dr.Majid Shalchian (VLSI System Design)
-(Assistant Professor – AmirKabir University Of Technology)
+(Assistant Professor ? AmirKabir University Of Technology)
 Email : shalchian@aut.ac.ir
 Dr.Hassan Kaatuzian (Photonic And Optoelectronic)
-(Associate Professor – AmirKabir University Of Technology)
+(Associate Professor ? AmirKabir University Of Technology)
 Email : hsnkato@aut.ac.ir
 Dr.Saeed Sharifian (Embedded System Design)
-(Assistant Professor – AmirKabir University Of Technology)
+(Assistant Professor ? AmirKabir University Of Technology)
 Email : sharifian_s@aut.ac.ir
 Dr.Ali Pourmohammad (Applied Signal Processing)
-(Part Time Lecturer – AmirKabir University Of Technology)
+(Part Time Lecturer ? AmirKabir University Of Technology)
 Email : pourmohammad@aut.ac.ir
