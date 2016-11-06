@@ -4,7 +4,7 @@ import sys
 if __name__ == "__main__":
     try:
         response = create_folder()
-        print("QPAGE By Sepand Haghighi")
+        print("QPAGE By S.Haghighi & M.M.Rahimi")
         print("Version : " + version)
         if response:
             print(

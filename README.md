@@ -1,7 +1,7 @@
 # QPage
 Free Project For Creating Academic Home page
 
-Last Version : 1.7
+Last Version : 1.8
 
 
 - [Overview](#overview)
@@ -23,7 +23,7 @@ QPage is written in Python3, in order to run it, you will need a python interper
 
 ## Installation
 
-- [Download](https://github.com/sepandhaghighi/qpage/archive/v1.7.zip) QPage
+- [Download](https://github.com/sepandhaghighi/qpage/archive/v1.8.zip) QPage
 
 - Just Unzip It !
 
