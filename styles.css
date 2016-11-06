@@ -1,9 +1,14 @@
+@font-face{
+    font-family:qpage;
+    src:url(Fonts/Ubuntu-Light.ttf);
+    
+}
 body{
 	
 	
 	background:linear-gradient(orange,white);	
     font-size:14px;
-	font-family: Florence, cursive;
+	font-family: qpage;
 	margin-top: 50px;
 	margin-bottom: 50px;
 	margin-right: 50px;
@@ -76,11 +81,5 @@ a:visited{
     75%{opacity:0.7;}
     100%{opacity: 1;}
 
-}
-
-@media all and (max-width:1024px) {
-    body{
-    font-family:monospace;
-    }
 }
 
