@@ -34,8 +34,6 @@ warnings = []
 today_time = str(datetime.date.today())  # Get Tody Date By datetime module
 
 
-# css_classes=["menu_color"]
-
 def create_folder():  # This Function Create Empty Folder At Begin
     folder_flag = 0
     list_of_folders = os.listdir(work_dir)
@@ -71,10 +69,10 @@ def menu_maker():  # Top Menu Maker In each html page
     result = "<center>"
     for i in range(len(page_name)):
         if page_name[i] == "Home":
-            target_blank = ""
+            targets_blank = ""
         else:
-            target_blank = 'target="blank"'
-        result = result + '\t<a href="' + actual_name[i] + '.html"' + target_blank + '>' + page_name[
+            targets_blank = 'target="blank"'
+        result = result + '\t<a href="' + actual_name[i] + '.html"' + targets_blank + '>' + page_name[
             i] + "</a>\n"  # Hyper Link To Each Page In HTML File
         result += "&nbsp\n"
     result += "</center>"
@@ -91,9 +89,9 @@ def menu_writer():  # Write menu_maker output in html file
 
 
 def print_meta():
-    meta_input = input("Please Enter Your Name")
+    meta_input = input("Please Enter Your Name : ")
     static_meta = '<meta name="description" content="Welcome to homepage of ' + meta_input + '"/>'
-    if len(meta_input) < 5:
+    if len(meta_input) < 4:
         warnings.append("[Warning] Your input for name is too short!!")
     return static_meta
 
@@ -108,9 +106,12 @@ def html_init(name):  # Create Initial Form Of each Html Page Like Title And HTM
     else:
         file.write("\t\t<title>" + name.upper() + "</title>\n")
     file.write('<link rel="stylesheet" href="styles.css" type="text/css"/>\n')
-    file.write(
-        '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/style"/>\n')
-    file.write(print_meta())
+    css_link = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'
+    file.write('<link rel="stylesheet" href= ' + css_link + ' type="text/style"/>\n')
+
+    if name == 'index':  # Add meta only for index page
+        file.write(print_meta())
+
     file.write("\t</head>\n")
     file.write('\t<body class="body_tag">\n')
     file.close()
