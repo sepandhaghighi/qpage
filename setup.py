@@ -1,10 +1,14 @@
 from qpage import *
 import webbrowser
+import sys
 if __name__=="__main__":
         try:
-            create_folder()
+            response=create_folder()
             print("QPAGE By Sepand Haghighi")
             print("Version : "+version)
+            if response==True:
+                print("Atleast one of the folders create for the first time , please put your data in proper order and run program again")
+                sys.exit()
             clear_folder(out_dir) # clear all of files in output directory
             page_name_update() # update page names
             for i in actual_name:
