@@ -31,6 +31,17 @@ css_margin= '''margin-top: 50px;
 today_time=str(datetime.date.today()) # Get Tody Date By datetime module
     
 #css_classes=["menu_color"]
+def create_folder():
+    list_of_folders=os.listdir(work_dir)
+    if "doc" not in list_of_folders:
+        os.mkdir("doc")
+    if "image" not in list_of_folders:
+        os.mkdir("image")
+    if "output" not in list_of_folders:
+        os.mkdir("output")
+    if "font" not in list_of_folders:
+        os.mkdir("font")
+    
 def page_name_update(): # This Function Update Page Names
     for i in os.listdir(doc_dir):
         if i.find(".txt")!=-1 and i[:-4].upper()!="INDEX":

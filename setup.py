@@ -2,6 +2,7 @@ from qpage import *
 import webbrowser
 if __name__=="__main__":
         try:
+            create_folder()
             print("QPAGE By Sepand Haghighi")
             print("Version : "+version)
             clear_folder(out_dir) # clear all of files in output directory
