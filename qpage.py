@@ -29,14 +29,14 @@ css_margin = '''margin-top: 50px;
     padding-left:10px;
     padding-right:10px;
     '''
-files=[]
-warnings=[]
+files = []
+warnings = []
 today_time = str(datetime.date.today())  # Get Tody Date By datetime module
 
 
 # css_classes=["menu_color"]
 
-def create_folder(): # This Function Create Empty Folder At Begin
+def create_folder():  # This Function Create Empty Folder At Begin
     folder_flag = 0
     list_of_folders = os.listdir(work_dir)
     if "doc" not in list_of_folders:
@@ -89,12 +89,14 @@ def menu_writer():  # Write menu_maker output in html file
         file.write(message)
         file.close()
 
+
 def print_meta():
     meta_input = input("Please Enter Your Name")
-    static_meta='<meta name="description" content="Welcome to homepage of '+meta_input+'"/>'
-    if len(meta_input)<5:
+    static_meta = '<meta name="description" content="Welcome to homepage of ' + meta_input + '"/>'
+    if len(meta_input) < 5:
         warnings.append("[Warning] Your input for name is too short!!")
     return static_meta
+
 
 def html_init(name):  # Create Initial Form Of each Html Page Like Title And HTML  And Body Tag
     html_name = os.path.join(out_dir, name + ".html")
@@ -121,9 +123,12 @@ def html_end(name):  # Create End Of The Html file
     file.write("</html>")
     file.close()
 
+
 def close_files():
     for i in files:
         i.close()
+
+
 def print_text(text_file, file, center=False, close=False):  # Write Text Part Of Each Page
     text_code = ""
     header_start = '<h4 class="color_tag">'
@@ -152,7 +157,7 @@ def print_text(text_file, file, center=False, close=False):  # Write Text Part O
             header_end += "</center>"
         if text.find("[center]") != -1:  # Find Center Tag In Each Line
             header_start = "<center>" + header_start
-            header_end = header_end + "</center>"
+            header_end += "</center>"
             text = text[:text.find("[center]")]
         text_code = header_start + text + header_end + "\n"
         file.write(text_code)
@@ -191,7 +196,7 @@ def print_adv(file, close=True):
         file.close()
 
 
-def contain(name):  # main fucntion That Open Each Page HTML File and call other function to write data in it
+def contain(name):  # main function That Open Each Page HTML File and call other function to write data in it
     file = open(os.path.join(out_dir, name + ".html"), "a")
     text_file = open(os.path.join(doc_dir, name + ".txt"), "r")
     files.append(file)
@@ -234,10 +239,13 @@ def clear_folder(path):  # This Function Get Path Of Foldr And Delte Its Contain
     else:
         os.mkdir(path)
 
+
 def print_warning():
-    print(str(len(warnings))+" Warning , 0 Error")
+    print(str(len(warnings)) + " Warning , 0 Error")
     for i in range(len(warnings)):
-        print(str(i+1)+"-"+warnings[i])
+        print(str(i + 1) + "-" + warnings[i])
+
+
 def css_creator():  # Ask For background and text color in
     font_flag = 0  # 0 If there is no font file in font_folder
     font_section = 'font-family : Georgia , serif;\n'
@@ -249,7 +257,7 @@ def css_creator():  # Ask For background and text color in
     text_color_code = int(input("Please enter your text color : "))
     if text_color_code not in range(7):
         text_color_code = 1
-    if text_color_code==back_color_code:
+    if text_color_code == back_color_code:
         warnings.append("[Warning] Your text color and background color are same!!")
     background_color = color_box[back_color_code]  # convert code to color string in color_box
     text_color = color_box[text_color_code]  # convert code to color string in color_box
@@ -282,26 +290,28 @@ def css_creator():  # Ask For background and text color in
 
 def preview():
     webbrowser.open(os.path.join(out_dir, "index.html"))
+
+
 def error_finder():
-    error_vector=[]
-    pass_vector=[]
-    pdf_counter=0
-    image_counter=0
-    image_list=os.listdir(image_dir)
-    doc_list=os.listdir(doc_dir)
-    if len(image_list)==0:
+    error_vector = []
+    pass_vector = []
+    pdf_counter = 0
+    image_counter = 0
+    image_list = os.listdir(image_dir)
+    doc_list = os.listdir(doc_dir)
+    if len(image_list) == 0:
         error_vector.append("[Error] Where is your profile image file? it should be in image folder")
     else:
         for i in imformat_box:
             for j in image_list:
-                if j.find(i)!=-1:
-                    image_counter=1
+                if j.find(i) != -1:
+                    image_counter = 1
                     break
-        if image_counter==1:
+        if image_counter == 1:
             pass_vector.append("[Pass] Your profile image in OK!!")
         else:
             error_vector.append("[Error] Your profile image is not in correct format")
-    if len(doc_list)==0:
+    if len(doc_list) == 0:
         error_vector.append("[Error] There is no file in doc folder ( index.txt and .pdf file in necessary)")
     else:
         if "index.txt" in doc_list:
@@ -309,14 +319,11 @@ def error_finder():
         else:
             error_vector.append("[Error] index.txt is not in doc folder!")
         for j in doc_list:
-            if j.find(".pdf")!=-1:
-                pdf_counter=1
+            if j.find(".pdf") != -1:
+                pdf_counter = 1
                 break
-        if pdf_counter==0:
+        if pdf_counter == 0:
             error_vector.append("[Error] Where Is Your Resume File? It should be in doc folder")
         else:
             pass_vector.append("[Pass] Your Resume File is OK!!")
-    return [error_vector,pass_vector]
-    
-        
-            
+    return [error_vector, pass_vector]
