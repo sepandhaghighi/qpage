@@ -29,7 +29,8 @@ css_margin = '''margin-top: 50px;
     padding-left:10px;
     padding-right:10px;
     '''
-
+files=[]
+warnings=[]
 today_time = str(datetime.date.today())  # Get Tody Date By datetime module
 
 
@@ -38,13 +39,11 @@ today_time = str(datetime.date.today())  # Get Tody Date By datetime module
 def create_folder(): # This Function Create Empty Folder At Begin
     folder_flag = 0
     list_of_folders = os.listdir(work_dir)
-    list_of_doc_files=os.listdir(doc_dir)
-    if "index.txt" not in list_of_doc_files:
-        file=open(os.path.join(doc_dir,"index.txt"),"w")
-        file.write("This is For First Page . . .")
-        file.close()
     if "doc" not in list_of_folders:
         os.mkdir("doc")
+        file = open(os.path.join(doc_dir, "index.txt"), "w")
+        file.write("This is For First Page . . .")
+        file.close()
         folder_flag += 1
     if "image" not in list_of_folders:
         os.mkdir("image")
@@ -90,6 +89,12 @@ def menu_writer():  # Write menu_maker output in html file
         file.write(message)
         file.close()
 
+def print_meta():
+    meta_input = input("Please Enter Your Name")
+    static_meta='<meta name="description" content="Welcome to homepage of '+meta_input+'"/>'
+    if len(meta_input)<5:
+        warnings.append("[Warning] Your input for name is too short!!")
+    return static_meta
 
 def html_init(name):  # Create Initial Form Of each Html Page Like Title And HTML  And Body Tag
     html_name = os.path.join(out_dir, name + ".html")
@@ -103,6 +108,7 @@ def html_init(name):  # Create Initial Form Of each Html Page Like Title And HTM
     file.write('<link rel="stylesheet" href="styles.css" type="text/css"/>\n')
     file.write(
         '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/style"/>\n')
+    file.write(print_meta())
     file.write("\t</head>\n")
     file.write('\t<body class="body_tag">\n')
     file.close()
@@ -115,7 +121,9 @@ def html_end(name):  # Create End Of The Html file
     file.write("</html>")
     file.close()
 
-
+def close_files():
+    for i in files:
+        i.close()
 def print_text(text_file, file, center=False, close=False):  # Write Text Part Of Each Page
     text_code = ""
     header_start = '<h4 class="color_tag">'
@@ -186,6 +194,8 @@ def print_adv(file, close=True):
 def contain(name):  # main fucntion That Open Each Page HTML File and call other function to write data in it
     file = open(os.path.join(out_dir, name + ".html"), "a")
     text_file = open(os.path.join(doc_dir, name + ".txt"), "r")
+    files.append(file)
+    files.append(text_file)
     resume_name = ""
     image_name = ""
     imformat = "jpg"
@@ -224,7 +234,10 @@ def clear_folder(path):  # This Function Get Path Of Foldr And Delte Its Contain
     else:
         os.mkdir(path)
 
-
+def print_warning():
+    print(str(len(warnings))+" Warning , 0 Error")
+    for i in range(len(warnings)):
+        print(str(i+1)+"-"+warnings[i])
 def css_creator():  # Ask For background and text color in
     font_flag = 0  # 0 If there is no font file in font_folder
     font_section = 'font-family : Georgia , serif;\n'
@@ -236,6 +249,8 @@ def css_creator():  # Ask For background and text color in
     text_color_code = int(input("Please enter your text color : "))
     if text_color_code not in range(7):
         text_color_code = 1
+    if text_color_code==back_color_code:
+        warnings.append("[Warning] Your text color and background color are same!!")
     background_color = color_box[back_color_code]  # convert code to color string in color_box
     text_color = color_box[text_color_code]  # convert code to color string in color_box
     font_folder = os.listdir(font_dir)
