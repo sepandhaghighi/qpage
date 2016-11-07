@@ -60,7 +60,7 @@ a:visited{
 
 .qpage_animation{
     animation-name: anim2;
-    animation-duration:7s;
+    animation-duration:4s;
     animation-iteration-count: 1;
     animation-fill-mode: both;
 }
@@ -76,6 +76,32 @@ a:visited{
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-fill-mode: both;
+}
+
+
+.td_class{
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top:5px;
+    text-align:center;
+}
+.link_bar{
+    font-size: 18px;
+}
+.link_bar:hover{
+    opacity: 0.4;
+}
+.profile_image{
+    border-radius: 200px;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.profile_image:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
 @keyframes anim1{
     0%{color:red;}
