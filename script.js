@@ -15,10 +15,13 @@ function func1(w){
         b[0].style.background="linear-gradient(red,white)";
     }
     else if (w==3){
-        b[0].style.background="linear-gradient(blue,white)";
+        b[0].style.background="linear-gradient(pink,white)";
     }
     else if (w==5){
         b[0].style.background="linear-gradient(green,white)";
+    }
+    else if (w==6){
+        b[0].style.background="linear-gradient(blue,white)";
     }
     else{
         b[0].style.background="linear-gradient(orange,white)";
