@@ -125,7 +125,7 @@ a:visited{
 }
 
 @keyframes contact_1{
-    0%{transform:scale(1.4,1.4);}
+    0%{transform:scale(1,1);}
     25%{transform:rotate(90deg);}
     50%{transform:rotate(180deg);}
     75%{transform:rotate(270deg);}
@@ -138,7 +138,7 @@ a:visited{
     100%{color:green;}
 }
 
-@media all and max-width:1074px{
+@media all and (max-width:1024px){
     .link_bar{
         font-size:24px;
     }

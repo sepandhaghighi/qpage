@@ -17,6 +17,9 @@ function func1(w){
     else if (w==3){
         b[0].style.background="linear-gradient(blue,white)";
     }
+    else if (w==5){
+        b[0].style.background="linear-gradient(green,white)";
+    }
     else{
         b[0].style.background="linear-gradient(orange,white)";
     }
