@@ -21,6 +21,7 @@ if __name__ == "__main__":
             contain(i)  # write contains of each page
             html_end(i)  # end tags of each page
         css_creator()  # create css file
+        icon_creator()
         close_files()
         print("Homepage is ready")
         print("Upload output folder contains directly to your host")

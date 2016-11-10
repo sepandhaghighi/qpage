@@ -1,5 +1,6 @@
 import os
 import datetime
+
 work_dir = os.getcwd()  # Get Current Directory
 image_dir = os.path.join(work_dir, 'image')
 doc_dir = os.path.join(work_dir, 'doc')
@@ -28,4 +29,4 @@ css_margin = '''margin-top: 50px;
     '''
 files = []
 warnings = []
-today_time = str(datetime.date.today())  # Get Tody Date By datetime module
+today_time = str(datetime.date.today())  # Get Today Date By datetime module

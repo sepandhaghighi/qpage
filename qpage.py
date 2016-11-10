@@ -3,6 +3,8 @@ import shutil  # Library For Work With File In High Level Like Copy
 import datetime  # For Adding System Time To Homepage
 import webbrowser
 from params import *
+
+
 def create_folder():  # This Function Create Empty Folder At Begin
     folder_flag = 0
     list_of_folders = os.listdir(work_dir)
@@ -297,3 +299,12 @@ def error_finder():
         else:
             pass_vector.append("[Pass] Your Resume File is OK!!")
     return [error_vector, pass_vector]
+
+
+def icon_creator():
+    for file in os.listdir(image_dir):
+        print(file)
+        if file.endswith('ico'):
+            print('ico ico')
+            shutil.copy(os.path.join(image_dir, file), out_dir)
+            os.rename(os.path.join(out_dir, file), os.path.join(out_dir, 'favicon.ico'))
