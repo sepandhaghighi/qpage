@@ -308,3 +308,7 @@ def icon_creator():
             print('ico ico')
             shutil.copy(os.path.join(image_dir, file), out_dir)
             os.rename(os.path.join(out_dir, file), os.path.join(out_dir, 'favicon.ico'))
+def robot_maker(): # This Function Create Robots.txt for pages
+    robots=open(os.path.join(out_dir,"robots.txt"),"w")
+    robots.write("User-agent: *\n")
+    robots.write("Disallow: ")

@@ -22,6 +22,7 @@ if __name__ == "__main__":
             html_end(i)  # end tags of each page
         css_creator()  # create css file
         icon_creator()
+        robot_maker()
         close_files()
         print("Homepage is ready")
         print("Upload output folder contains directly to your host")
