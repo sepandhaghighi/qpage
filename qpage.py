@@ -61,7 +61,10 @@ def menu_writer():  # Write menu_maker output in html file
 
 def print_meta():
     meta_input = input("Please Enter Your Name : ")
-    static_meta = '<meta name="description" content="Welcome to homepage of ' + meta_input + '"/>'
+    static_meta = '<meta name="description" content="Welcome to homepage of ' + meta_input + '"/>\n'
+    static_meta=static_meta+'<meta property="og:title" content="'+meta_input+'"/>\n'
+    static_meta=static_meta+'<meta property="og:site_name" content="'+meta_input+'"/>\n'
+    static_meta=static_meta+'<meta property="og:image" content="favicon.ico" />\n'
     if len(meta_input) < 4:
         warnings.append("[Warning] Your input for name is too short!!")
     return static_meta
