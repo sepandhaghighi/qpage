@@ -60,7 +60,7 @@ def menu_writer():  # Write menu_maker output in html file
 
 
 def print_meta():
-    meta_input = input("Please Enter Your Name : ")
+    meta_input = raw_input("Please Enter Your Name : ")
     static_meta = '<meta name="description" content="Welcome to homepage of ' + meta_input + '"/>\n'
     static_meta=static_meta+'<meta property="og:title" content="'+meta_input+'"/>\n'
     static_meta=static_meta+'<meta property="og:site_name" content="'+meta_input+'"/>\n'
@@ -142,8 +142,8 @@ def print_text(text_file, file, center=False, close=False):  # Write Text Part O
 
 def print_image(file, close=False, imformat="jpg"):  # Write Image Part OF The Page
     for i in range(len(size_box)):
-        print(i, "-", size_box[i])
-    image_size = int(input("Please Enter Profile Image Size : "))  # Choose Profile Image Size
+        print i, "-", size_box[i]
+    image_size = int(raw_input("Please Enter Profile Image Size : "))  # Choose Profile Image Size
     image_size_string = size_box[2]  # Getting Html String From size_box list default mode (Medium)
     if 0 <= image_size < len(size_box):
         image_size_string = size_box[image_size]
@@ -216,20 +216,20 @@ def clear_folder(path):  # This Function Get Path Of Foldr And Delte Its Contain
 
 
 def print_warning():
-    print(str(len(warnings)) + " Warning , 0 Error")
+    print str(len(warnings)) + " Warning , 0 Error"
     for i in range(len(warnings)):
-        print(str(i + 1) + "-" + warnings[i])
+        print str(i + 1) + "-" + warnings[i]
 
 
 def css_creator():  # Ask For background and text color in
     font_flag = 0  # 0 If there is no font file in font_folder
     font_section = 'font-family : Georgia , serif;\n'
     for i in range(len(color_box)):
-        print(i, "-", color_box[i])
-    back_color_code = int(input("Please enter your background color : "))
+        print i, "-", color_box[i]
+    back_color_code = int(raw_input("Please enter your background color : "))
     if back_color_code not in range(7):
         back_color_code = 0
-    text_color_code = int(input("Please enter your text color : "))
+    text_color_code = int(raw_input("Please enter your text color : "))
     if text_color_code not in range(7):
         text_color_code = 1
     if text_color_code == back_color_code:
@@ -250,8 +250,8 @@ def css_creator():  # Ask For background and text color in
             "@font-face{\nfont-family:qpagefont;\nsrc:url(qpage" + current_font_format + ");\n}\n")  # wrtie font-face in html
         font_section = "font-family:qpagefont;\n"  # Update Font Section For Body Tag
         for i in range(len(fontstyle_box)):
-            print(i, "-", fontstyle_box[i])
-        font_style = int(input(" Please choose your font style "))
+            print i, "-", fontstyle_box[i]
+        font_style = int(raw_input(" Please choose your font style "))
         if font_style < len(fontstyle_box):
             font_style = fontstyle_box[font_style]
         else:
@@ -307,9 +307,9 @@ def error_finder():
 
 def icon_creator():
     for file in os.listdir(image_dir):
-        print(file)
+        print file
         if file.endswith('ico'):
-            print('ico ico')
+            print 'ico ico'
             shutil.copy(os.path.join(image_dir, file), out_dir)
             os.rename(os.path.join(out_dir, file), os.path.join(out_dir, 'favicon.ico'))
             break

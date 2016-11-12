@@ -33,7 +33,7 @@ if __name__ == "__main__":
             preview()
             close_files()
 
-    except FileNotFoundError:  # error exception in FileNotFound ( When Something Missed)
+    except EnvironmentError:  # error exception in FileNotFound ( When Something Missed)
         close_files()
         vector_2 = error_finder()
         error_vector = vector_2[0]
