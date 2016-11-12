@@ -258,8 +258,9 @@ def css_creator():  # Ask For background and text color in
             font_style = "normal"
         font_section = font_section + "font-style:" + font_style + ";\n"
     css_file.write(
-        ".body_tag{\n" + "background-color:" + background_color + ";\n" + font_section + css_margin + "}\n")  # write body tag
+        ".body_tag{\n" + "background-color:" + background_color + ";\n" + font_section + css_margin +css_animation_1+ "}\n")  # write body tag
     css_file.write(".color_tag{\n" + "color:" + text_color + ";\n}")  # write color_tag in css
+    css_file.write(css_animation_2)
     css_file.close()  # close css file
 
 

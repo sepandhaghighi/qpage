@@ -27,6 +27,23 @@ css_margin = '''margin-top: 50px;
     padding-left:10px;
     padding-right:10px;
     '''
+css_animation_1='''
+   animation-name: anim1;
+    animation-duration: 4s;
+    animation-fill-mode: both;
+'''
+css_animation_2='''
+@keyframes anim1{
+    0%{opacity: 0;}
+    25%{opacity: 0.4;}
+    50%{opacity:0.5;}
+    75%{opacity:0.7;}
+    100%{opacity: 1;}
+
+}
+
+
+'''
 files = []
 warnings = []
 today_time = str(datetime.date.today())  # Get Today Date By datetime module
