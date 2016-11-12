@@ -311,6 +311,10 @@ def icon_creator():
             print('ico ico')
             shutil.copy(os.path.join(image_dir, file), out_dir)
             os.rename(os.path.join(out_dir, file), os.path.join(out_dir, 'favicon.ico'))
+            break
+    if "favicon.ico" in os.listdir(work_dir):
+        shutil.copy(os.path.join(work_dir, "favicon.ico"), out_dir)
+    warnings.append("[warning] There is no icon for this website")
 def robot_maker(): # This Function Create Robots.txt for pages
     robots=open(os.path.join(out_dir,"robots.txt"),"w")
     robots.write("User-agent: *\n")
