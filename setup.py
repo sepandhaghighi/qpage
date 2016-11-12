@@ -4,8 +4,8 @@ import sys
 if __name__ == "__main__":
     try:
         response = create_folder()
-        print("QPAGE By S.Haghighi & M.M.Rahimi")
-        print("Version : " + version)
+        print "QPAGE By S.Haghighi & M.M.Rahimi" 
+        print "Version : " + version 
         if response:
             print(
                 "At least one of the folders create for the first time ,\n"
@@ -24,9 +24,9 @@ if __name__ == "__main__":
         icon_creator()
         robot_maker()
         close_files()
-        print("Homepage is ready")
-        print("Upload output folder contains directly to your host")
-        print("Please Don't Change HTML Files Name")
+        print "Homepage is ready" 
+        print "Upload output folder contains directly to your host" 
+        print "Please Don't Change HTML Files Name" 
         print_warning()
         browse = int(input("Preview Homepage?[1] or Not[2]"))
         if browse == 1:
@@ -38,13 +38,13 @@ if __name__ == "__main__":
         vector_2 = error_finder()
         error_vector = vector_2[0]
         pass_vector = vector_2[1]
-        print(str(len(error_vector)) + " Error")
-        print("Please Check Following :\n")
+        print str(len(error_vector)) + " Error"
+        print "Please Check Following :\n" 
         for i in range(len(error_vector)):
-            print(str(i + 1) + "-" + error_vector[i])
+            print str(i + 1) + "-" + error_vector[i] 
         for i in range(len(pass_vector)):
-            print(str(i + len(error_vector) + 1) + "-" + pass_vector[i])
-        input("")
+            print str(i + len(error_vector) + 1) + "-" + pass_vector[i]
+        raw_input("")
     except ValueError:
-        print("Bad Input")
-        input("")
+        print "Bad Input"
+        raw_input("")
