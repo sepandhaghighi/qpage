@@ -312,3 +312,4 @@ def robot_maker(): # This Function Create Robots.txt for pages
     robots=open(os.path.join(out_dir,"robots.txt"),"w")
     robots.write("User-agent: *\n")
     robots.write("Disallow: ")
+    robots.close()
