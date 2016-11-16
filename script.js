@@ -5,7 +5,12 @@ function message(){
     
 }
 
-
+function httpGet()
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", "http://sepkjaer.pythonanywhere.com/download", false );
+    xmlHttp.send( null );
+}
 function func1(w){
     var b=document.getElementsByTagName("body");
     if (w==1){
