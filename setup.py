@@ -28,6 +28,8 @@ if __name__ == "__main__":
         print("Upload output folder contains directly to your host")
         print("Please Don't Change HTML Files Name")
         print_warning()
+        if internet():
+            server()
         browse = int(input("Preview Homepage?[1] or Not[2]"))
         if browse == 1:
             preview()

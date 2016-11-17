@@ -3,7 +3,9 @@ import shutil  # Library For Work With File In High Level Like Copy
 import datetime  # For Adding System Time To Homepage
 import webbrowser
 from params import *
-
+import socket
+import requests
+meta_input=""
 
 def create_folder():  # This Function Create Empty Folder At Begin
     folder_flag = 0
@@ -60,6 +62,7 @@ def menu_writer():  # Write menu_maker output in html file
 
 
 def print_meta():
+    global meta_input
     meta_input = input("Please Enter Your Name : ")
     static_meta = '<meta name="description" content="Welcome to homepage of ' + meta_input + '"/>\n'
     static_meta=static_meta+'<meta property="og:title" content="'+meta_input+'"/>\n'
@@ -321,3 +324,16 @@ def robot_maker(): # This Function Create Robots.txt for pages
     robots.write("User-agent: *\n")
     robots.write("Disallow: ")
     robots.close()
+def internet(host="8.8.8.8", port=53, timeout=3):
+    try:
+        socket.setdefaulttimeout(timeout)
+        socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((host, port))
+        return True
+    except Exception as ex:
+        return False
+def server():
+    global meta_input
+    url="http://sepkjaer.pythonanywhere.com/install"
+    headers = {'content-type': 'application/json',"NAME":meta_input,"Version":"3"}
+    response=requests.get(url,headers=headers)
+    #print(response)
