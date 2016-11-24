@@ -6,6 +6,7 @@ if __name__ == "__main__":
         response = create_folder()
         print("QPAGE By S.Haghighi & M.M.Rahimi")
         print("Version : " + version)
+        version_control()
         if response:
             print(
                 "At least one of the folders create for the first time ,\n"

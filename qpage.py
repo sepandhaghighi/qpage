@@ -5,6 +5,7 @@ import webbrowser
 from params import *
 import socket
 import requests
+import re
 meta_input=""
 
 def create_folder():  # This Function Create Empty Folder At Begin
@@ -337,3 +338,15 @@ def server():
     headers = {'content-type': 'application/json',"NAME":meta_input,"Version":"3"}
     response=requests.get(url,headers=headers)
     #print(response)
+def version_control():
+    version_pattern=r"last_version:(.+)"
+    try:
+        if internet():
+            response=requests.get("http://www.qpage.ir/releases.html")
+            body=response.text
+            last_version=float(re.findall(version_pattern,body)[0])
+            if last_version>version:
+                print("New Version Of Qpage Is Available Now (Version "+last_version+")")
+    except:
+        pass
+
