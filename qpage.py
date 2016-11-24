@@ -339,14 +339,19 @@ def server():
     response=requests.get(url,headers=headers)
     #print(response)
 def version_control():
-    version_pattern=r"last_version:(.+)"
     try:
+        version_pattern=r"last_version:(.+)"
         if internet():
             response=requests.get("http://www.qpage.ir/releases.html")
             body=response.text
-            last_version=float(re.findall(version_pattern,body)[0])
-            if last_version>version:
-                print("New Version Of Qpage Is Available Now (Version "+last_version+")")
+            last_version=float(re.findall(version_pattern,body)[0][:-3])
+            if last_version>float(version):
+                print("--------------------------------------------------------------------------")
+                print("**New Version Of Qpage Is Available Now (Version "+str(last_version)+")**")
+                print("Download Link -->"+"https://github.com/sepandhaghighi/qpage/archive/v"+str(last_version)+".zip")
+                print("--------------------------------------------------------------------------")
     except:
         pass
+def enter_to_exit():
+    input("Enter any key to exit()")
 

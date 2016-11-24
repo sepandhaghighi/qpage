@@ -47,7 +47,7 @@ if __name__ == "__main__":
             print(str(i + 1) + "-" + error_vector[i])
         for i in range(len(pass_vector)):
             print(str(i + len(error_vector) + 1) + "-" + pass_vector[i])
-        input("")
+        enter_to_exit()
     except ValueError:
         print("Bad Input")
-        input("")
+        enter_to_exit()
