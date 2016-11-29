@@ -1,4 +1,4 @@
-var a="QPAGE Version 1.8 : \n\n + Meta File\n + Error And Warning Handler";
+var a="QPAGE Version 1.9 : \n\n + Simple Annimation\n + Version Control\n + icon";
 
 function message(){
     alert(a);
