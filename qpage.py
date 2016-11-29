@@ -310,16 +310,16 @@ def error_finder():
 
 
 def icon_creator():
+    icon_flag=0
     for file in os.listdir(image_dir):
-        print(file)
         if file.endswith('ico'):
-            print('ico ico')
             shutil.copy(os.path.join(image_dir, file), out_dir)
             os.rename(os.path.join(out_dir, file), os.path.join(out_dir, 'favicon.ico'))
+            icon_flag=1
             break
-    if "favicon.ico" in os.listdir(work_dir):
+    if "favicon.ico" in os.listdir(work_dir) and icon_flag==0:
         shutil.copy(os.path.join(work_dir, "favicon.ico"), out_dir)
-    warnings.append("[warning] There is no icon for this website")
+        warnings.append("[warning] There is no icon for this website")
 def robot_maker(): # This Function Create Robots.txt for pages
     robots=open(os.path.join(out_dir,"robots.txt"),"w")
     robots.write("User-agent: *\n")
