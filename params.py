@@ -10,10 +10,10 @@ page_name = ["Home"]  # list of default Homepage Name
 actual_name = ["index"]  # List of Actual Name Like Home.Html
 break_line = "<hr/><hr/>\n"
 homepage = "http://www.qpage.ir"
-version = "1.8"
+version = "1.9"
 color_box = ["White", "Black", "Purple", "Yellow", "Orange", "Green", "Blue"]  # Color list for background and text
 size_box = ["50px", "100px", "200px", "360px", "500px"]  # list of size of images
-imformat_box = ["jpg", "bmp", "png", "gif", "tiff"]  # list of supported image format
+imformat_box = ["jpg", "bmp", "png", "gif", "tiff","JPG","BMP","PNG","GIF","TIFF"]  # list of supported image format
 fontstyle_box = ["normal", "italic", "oblique"]
 font_format = [".ttf", ".woff", ".svg", ".eot"]
 target_blank = 'target="blank"'
