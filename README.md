@@ -15,6 +15,8 @@ Last Version : 1.9
 
 [![Requirements Status](https://requires.io/github/sepandhaghighi/qpage/requirements.svg?branch=master)](https://requires.io/github/sepandhaghighi/qpage/requirements/?branch=master)
 
+[![PyPI version](https://badge.fury.io/py/qpage.svg)](https://badge.fury.io/py/qpage)
+
 
 ## Overview
 
