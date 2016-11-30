@@ -24,10 +24,6 @@ Last Version : 1.9
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=plastic)](https://gitter.im/qpage/Lobby?source=orgpage)
 
 
-[![PyPI](https://img.shields.io/pypi/dm/Django.svg)](https://pypi.python.org/pypi/qpage)
-
-
-[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)](https://github.com/sepandhaghighi/qpage/releases)
 
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sepandhaghighi/qpage/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sepandhaghighi/qpage/?branch=master)
