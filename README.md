@@ -30,6 +30,9 @@ Last Version : 1.9
 [![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)](https://github.com/sepandhaghighi/qpage/releases)
 
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sepandhaghighi/qpage/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sepandhaghighi/qpage/?branch=master)
+
+
 ## Overview
 
 We developed QPage on Windows but it also run in Linux and Mac-OSX.
