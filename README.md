@@ -20,6 +20,9 @@ Last Version : 1.9
 [![PyPI version](https://badge.fury.io/py/qpage.svg)](https://badge.fury.io/py/qpage)
 
 
+[![Documentation Status](https://readthedocs.org/projects/qpage/badge/?version=v1.9)](http://qpage.readthedocs.io/en/v1.9/?badge=v1.9)
+
+
 ## Overview
 
 We developed QPage on Windows but it also run in Linux and Mac-OSX.
