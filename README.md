@@ -15,7 +15,7 @@ Status
 ======
 
 
-![image](https://requires.io/github/sepandhaghighi/qpage/requirements.svg?branch=master%0A%20%20:target:%20https://requires.io/github/sepandhaghighi/qpage/requirements/?branch=master)
+[![Requirements Status](https://requires.io/github/sepandhaghighi/qpage/requirements.svg?branch=master)](https://requires.io/github/sepandhaghighi/qpage/requirements/?branch=master)
 
 
 ## Overview
