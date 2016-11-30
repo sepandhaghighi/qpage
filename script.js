@@ -1,4 +1,4 @@
-var a="QPAGE Version 1.9 : \n\n + Simple Annimation\n + Version Control\n + icon";
+var a="QPAGE Version 1.9 : \n\n + Simple Animation\n + Version Control\n + icon";
 
 function message(){
     alert(a);
