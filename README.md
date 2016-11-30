@@ -22,6 +22,8 @@ Last Version : 1.9
 
 [![Documentation Status](https://readthedocs.org/projects/qpage/badge/?version=v1.9)](http://qpage.readthedocs.io/en/v1.9/?badge=v1.9)
 
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=plastic)](https://gitter.im/qpage/Lobby?source=orgpage)
+
 
 ## Overview
 
