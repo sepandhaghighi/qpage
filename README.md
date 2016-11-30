@@ -11,6 +11,13 @@ Last Version : 1.9
 - [Credits](#credits)
 
 
+Status
+======
+
+
+![image](https://requires.io/github/sepandhaghighi/qpage/requirements.svg?branch=master%0A%20%20:target:%20https://requires.io/github/sepandhaghighi/qpage/requirements/?branch=master)
+
+
 ## Overview
 
 We developed QPage on Windows but it also run in Linux and Mac-OSX.
