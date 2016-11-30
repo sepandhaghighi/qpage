@@ -11,8 +11,6 @@ Last Version : 1.9
 - [Credits](#credits)
 
 
-Status
-======
 
 
 [![Requirements Status](https://requires.io/github/sepandhaghighi/qpage/requirements.svg?branch=master)](https://requires.io/github/sepandhaghighi/qpage/requirements/?branch=master)
