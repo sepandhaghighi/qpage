@@ -12,6 +12,7 @@ def run():
                 " please put your data in proper order and run program again\n Program Reboot Automaticly in 3 Sec")
             wait_func(3)
             run()
+            sys.exit()
         clear_folder(out_dir)  # clear all of files in output directory
         page_name_update()  # update page names
         for i in actual_name:

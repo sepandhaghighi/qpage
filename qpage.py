@@ -247,13 +247,9 @@ def css_init():
     text_color = color_box[text_color_code]  # convert code to color string in color_box
     return [background_color,text_color]
 
-def css_creator():  # Ask For background and text color in
+def css_font(font_folder):
     font_flag = 0  # 0 If there is no font file in font_folder
-    font_section = 'font-family : Georgia , serif;\n'
-    colors=css_init()
-    background_color=colors[0]
-    text_color=colors[1]
-    font_folder = os.listdir(font_dir)
+    current_font_format=None
     for i in font_folder:
         for j in range(len(font_format)):  # search for other font format in font box
             if i.lower().find(font_format[j]) != -1:  # If there is a font in font folder
@@ -261,6 +257,16 @@ def css_creator():  # Ask For background and text color in
                                 os.path.join(out_dir, "qpage" + font_format[j]))  # copy font file to output folder
                 font_flag = 1  # Turn Flag On
                 current_font_format = font_format[j]  # font format of current selected font for css editing
+    return [font_flag,current_font_format]
+def css_creator():  # Ask For background and text color in
+    font_section = 'font-family : Georgia , serif;\n'
+    colors=css_init()
+    background_color=colors[0]
+    text_color=colors[1]
+    font_folder = os.listdir(font_dir)
+    details=css_font(font_folder)
+    current_font_format=details[1]
+    font_flag=details[0]
     css_file = open(os.path.join(out_dir, "styles.css"), "w")  # open css file
     if font_flag == 1:  # check flag if it is 1
         css_file.write(
@@ -274,6 +280,8 @@ def css_creator():  # Ask For background and text color in
         else:
             font_style = "normal"
         font_section = font_section + "font-style:" + font_style + ";\n"
+    else:
+        warnings.append("[Warning] There is no specific font set for this website!!")
     css_file.write(
         ".body_tag{\n" + "background-color:" + background_color + ";\n" + font_section + css_margin +css_animation_1+ "}\n")  # write body tag
     css_file.write(".color_tag{\n" + "color:" + text_color + ";\n}")  # write color_tag in css
