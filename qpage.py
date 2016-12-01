@@ -360,6 +360,8 @@ def version_control():
                 print("**New Version Of Qpage Is Available Now (Version "+str(last_version)+")**")
                 print("Download Link -->"+"https://github.com/sepandhaghighi/qpage/archive/v"+str(last_version)+".zip")
                 print("--------------------------------------------------------------------------")
+            else:
+                print ("Already Updated!")
     except:
         pass
 def enter_to_exit():

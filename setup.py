@@ -21,18 +21,19 @@ def run_2():
     if browse == 1:
         preview()
         close_files()
-def run():
+def run(control_flag=True):
     try:
         response = create_folder()
         print("QPAGE By S.Haghighi & M.M.Rahimi")
         print("Version : " + version)
-        version_control()
+        if control_flag==True:
+            version_control()
         if response:
             print(
                 "At least one of the folders create for the first time ,\n"
                 " please put your data in proper order and run program again\n Program Reboot Automaticly in 3 Sec")
             wait_func(3)
-            run()
+            run(False)
             sys.exit()
         clear_folder(out_dir)  # clear all of files in output directory
         page_name_update()  # update page names
