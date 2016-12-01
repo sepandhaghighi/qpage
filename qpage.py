@@ -206,6 +206,8 @@ def contain(name):  # main function That Open Each Page HTML File and call other
         for i in range(len(file_of_docs)):
             if file_of_docs[i].find(".pdf") != -1:
                 resume_name = os.path.join(doc_dir, file_of_docs[i])
+                global pdf_counter
+                pdf_counter=1
                 break
         shutil.copyfile(resume_name, os.path.join(out_dir, "Resume.pdf"))
         print_download(file, "Download Full Version", "Resume.pdf", center=True)
@@ -300,10 +302,6 @@ def error_finder():
             pass_vector.append("[Pass] index.txt file OK!")
         else:
             error_vector.append("[Error] index.txt is not in doc folder!")
-        for j in doc_list:
-            if j.find(".pdf") != -1:
-                pdf_counter = 1
-                break
         if pdf_counter == 0:
             error_vector.append("[Error] Where Is Your Resume File? It should be in doc folder")
         else:
