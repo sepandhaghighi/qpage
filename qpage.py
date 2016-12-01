@@ -107,38 +107,41 @@ def close_files():
     for i in files:
         i.close()
 
-
-def print_text(text_file, file, center=False, close=False):  # Write Text Part Of Each Page
-    text_code = ""
+def LSM_translate(line,center):
+    line.strip()
+    text = line
     header_start = '<h4 class="color_tag">'
     header_end = "</h4>"
-    space = "&nbsp\n"
+    if line.find("[L]") != -1:
+        header_start = '<h2 class="color_tag">'
+        header_end = "</h2>"
+        text = line[3:]
+    elif line.find("[S]") != -1:
+        header_start = '<h5 class="color_tag">'
+        header_end = "</h5>"
+        text = line[3:]
+    elif line.find("[M]") != -1:
+        text = line[3:]
+    if center:  # Centerizes Text If Condition Is True For Manual Centering
+        header_start = "<center>" + header_start
+        header_end += "</center>"
+    if text.find("[center]") != -1:  # Find Center Tag In Each Line
+        header_start = "<center>" + header_start
+        header_end += "</center>"
+        text = text[:text.find("[center]")]
+    return [text,header_end,header_start]
+
+def print_text(text_file, file, center=False, close=False):  # Write Text Part Of Each Page
+    text_code=""
     for line in text_file:
-        #header_start = '<h4 class="color_tag">'
-        #header_end = "</h4>"
-        line.strip()
-        text = line
-        if len(line) == 1:  # For Detecting White Space
+        if len(line)==1:
             text_code = space
-        else:  # Detecting Font Size
-            if line.find("[L]") != -1:
-                header_start = '<h2 class="color_tag">'
-                header_end = "</h2>"
-                text = line[3:]
-            elif line.find("[S]") != -1:
-                header_start = '<h5 class="color_tag">'
-                header_end = "</h5>"
-                text = line[3:]
-            elif line.find("[M]") != -1:
-                text = line[3:]
-        if center:  # Centerizes Text If Condition Is True For Manual Centering
-            header_start = "<center>" + header_start
-            header_end += "</center>"
-        if text.find("[center]") != -1:  # Find Center Tag In Each Line
-            header_start = "<center>" + header_start
-            header_end += "</center>"
-            text = text[:text.find("[center]")]
-        text_code = header_start + text + header_end + "\n"
+        else:
+            text_header=LSM_translate(line,center)
+            text=text_header[0]
+            header_end =text_header[1]
+            header_start =text_header[2]
+            text_code = header_start + text + header_end + "\n"
         file.write(text_code)
     if close:
         file.close()

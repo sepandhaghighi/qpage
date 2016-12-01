@@ -3,6 +3,7 @@ import datetime
 
 work_dir = os.getcwd()  # Get Current Directory
 image_counter = 0
+space = "&nbsp\n"
 try:
     image_dir = os.path.join(work_dir, 'image')
     doc_dir = os.path.join(work_dir, 'doc')
