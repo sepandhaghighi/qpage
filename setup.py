@@ -1,6 +1,5 @@
 from qpage import *
 import sys
-import time
 def run():
     try:
         response = create_folder()
@@ -11,7 +10,7 @@ def run():
             print(
                 "At least one of the folders create for the first time ,\n"
                 " please put your data in proper order and run program again\n Program Reboot Automaticly in 3 Sec")
-            time.sleep(3)
+            wait_func(3)
             run()
         clear_folder(out_dir)  # clear all of files in output directory
         page_name_update()  # update page names

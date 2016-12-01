@@ -6,6 +6,7 @@ from params import *
 import socket
 import requests
 import re
+import time
 meta_input=""
 
 def create_folder():  # This Function Create Empty Folder At Begin
@@ -353,4 +354,11 @@ def version_control():
         pass
 def enter_to_exit():
     input("Enter any key to exit()")
+
+def wait_func(iteration):
+    for i in range(iteration):
+        time.sleep(1)
+        print(".")
+
+
 
