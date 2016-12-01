@@ -9,9 +9,9 @@ try:
     out_dir = os.path.join(work_dir, 'output')
     font_dir = os.path.join(work_dir, 'font')
     image_list = os.listdir(image_dir)
+    doc_list = os.listdir(doc_dir)
 except:
     pass
-doc_list = os.listdir(doc_dir)
 page_name = ["Home"]  # list of default Homepage Name
 actual_name = ["index"]  # List of Actual Name Like Home.Html
 break_line = "<hr/><hr/>\n"

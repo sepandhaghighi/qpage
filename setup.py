@@ -1,7 +1,7 @@
 from qpage import *
 import sys
-
-if __name__ == "__main__":
+import time
+def run():
     try:
         response = create_folder()
         print("QPAGE By S.Haghighi & M.M.Rahimi")
@@ -10,8 +10,9 @@ if __name__ == "__main__":
         if response:
             print(
                 "At least one of the folders create for the first time ,\n"
-                " please put your data in proper order and run program again")
-            sys.exit()
+                " please put your data in proper order and run program again\n Program Reboot Automaticly in 3 Sec")
+            time.sleep(3)
+            run()
         clear_folder(out_dir)  # clear all of files in output directory
         page_name_update()  # update page names
         for i in actual_name:
@@ -35,7 +36,6 @@ if __name__ == "__main__":
         if browse == 1:
             preview()
             close_files()
-
     except FileNotFoundError:  # error exception in FileNotFound ( When Something Missed)
         close_files()
         vector_2 = error_finder()
@@ -51,3 +51,7 @@ if __name__ == "__main__":
     except ValueError:
         print("Bad Input")
         enter_to_exit()
+
+if __name__ == "__main__":
+    run()
+
