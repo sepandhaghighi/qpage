@@ -342,6 +342,8 @@ def server():
     #print(response)
 def version_control():
     try:
+        print("Check for new version . . .")
+        print("----------------------------")
         version_pattern=r"last_version:(.+)"
         if internet():
             response=requests.get("http://www.qpage.ir/releases.html")
