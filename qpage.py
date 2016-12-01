@@ -114,8 +114,8 @@ def print_text(text_file, file, center=False, close=False):  # Write Text Part O
     header_end = "</h4>"
     space = "&nbsp\n"
     for line in text_file:
-        header_start = '<h4 class="color_tag">'
-        header_end = "</h4>"
+        #header_start = '<h4 class="color_tag">'
+        #header_end = "</h4>"
         line.strip()
         text = line
         if len(line) == 1:  # For Detecting White Space
@@ -190,6 +190,8 @@ def contain(name):  # main function That Open Each Page HTML File and call other
                 if file_of_images[i].find("." + form) != -1:
                     image_name = os.path.join(image_dir, file_of_images[i])
                     imformat = form
+                    global image_counter
+                    image_counter=1
                     break
         shutil.copyfile(image_name, os.path.join(out_dir, "image." + imformat))
         print_image(file, imformat=imformat)
@@ -281,21 +283,10 @@ def error_finder():
     error_vector = []
     pass_vector = []
     pdf_counter = 0
-    image_counter = 0
-    image_list = os.listdir(image_dir)
-    doc_list = os.listdir(doc_dir)
-    if len(image_list) == 0:
-        error_vector.append("[Error] Where is your profile image file? it should be in image folder")
+    if image_counter == 1:
+        pass_vector.append("[Pass] Your profile image in OK!!")
     else:
-        for i in imformat_box:
-            for j in image_list:
-                if j.find(i) != -1:
-                    image_counter = 1
-                    break
-        if image_counter == 1:
-            pass_vector.append("[Pass] Your profile image in OK!!")
-        else:
-            error_vector.append("[Error] Your profile image is not in correct format")
+        error_vector.append("[Error] Your profile image is not in correct format")
     if len(doc_list) == 0:
         error_vector.append("[Error] There is no file in doc folder ( index.txt and .pdf file in necessary)")
     else:
