@@ -224,10 +224,7 @@ def print_warning():
     for i in range(len(warnings)):
         print(str(i + 1) + "-" + warnings[i])
 
-
-def css_creator():  # Ask For background and text color in
-    font_flag = 0  # 0 If there is no font file in font_folder
-    font_section = 'font-family : Georgia , serif;\n'
+def css_init():
     for i in range(len(color_box)):
         print(i, "-", color_box[i])
     back_color_code = int(input("Please enter your background color : "))
@@ -240,6 +237,14 @@ def css_creator():  # Ask For background and text color in
         warnings.append("[Warning] Your text color and background color are same!!")
     background_color = color_box[back_color_code]  # convert code to color string in color_box
     text_color = color_box[text_color_code]  # convert code to color string in color_box
+    return [background_color,text_color]
+
+def css_creator():  # Ask For background and text color in
+    font_flag = 0  # 0 If there is no font file in font_folder
+    font_section = 'font-family : Georgia , serif;\n'
+    colors=css_init()
+    background_color=colors[0]
+    text_color=colors[1]
     font_folder = os.listdir(font_dir)
     for i in font_folder:
         for j in range(len(font_format)):  # search for other font format in font box
