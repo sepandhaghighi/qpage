@@ -287,6 +287,8 @@ def error_finder():
     error_vector = []
     pass_vector = []
     pdf_counter = 0
+    image_list = os.listdir(image_dir)
+    doc_list = os.listdir(doc_dir)
     if image_counter == 1:
         pass_vector.append("[Pass] Your profile image in OK!!")
     else:

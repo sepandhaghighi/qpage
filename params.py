@@ -4,15 +4,11 @@ import datetime
 work_dir = os.getcwd()  # Get Current Directory
 image_counter = 0
 space = "&nbsp\n"
-try:
-    image_dir = os.path.join(work_dir, 'image')
-    doc_dir = os.path.join(work_dir, 'doc')
-    out_dir = os.path.join(work_dir, 'output')
-    font_dir = os.path.join(work_dir, 'font')
-    image_list = os.listdir(image_dir)
-    doc_list = os.listdir(doc_dir)
-except:
-    pass
+
+image_dir = os.path.join(work_dir, 'image')
+doc_dir = os.path.join(work_dir, 'doc')
+out_dir = os.path.join(work_dir, 'output')
+font_dir = os.path.join(work_dir, 'font')
 page_name = ["Home"]  # list of default Homepage Name
 actual_name = ["index"]  # List of Actual Name Like Home.Html
 break_line = "<hr/><hr/>\n"
