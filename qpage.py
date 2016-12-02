@@ -8,6 +8,9 @@ import requests
 import re
 import time
 meta_input=""
+def name_standard(name):
+    reponse_name=name[0].upper()+name[1:].lower()
+    return reponse_name
 
 def create_folder():  # This Function Create Empty Folder At Begin
     folder_flag = 0
@@ -47,8 +50,8 @@ def menu_maker():  # Top Menu Maker In each html page
             targets_blank = ""
         else:
             targets_blank = 'target="blank"'
-        result = result + '\t<a href="' + actual_name[i] + '.html"' + targets_blank + '>' + page_name[
-            i] + "</a>\n"  # Hyper Link To Each Page In HTML File
+        result = result + '\t<a href="' + actual_name[i] + '.html"' + targets_blank + '>' + name_standard(page_name[
+            i]) + "</a>\n"  # Hyper Link To Each Page In HTML File
         result += "&nbsp\n"
     result += "</center>"
     result = result + "\t\t" + break_line  # Add Break line to End Of The Menu
@@ -83,7 +86,7 @@ def html_init(name):  # Create Initial Form Of each Html Page Like Title And HTM
     if name == "index":
         file.write("\t\t<title>Welcome To My Homepage</title>\n")
     else:
-        file.write("\t\t<title>" + name.upper() + "</title>\n")
+        file.write("\t\t<title>" + name_standard(name) + "</title>\n")
     file.write('<link rel="stylesheet" href="styles.css" type="text/css"/>\n')
     css_link = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'
     file.write('<link rel="stylesheet" href= ' + css_link + ' type="text/style"/>\n')
