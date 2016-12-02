@@ -29,6 +29,9 @@ Last Version : 1.9
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sepandhaghighi/qpage/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sepandhaghighi/qpage/?branch=master)
 
 
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/sepandhaghighi/qpage/blob/master/LICENSE)
+
+
 ## Overview
 
 We developed QPage on Windows but it also run in Linux and Mac-OSX.
