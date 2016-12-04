@@ -11,6 +11,8 @@ meta_input=""
 def name_standard(name):
     reponse_name=name[0].upper()+name[1:].lower()
     return reponse_name
+def address_print():
+    print("Where--> "+work_dir)
 
 def create_folder():  # This Function Create Empty Folder At Begin
     folder_flag = 0

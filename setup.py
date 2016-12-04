@@ -14,6 +14,7 @@ def run_2():
     print("Homepage is ready")
     print("Upload output folder contains directly to your host")
     print("Please Don't Change HTML Files Name")
+    address_print()
     print_warning()
     if internet():
         server()
@@ -26,6 +27,7 @@ def run(control_flag=True):
         response = create_folder()
         print("QPAGE By S.Haghighi & M.M.Rahimi")
         print("Version : " + version)
+        address_print()
         if control_flag==True:
             version_control()
         if response:
