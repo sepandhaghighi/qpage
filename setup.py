@@ -1,5 +1,17 @@
 from qpage import *
 import sys
+def error_handler():
+    close_files()
+    vector_2 = error_finder()
+    error_vector = vector_2[0]
+    pass_vector = vector_2[1]
+    print(str(len(error_vector)) + " Error")
+    print("Please Check Following :\n")
+    for i in range(len(error_vector)):
+        print(str(i + 1) + "-" + error_vector[i])
+    for i in range(len(pass_vector)):
+        print(str(i + len(error_vector) + 1) + "-" + pass_vector[i])
+    enter_to_exit()
 def run_2():
     for i in actual_name:
         html_init(i)  # create pages html files
@@ -41,17 +53,7 @@ def run(control_flag=True):
         page_name_update()  # update page names
         run_2()
     except FileNotFoundError:  # error exception in FileNotFound ( When Something Missed)
-        close_files()
-        vector_2 = error_finder()
-        error_vector = vector_2[0]
-        pass_vector = vector_2[1]
-        print(str(len(error_vector)) + " Error")
-        print("Please Check Following :\n")
-        for i in range(len(error_vector)):
-            print(str(i + 1) + "-" + error_vector[i])
-        for i in range(len(pass_vector)):
-            print(str(i + len(error_vector) + 1) + "-" + pass_vector[i])
-        enter_to_exit()
+        error_handler()
     except ValueError:
         print("Bad Input")
         enter_to_exit()
