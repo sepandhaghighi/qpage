@@ -34,6 +34,14 @@ def run_2():
     if browse == 1:
         preview()
         close_files()
+def response_handler(response):
+    if response:
+        print(
+            "At least one of the folders create for the first time ,\n"
+            " please put your data in proper order and run program again\n Program Reboot Automaticly in 3 Sec")
+        wait_func(3)
+        run(False)
+        sys.exit()
 def run(control_flag=True):
     try:
         response = create_folder()
@@ -42,13 +50,7 @@ def run(control_flag=True):
         address_print()
         if control_flag==True:
             version_control()
-        if response:
-            print(
-                "At least one of the folders create for the first time ,\n"
-                " please put your data in proper order and run program again\n Program Reboot Automaticly in 3 Sec")
-            wait_func(3)
-            run(False)
-            sys.exit()
+        response_handler(response)
         clear_folder(out_dir)  # clear all of files in output directory
         page_name_update()  # update page names
         run_2()
