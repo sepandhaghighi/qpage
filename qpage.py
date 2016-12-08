@@ -347,7 +347,7 @@ def server():
 def version_control():
     try:
         print("Check for new version . . .")
-        print("----------------------------")
+        print("--------------------------------------------------------------------------")
         version_pattern=r"last_version:(.+)"
         if internet():
             response=requests.get("http://www.qpage.ir/releases.html")
@@ -359,7 +359,8 @@ def version_control():
                 print("Download Link -->"+"https://github.com/sepandhaghighi/qpage/archive/v"+str(last_version)+".zip")
                 print("--------------------------------------------------------------------------")
             else:
-                print ("Already Updated!")
+                print ("Already Updated!!!")
+                print("--------------------------------------------------------------------------")
     except:
         pass
 def enter_to_exit():
