@@ -9,18 +9,19 @@ import re
 import time
 meta_input=""
 
-def print_line(number):
+def print_line(number,char="-"):
     line=""
     for i in range(number):
-        line=line+"-"
+        line=line+char
     print(line)
 
 def name_standard(name):
     reponse_name=name[0].upper()+name[1:].lower()
     return reponse_name
 def address_print():
+    print_line(70,"*")
     print("Where--> "+work_dir)
-
+    print_line(70, "*")
 def create_folder():  # This Function Create Empty Folder At Begin
     folder_flag = 0
     list_of_folders = os.listdir(work_dir)
@@ -354,20 +355,20 @@ def server():
 def version_control():
     try:
         print("Check for new version . . .")
-        print_line(20)
+        print_line(70)
         version_pattern=r"last_version:(.+)"
         if internet():
             response=requests.get("http://www.qpage.ir/releases.html")
             body=response.text
             last_version=float(re.findall(version_pattern,body)[0][:-3])
             if last_version>float(version):
-                print_line(20)
+                print_line(70)
                 print("**New Version Of Qpage Is Available Now (Version "+str(last_version)+")**")
                 print("Download Link -->"+"https://github.com/sepandhaghighi/qpage/archive/v"+str(last_version)+".zip")
-                print_line(20)
+                print_line(70)
             else:
                 print ("Already Updated!!!")
-                print_line(20)
+                print_line(70)
     except:
         pass
 def enter_to_exit():
