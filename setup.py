@@ -1,5 +1,6 @@
 from qpage import *
 import sys
+
 def error_handler():
     close_files()
     vector_2 = error_finder()
@@ -12,7 +13,7 @@ def error_handler():
     for i in range(len(pass_vector)):
         print(str(i + len(error_vector) + 1) + "-" + pass_vector[i])
     enter_to_exit()
-def run_2():
+def file_creator():
     for i in actual_name:
         html_init(i)  # create pages html files
     menu_writer()  # write menu for each html file
@@ -23,6 +24,9 @@ def run_2():
     icon_creator()
     robot_maker()
     close_files()
+
+def run_2():
+    file_creator()
     print("Homepage is ready")
     print("Upload output folder contains directly to your host")
     print("Please Don't Change HTML Files Name")
