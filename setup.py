@@ -13,7 +13,8 @@ def error_handler():
     for i in range(len(pass_vector)):
         print(str(i + len(error_vector) + 1) + "-" + pass_vector[i])
     enter_to_exit()
-def file_creator():
+
+def file_handler():
     for i in actual_name:
         html_init(i)  # create pages html files
     menu_writer()  # write menu for each html file
@@ -25,8 +26,8 @@ def file_creator():
     robot_maker()
     close_files()
 
-def run_2():
-    file_creator()
+def main_handler_2():
+    file_handler()
     print("Homepage is ready")
     print("Upload output folder contains directly to your host")
     print("Please Don't Change HTML Files Name")
@@ -38,15 +39,17 @@ def run_2():
     if browse == 1:
         preview()
         close_files()
+
 def response_handler(response):
     if response:
         print(
             "At least one of the folders create for the first time ,\n"
             " please put your data in proper order and run program again\n Program Reboot Automaticly in 3 Sec")
         wait_func(3)
-        run(False)
+        main_handler(False)
         sys.exit()
-def run(control_flag=True):
+
+def main_handler(control_flag=True):
     try:
         response = create_folder()
         print("QPAGE By S.Haghighi & M.M.Rahimi")
@@ -57,7 +60,7 @@ def run(control_flag=True):
         response_handler(response)
         clear_folder(out_dir)  # clear all of files in output directory
         page_name_update()  # update page names
-        run_2()
+        main_handler_2()
     except FileNotFoundError:  # error exception in FileNotFound ( When Something Missed)
         error_handler()
     except ValueError:
@@ -65,5 +68,5 @@ def run(control_flag=True):
         enter_to_exit()
 
 if __name__ == "__main__":
-    run()
+    main_handler()
 
