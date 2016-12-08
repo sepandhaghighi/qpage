@@ -8,6 +8,13 @@ import requests
 import re
 import time
 meta_input=""
+
+def print_line(number):
+    line=""
+    for i in range(number):
+        line=line+"-"
+    print(line)
+
 def name_standard(name):
     reponse_name=name[0].upper()+name[1:].lower()
     return reponse_name
@@ -347,20 +354,20 @@ def server():
 def version_control():
     try:
         print("Check for new version . . .")
-        print("--------------------------------------------------------------------------")
+        print_line(20)
         version_pattern=r"last_version:(.+)"
         if internet():
             response=requests.get("http://www.qpage.ir/releases.html")
             body=response.text
             last_version=float(re.findall(version_pattern,body)[0][:-3])
             if last_version>float(version):
-                print("--------------------------------------------------------------------------")
+                print_line(20)
                 print("**New Version Of Qpage Is Available Now (Version "+str(last_version)+")**")
                 print("Download Link -->"+"https://github.com/sepandhaghighi/qpage/archive/v"+str(last_version)+".zip")
-                print("--------------------------------------------------------------------------")
+                print_line(20)
             else:
                 print ("Already Updated!!!")
-                print("--------------------------------------------------------------------------")
+                print_line(20)
     except:
         pass
 def enter_to_exit():
