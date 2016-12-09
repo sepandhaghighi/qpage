@@ -13,6 +13,7 @@ def error_handler():
     for i in range(len(pass_vector)):
         print(str(i + len(error_vector) + 1) + "-" + pass_vector[i])
     enter_to_exit()
+    main_handler()
 
 def file_handler():
     for i in actual_name:
@@ -65,7 +66,14 @@ def main_handler(control_flag=True):
         error_handler()
     except ValueError:
         print("Bad Input")
+        close_files()
         enter_to_exit()
+        main_handler()
+    except PermissionError:
+        print("Files Is Open By Another Program")
+        close_files()
+        enter_to_exit()
+        main_handler()
 
 if __name__ == "__main__":
     main_handler()

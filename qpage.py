@@ -7,6 +7,7 @@ import socket
 import requests
 import re
 import time
+import sys
 meta_input=""
 
 def print_line(number,char="-"):
@@ -371,8 +372,13 @@ def version_control():
                 print_line(70)
     except:
         pass
-def enter_to_exit():
-    input("Enter any key to exit()")
+def enter_to_exit(mode=False):
+    print_line(70,"*")
+    response=input("Enter [R] for restart Qpage and any other key to exit : ")
+    if response.upper()!="R":
+        sys.exit()
+
+
 
 def wait_func(iteration):
     for i in range(iteration):
