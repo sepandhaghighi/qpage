@@ -248,7 +248,8 @@ def print_warning():
     for i in range(len(warnings)):
         print(str(i + 1) + "-" + warnings[i])
 
-def css_init():
+
+def get_color_code():
     for i in range(len(color_box)):
         print(i, "-", color_box[i])
     back_color_code = int(input("Please enter your background color : "))
@@ -257,6 +258,10 @@ def css_init():
     text_color_code = int(input("Please enter your text color : "))
     if text_color_code not in range(7):
         text_color_code = 1
+    return [back_color_code,text_color_code]
+
+def color_code_map():
+    [back_color_code, text_color_code]=get_color_code()
     if text_color_code == back_color_code:
         warnings.append("[Warning] Your text color and background color are same!!")
     background_color = color_box[back_color_code]  # convert code to color string in color_box
@@ -276,7 +281,7 @@ def css_font(font_folder):
     return [font_flag,current_font_format]
 def css_creator():  # Ask For background and text color in
     font_section = 'font-family : Georgia , serif;\n'
-    colors=css_init()
+    colors=color_code_map()
     background_color=colors[0]
     text_color=colors[1]
     font_folder = os.listdir(font_dir)
