@@ -3,5 +3,6 @@ shutil
 datetime
 webbrowser
 socket
-requests==2.11.1
+requests
+
 
