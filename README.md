@@ -34,6 +34,8 @@ Last Version : 1.9
 
 [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://www.qpage.ir)
 
+[![Coverage](https://img.shields.io/badge/coverage-87-green.svg)](http://www.qpage.ir/htmlcov/index.html)
+
 
 ## Overview
 
