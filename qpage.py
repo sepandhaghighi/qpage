@@ -10,6 +10,15 @@ import time
 import sys
 meta_input=""
 
+def logger(status=False):
+    file=open("build_log.txt","a")
+    if status==False:
+        file.write("Faild  "+str(datetime.datetime.now())+"\n")
+    else:
+        file.write("Sucess "+str(datetime.datetime.now())+"\n")
+    file.close()
+
+
 def print_line(number,char="-"):
     line=""
     for i in range(number):

@@ -34,6 +34,7 @@ def main_handler_2():
     print("Please Don't Change HTML Files Name")
     address_print()
     print_warning()
+    logger(True)
     if internet():
         server()
     browse = int(input("Preview Homepage?[1] or Not[2]"))
@@ -63,13 +64,16 @@ def main_handler(control_flag=True):
         page_name_update()  # update page names
         main_handler_2()
     except FileNotFoundError:  # error exception in FileNotFound ( When Something Missed)
+        logger(False)
         error_handler()
     except ValueError:
         print("Bad Input")
+        logger(False)
         close_files()
         enter_to_exit()
         main_handler()
     except PermissionError:
+        logger(False)
         print("Files Is Open By Another Program")
         close_files()
         enter_to_exit()
