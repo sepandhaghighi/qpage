@@ -43,10 +43,7 @@ def create_folder():  # This Function Create Empty Folder At Begin
                 file = open(os.path.join(doc_dir, "index.txt"), "w")
                 file.write("This is For First Page . . .")
                 file.close()
-    if folder_flag > 0:
-        return True
-    else:
-        return False
+    return bool(folder_flag)
 
 
 def page_name_update():  # This Function Update Page Names
