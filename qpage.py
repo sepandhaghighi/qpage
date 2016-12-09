@@ -39,10 +39,10 @@ def create_folder():  # This Function Create Empty Folder At Begin
         if i not in list_of_folders:
             os.mkdir(i)
             folder_flag += 1
-        if i=="doc":
-            file = open(os.path.join(doc_dir, "index.txt"), "w")
-            file.write("This is For First Page . . .")
-            file.close()
+            if i=="doc":
+                file = open(os.path.join(doc_dir, "index.txt"), "w")
+                file.write("This is For First Page . . .")
+                file.close()
     if folder_flag > 0:
         return True
     else:
