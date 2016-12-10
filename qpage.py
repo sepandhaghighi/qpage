@@ -8,8 +8,26 @@ import requests
 import re
 import time
 import sys
+import urllib.request
 meta_input=""
 
+def sample_site_download():
+    try:
+        if internet():
+            print("Downloading . . . ")
+            urllib.request.urlretrieve("http://www.qpage.ir/sample/profile.png",os.path.join(image_dir,"profile.png"))
+            urllib.request.urlretrieve("http://www.qpage.ir/sample/font.TTF", os.path.join(font_dir, "font.TTF"))
+            urllib.request.urlretrieve("http://www.qpage.ir/sample/resume.pdf", os.path.join(doc_dir, "resume.pdf"))
+            urllib.request.urlretrieve("http://www.qpage.ir/sample/resume.txt", os.path.join(doc_dir, "resume.txt"))
+            urllib.request.urlretrieve("http://www.qpage.ir/sample/icon.ico", os.path.join(image_dir, "icon.ico"))
+            print("Done!")
+            print_line(70)
+        else:
+            print("Error In Internet Connection!")
+            print_line(70)
+    except:
+        print("Error In Download Sample")
+        print_line(70)
 def logger(status=False):
     file=open("build_log.txt","a")
     if status==False:
@@ -214,7 +232,7 @@ def contain(name):  # main function That Open Each Page HTML File and call other
         print_image(file, imformat=imformat)
         print_text(text_file, file)
         print_adv(file)
-    elif name == "Resume":
+    elif name.upper() == "RESUME":
         file_of_docs = os.listdir(doc_dir)
         for i in range(len(file_of_docs)):
             if file_of_docs[i].find(".pdf") != -1:

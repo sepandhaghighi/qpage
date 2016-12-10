@@ -50,7 +50,10 @@ def response_handler(response):
         wait_func(3)
         main_handler(False)
         sys.exit()
-
+def sample_handler():
+    response=input("Press [S] to enter sample site material download or other keys to continue with your data")
+    if response.upper()=="S":
+        sample_site_download()
 def main_handler(control_flag=True):
     try:
         response = create_folder()
@@ -60,6 +63,7 @@ def main_handler(control_flag=True):
         if control_flag==True:
             version_control()
         response_handler(response)
+        sample_handler()
         clear_folder(out_dir)  # clear all of files in output directory
         page_name_update()  # update page names
         main_handler_2()
