@@ -218,7 +218,7 @@ def contain(name):  # main function That Open Each Page HTML File and call other
     resume_name = ""
     image_name = ""
     imformat = "jpg"
-    if name == "index":
+    if name.upper() == "INDEX":
         file_of_images = os.listdir(image_dir)
         for i in range(len(file_of_images)):
             for form in imformat_box:
