@@ -66,11 +66,10 @@ def create_folder():  # This Function Create Empty Folder At Begin
             folder_flag += 1
             if i=="doc":
                 file = open(os.path.join(doc_dir, "index.txt"), "w")
-                index_contain=read_lorem()
-                if index_contain==None:
+                if read_lorem()==None:
                     file.write("This is For First Page . . .")
                 else:
-                    file.write(index_contain)
+                    file.write(read_lorem())
                 file.close()
     return bool(folder_flag)
 
