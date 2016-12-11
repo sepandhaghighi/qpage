@@ -10,8 +10,14 @@ import time
 import sys
 import urllib.request
 meta_input=""
-def read_lorem():
-    pass
+def read_lorem(char=100):
+    try:
+        lorem_file=open("Latin-Lipsum.txt","r")
+        lorem_text=lorem_file.read()
+        lorem_file.close()
+        return lorem_text
+    except:
+        return None
 def sample_site_download():
     try:
         if internet():
@@ -60,7 +66,11 @@ def create_folder():  # This Function Create Empty Folder At Begin
             folder_flag += 1
             if i=="doc":
                 file = open(os.path.join(doc_dir, "index.txt"), "w")
-                file.write("This is For First Page . . .")
+                index_contain=read_lorem()
+                if index_contain==None:
+                    file.write("This is For First Page . . .")
+                else:
+                    file.write(index_contain)
                 file.close()
     return bool(folder_flag)
 
