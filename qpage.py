@@ -22,7 +22,7 @@ def read_lorem(char=100):
         lorem_file=open("Latin-Lipsum.txt","r")
         lorem_text=lorem_file.read()
         lorem_file.close()
-        return lorem_text
+        return " ".join(lorem_text.split(" ")[:char])
     except:
         return None
 def sample_site_download():
