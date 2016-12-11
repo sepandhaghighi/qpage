@@ -10,8 +10,15 @@ import time
 import sys
 import urllib.request
 meta_input=""
+def download_lorem():
+    if internet():
+        urllib.request.urlretrieve("http://www.qpage.ir/sample/Latin-Lipsum.txt","Latin-Lipsum.txt")
+    else:
+        print("Error In Download Lorem")
 def read_lorem(char=100):
     try:
+        if "Latin-Lipsum.txt"  not in os.listdir():
+            download_lorem()
         lorem_file=open("Latin-Lipsum.txt","r")
         lorem_text=lorem_file.read()
         lorem_file.close()
