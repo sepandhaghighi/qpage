@@ -10,7 +10,8 @@ import time
 import sys
 import urllib.request
 meta_input=""
-
+def read_lorem():
+    pass
 def sample_site_download():
     try:
         if internet():
