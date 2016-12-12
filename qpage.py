@@ -28,11 +28,18 @@ def read_lorem(char=100):
 def sample_site_download():
     try:
         if internet():
-            print("Downloading . . . ")
+            print("Downloading Profile Image . . . ")
+            print_line(70)
             urllib.request.urlretrieve("http://www.qpage.ir/sample/profile.png",os.path.join(image_dir,"profile.png"))
+            print("Downloading Font . . . ")
+            print_line(70)
             urllib.request.urlretrieve("http://www.qpage.ir/sample/font.TTF", os.path.join(font_dir, "font.TTF"))
+            print("Downloading Resume . . .  ")
+            print_line(70)
             urllib.request.urlretrieve("http://www.qpage.ir/sample/resume.pdf", os.path.join(doc_dir, "resume.pdf"))
             urllib.request.urlretrieve("http://www.qpage.ir/sample/resume.txt", os.path.join(doc_dir, "resume.txt"))
+            print("Downloading Icon File . . .  ")
+            print_line(70)
             urllib.request.urlretrieve("http://www.qpage.ir/sample/icon.ico", os.path.join(image_dir, "icon.ico"))
             print("Done!")
             print_line(70)
