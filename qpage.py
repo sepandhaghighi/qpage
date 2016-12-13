@@ -11,7 +11,17 @@ import sys
 import urllib.request
 meta_input=""
 def is_sample_downloaded():
-    pass
+    download_list=[]
+    if "profile.png"  not in os.listdir(image_dir):
+        download_list.append(0)
+    if "font.TTF" not in os.listdir(font_dir):
+        download_list.append(1)
+    if "resume.pdf"  not in os.listdir(doc_dir) and "resume.txt" not in os.listdir(doc_dir):
+        download_list.extend([2,3])
+    if "icon.ico" not in os.listdir(image_dir):
+        download_list.append(4)
+    return download_list
+
 def download_lorem():
     if internet():
         urllib.request.urlretrieve("http://www.qpage.ir/sample/Latin-Lipsum.txt","Latin-Lipsum.txt")
@@ -27,14 +37,14 @@ def read_lorem(char=100):
         return " ".join(lorem_text.split(" ")[:char])
     except:
         return None
-def sample_site_download():
+def sample_site_download(item_list):
     try:
         if internet():
-            for i in range(len(sample_dict_addr.keys())):
+            for i in item_list:
                 print("Downloading "+ sample_dict_message[i]+" . . . ["+str(i+1)+"/4]")
                 print_line(70)
                 urllib.request.urlretrieve(list(sample_dict_addr.values())[i],os.path.join(image_dir,list(sample_dict_addr.keys())[i]))
-            print("Done!")
+            print("Done! All Material Downloaded")
             print_line(70)
         else:
             print("Error In Internet Connection!")

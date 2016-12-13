@@ -51,10 +51,10 @@ def response_handler(response):
         main_handler(False)
         sys.exit()
 def sample_handler():
-    response=input("Press [S] to enter sample site material download or other keys to continue with your data")
+    response=input("Press [S] to enter sample site material runing or other keys to continue with your data")
     print_line(70)
     if response.upper()=="S":
-        sample_site_download()
+        sample_site_download(is_sample_downloaded())
 def main_handler(control_flag=True):
     try:
         response = create_folder()
