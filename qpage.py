@@ -210,7 +210,7 @@ def print_image(file, close=False, imformat="jpg"):  # Write Image Part OF The P
     image_size_string = size_box[2]  # Getting Html String From size_box list default mode (Medium)
     if 0 <= image_size < len(size_box):
         image_size_string = size_box[image_size]
-    image_code = '<center><img src="image.' + imformat + '"' + ', width=' + image_size_string + '></img></center>\n'
+    image_code = '<center><img src="image.' + imformat + '"' + ', width=' + image_size_string + ' alt="profile image"></img></center>\n'
     file.write(image_code)
     if close:
         file.close()
