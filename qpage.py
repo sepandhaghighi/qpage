@@ -10,7 +10,8 @@ import time
 import sys
 import urllib.request
 meta_input=""
-
+def is_sample_downloaded():
+    pass
 def download_lorem():
     if internet():
         urllib.request.urlretrieve("http://www.qpage.ir/sample/Latin-Lipsum.txt","Latin-Lipsum.txt")
