@@ -1,14 +1,17 @@
 import os
 import datetime
-
 work_dir = os.getcwd()  # Get Current Directory
-image_counter = 0
-pdf_counter = 0
-space = "&nbsp\n"
 image_dir = os.path.join(work_dir, 'image')
 doc_dir = os.path.join(work_dir, 'doc')
 out_dir = os.path.join(work_dir, 'output')
 font_dir = os.path.join(work_dir, 'font')
+sample_dict_addr={image_dir+"profile.image":"http://www.qpage.ir/sample/profile.png",font_dir+"font.TTF":"http://www.qpage.ir/sample/font.TTF",doc_dir+"resume.pdf":"http://www.qpage.ir/sample/resume.pdf",doc_dir+"resume.txt":"http://www.qpage.ir/sample/resume.txt",image_dir+"icon.ico":"http://www.qpage.ir/sample/icon.ico"}
+sample_dict_message=["Profile Image","Font","Resume Part-1","Resum Part-2","Icon File"]
+
+image_counter = 0
+pdf_counter = 0
+space = "&nbsp\n"
+
 page_name = ["Home"]  # list of default Homepage Name
 actual_name = ["index"]  # List of Actual Name Like Home.Html
 break_line = "<hr/><hr/>\n"
