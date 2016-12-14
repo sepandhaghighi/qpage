@@ -10,6 +10,7 @@ import time
 import sys
 import urllib.request
 meta_input=""
+
 def is_sample_downloaded():
     download_list=[]
     if "profile.png"  not in os.listdir(image_dir):
@@ -29,7 +30,7 @@ def download_lorem():
         print("Error In Download Lorem")
 def read_lorem(char=100):
     try:
-        if "Latin-Lipsum.txt"  not in os.listdir():
+        if "Latin-Lipsum.txt"  not in os.listdir(work_dir):
             download_lorem()
         lorem_file=open("Latin-Lipsum.txt","r")
         lorem_text=lorem_file.read()
