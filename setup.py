@@ -1,6 +1,6 @@
 from qpage import *
 import sys
-
+from  tkinter import *
 def error_handler():
     close_files() # Close all of the open files
     vector_2 = error_finder() # load error and pass vector
@@ -83,6 +83,7 @@ def main_handler(control_flag=True):
         close_files() #Close all of the opne files
         enter_to_exit() # get input from user to continue
         main_handler() #call part_1 of main_handler , resetart from the first
+
 
 if __name__ == "__main__":
     main_handler()
