@@ -70,7 +70,7 @@ def main_handler(control_flag=True):
         print("QPAGE By S.Haghighi & M.M.Rahimi")
         print("Version : " + version)
         address_print()  # Print Files Location
-        if control_flag == True:  # Check if version control passed in prev step
+        if control_flag:  # Check if version control passed in prev step
             version_control()  # Check for new version of qpage
         response_handler(response)  # call response_handler
         sample_handler()  # run sample handler

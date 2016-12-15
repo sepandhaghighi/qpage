@@ -259,7 +259,7 @@ def print_adv(file, close=True):
         file.close()
 
 
-def build_index(file, text_file):
+def build_index(file):
     image_name = ""
     img_format = "jpg"
     file_of_images = os.listdir(image_dir)
@@ -273,23 +273,19 @@ def build_index(file, text_file):
                 break
     shutil.copyfile(image_name, os.path.join(out_dir, "image." + img_format))
     print_image(file, image_format=img_format)
-    # print_text(text_file, file)
-    # print_adv(file)
 
 
-def build_resume(file, text_file):
+def build_resume(file):
     resume_name = ""
     file_of_docs = os.listdir(doc_dir)
     for i in range(len(file_of_docs)):
         if file_of_docs[i].find(".pdf") != -1:
             resume_name = os.path.join(doc_dir, file_of_docs[i])
-            # noinspection PyGlobalUndefined
             global pdf_counter
             pdf_counter = 1
             break
     shutil.copyfile(resume_name, os.path.join(out_dir, "Resume.pdf"))
     print_download(file, "Download Full Version", "Resume.pdf", center=True)
-    # print_text(text_file, file)
 
 
 def contain(name):  # main function That Open Each Page HTML File and call other function to write data in it
@@ -299,9 +295,9 @@ def contain(name):  # main function That Open Each Page HTML File and call other
     files.append(text_file)
 
     if name.upper() == "INDEX":
-        build_index(file, text_file)
+        build_index(file)
     elif name.upper() == "RESUME":
-        build_resume(file, text_file)
+        build_resume(file)
 
     print_text(text_file, file)
     print_adv(file)
@@ -356,19 +352,19 @@ def css_font(font_folder):
     return [font_flag, current_font_format]
 
 
-def css_creator():  # Ask For background and text color in
-    font_section = 'font-family : Georgia , serif;\n'
-    colors = color_code_map()
-    background_color = colors[0]
-    text_color = colors[1]
+def font_creator(css_file, font_section):
+
     font_folder = os.listdir(font_dir)
     details = css_font(font_folder)
     current_font_format = details[1]
     font_flag = details[0]
-    css_file = open(os.path.join(out_dir, "styles.css"), "w")  # open css file
+
     if font_flag == 1:  # check flag if it is 1
         css_file.write(
-            "@font-face{\nfont-family:qpagefont;\nsrc:url(qpage" + current_font_format + ");\n}\n")  # wrtie font-face in html
+            "@font-face{\nfont-family:qpagefont;\nsrc:url(qpage"
+            + current_font_format
+            + ");\n}\n")  # Write font-face in html
+
         font_section = "font-family:qpagefont;\n"  # Update Font Section For Body Tag
         for i in range(len(fontstyle_box)):
             print(i, "-", fontstyle_box[i])
@@ -380,8 +376,28 @@ def css_creator():  # Ask For background and text color in
         font_section = font_section + "font-style:" + font_style + ";\n"
     else:
         warnings.append("[Warning] There is no specific font set for this website!!")
+    return font_section
+
+
+def css_creator():  # Ask For background and text color in
+    font_section = 'font-family : Georgia , serif;\n'
+    colors = color_code_map()
+    background_color = colors[0]
+    text_color = colors[1]
+
+    css_file = open(os.path.join(out_dir, "styles.css"), "w")  # open css file
+    font_section = font_creator(css_file, font_section)
+
     css_file.write(
-        ".body_tag{\n" + "background-color:" + background_color + ";\n" + font_section + css_margin + css_animation_1 + "}\n")  # write body tag
+        ".body_tag{\n"
+        + "background-color:"
+        + background_color
+        + ";\n"
+        + font_section
+        + css_margin
+        + css_animation_1
+        + "}\n")  # write body tag
+
     css_file.write(".color_tag{\n" + "color:" + text_color + ";\n}")  # write color_tag in css
     css_file.write(css_animation_2)
     css_file.close()  # close css file
