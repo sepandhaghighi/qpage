@@ -1,6 +1,8 @@
 __pycache__
 output
-.idea/*
 qpage.pyc
-doc/*
-image/*
+.idea/
+doc/
+font/
+image/
+build_log.txt
