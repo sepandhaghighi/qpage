@@ -7,16 +7,19 @@ out_dir = os.path.join(work_dir, 'output')
 font_dir = os.path.join(work_dir, 'font')
 sample_dict_addr={os.path.join(image_dir,"profile.png"):"http://www.qpage.ir/sample/profile.png",os.path.join(font_dir,"font.TTF"):"http://www.qpage.ir/sample/font.TTF",os.path.join(doc_dir,"resume.pdf"):"http://www.qpage.ir/sample/resume.pdf",os.path.join(doc_dir,"resume.txt"):"http://www.qpage.ir/sample/resume.txt",os.path.join(image_dir,"icon.ico"):"http://www.qpage.ir/sample/icon.ico"}
 sample_dict_message=["Profile Image","Font","Resume Part-1","Resume Part-2","Icon File"]
-
+badge_color_list=["brightgreen","green","yellowgreen","yellow","orange","red","lightgrey","blue"]
 image_counter = 0
 pdf_counter = 0
 space = "&nbsp\n"
+
 
 page_name = ["Home"]  # list of default Homepage Name
 actual_name = ["index"]  # List of Actual Name Like Home.Html
 break_line = "<hr/><hr/>\n"
 homepage = "http://www.qpage.ir"
 version = "1.9"
+adv_badge_static="https://img.shields.io/badge/"
+
 color_box = ["White", "Black", "Purple", "Yellow", "Orange", "Green", "Blue"]  # Color list for background and text
 size_box = ["50px", "100px", "200px", "360px", "500px"]  # list of size of images
 imformat_box = ["jpg", "bmp", "png", "gif", "tiff","JPG","BMP","PNG","GIF","TIFF"]  # list of supported image format

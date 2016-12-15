@@ -10,6 +10,10 @@ import time
 import sys
 import urllib.request
 meta_input=""
+def create_badge(subject="qpage",status=version,color="blue"):
+    if color not in badge_color_list:
+        color="orange"
+    return adv_badge_static+subject+"-"+status+"-"+color+'.svg'
 
 def is_sample_downloaded():
     download_list=[]
@@ -233,7 +237,7 @@ def print_download(file, name, link, center=False, close=False):  # Create Downl
 def print_adv(file, close=True):
     file.write(break_line)
     file.write(
-        '<center><a href=' + '"' + homepage + '"' + target_blank + '>' + "Generated " + today_time + " By" + "QPage " + version + "</a> </center>")
+        '<center>'+"<p>"+"Generated " + today_time + " By"+"</p>"+'<a href=' + '"' + homepage + '"' + target_blank + '>'+'<img src="'+create_badge()+'"</a> </center>')
     if close:
         file.close()
 
