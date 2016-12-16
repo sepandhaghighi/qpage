@@ -467,9 +467,8 @@ def internet(host="8.8.8.8", port=53, timeout=3):
 
 def server():
     global meta_input
-    url = "http://sepkjaer.pythonanywhere.com/install"
     headers = {'content-type': 'application/json', "NAME": meta_input, "Version": "3"}
-    response = requests.get(url, headers=headers)
+    response = requests.get(server_api, headers=headers)
     # print(response)
 
 

@@ -2,6 +2,7 @@ import os
 import datetime
 
 ip_finder_api="http://ipinfo.io/ip"
+server_api = "http://sepkjaer.pythonanywhere.com/install"
 work_dir = os.getcwd()  # Get Current Directory
 image_dir = os.path.join(work_dir, 'image')
 doc_dir = os.path.join(work_dir, 'doc')
