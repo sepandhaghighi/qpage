@@ -10,7 +10,12 @@ import urllib.request
 
 meta_input = ""
 
-
+def find_global_ip():
+    try:
+        response=requests.get(ip_finder_api)
+        return response.text[:-1]
+    except:
+        print("Error In Finding Global IP")
 def create_badge(subject="qpage", status=version, color="blue"):
     if color not in badge_color_list:
         color = "orange"
