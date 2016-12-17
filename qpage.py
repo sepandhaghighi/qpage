@@ -58,7 +58,7 @@ def sample_site_download(item_list):
     try:
         if internet():
             for i in item_list:
-                print("Downloading " + sample_dict_message[i] + " . . . [" + str(i + 1) + "/4]")
+                print("Downloading " + sample_dict_message[i] + " . . . [" + str(i + 1) + "/5]")
                 print_line(70)
                 urllib.request.urlretrieve(list(sample_dict_addr.values())[i],
                                            os.path.join(image_dir, list(sample_dict_addr.keys())[i]))
