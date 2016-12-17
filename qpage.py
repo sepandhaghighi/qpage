@@ -10,6 +10,14 @@ import urllib.request
 
 meta_input = ""
 
+
+
+def generation_time(time_1=None):
+    if time_1==None:
+        return time.perf_counter()
+    else:
+        return time.perf_counter()-time_1
+
 def find_global_ip():
     try:
         response=requests.get(ip_finder_api)

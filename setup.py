@@ -30,9 +30,10 @@ def file_handler():
     close_files()
 
 
-def main_handler_2():
+def main_handler_2(time_1=0):
     file_handler()  # call file_handler
-    print("Homepage is ready")
+    total_perf_time=generation_time(time_1)
+    print("Homepage is ready,generated in "+str(total_perf_time)+" sec")
     print("Upload output folder contains directly to your host")
     print("Please Don't Change HTML Files Name")
     address_print()  # print files location
@@ -66,6 +67,7 @@ def sample_handler():
 
 def main_handler(control_flag=True):
     try:
+        start_time=generation_time()
         response = create_folder()  # Check Folder and Files Status
         print("QPAGE By S.Haghighi & M.M.Rahimi")
         print("Version : " + version)
@@ -76,7 +78,7 @@ def main_handler(control_flag=True):
         sample_handler()  # run sample handler
         clear_folder(out_dir)  # clear all of files in output directory
         page_name_update()  # update page names
-        main_handler_2()  # call part_2 of main_handler
+        main_handler_2(time_1=start_time)  # call part_2 of main_handler
     except FileNotFoundError:  # error exception in FileNotFound ( When Something Missed)
         logger(False)  # Add Failed Run to local logger file
         error_handler()  # call error_handler
@@ -89,7 +91,7 @@ def main_handler(control_flag=True):
     except PermissionError:
         logger(False)  # Add Failed Run to local logger file
         print("Files Is Open By Another Program")
-        close_files()  # Close all of the opne files
+        close_files()  # Close all of the open files
         enter_to_exit()  # get input from user to continue
         main_handler()  # call part_1 of main_handler , resetart from the first
 
