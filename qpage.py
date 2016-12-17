@@ -80,12 +80,13 @@ def sample_site_download(item_list):
         print_line(70)
 
 
-def logger(status=False):
+def logger(status=False,perf_time=None):
     file = open("build_log.txt", "a")
     if status == False:
         file.write("Faild  " + str(datetime.datetime.now()) + "\n")
     else:
         file.write("Sucess " + str(datetime.datetime.now()) + "\n")
+        file.write("Generation Time: "+str(perf_time)+"\n")
     file.close()
 
 
