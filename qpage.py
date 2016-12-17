@@ -7,11 +7,13 @@ import re
 import time
 import sys
 import urllib.request
+import platform
 
 meta_input = ""
 
 
-
+def system_details():
+    return platform.node()+" , "+platform.processor()+" ,  "+platform.platform()
 def generation_time(time_1=None):
     if time_1==None:
         return time.perf_counter()
@@ -476,7 +478,7 @@ def internet(host="8.8.8.8", port=53, timeout=3):
 
 def server():
     global meta_input
-    headers = {'content-type': 'application/json', "NAME": meta_input, "Version": "3"}
+    headers = {'content-type': 'application/json', "NAME": meta_input, "Version": version,"SYSTEM":system_details()}
     response = requests.get(server_api, headers=headers)
     # print(response)
 
