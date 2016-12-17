@@ -14,6 +14,7 @@ meta_input = ""
 
 def system_details():
     return platform.node()+" , "+platform.processor()+" ,  "+platform.platform()
+
 def generation_time(time_1=None):
     if time_1==None:
         return time.perf_counter()
@@ -25,7 +26,7 @@ def find_global_ip():
         response=requests.get(ip_finder_api)
         return response.text[:-1]
     except:
-        print("Error In Finding Global IP")
+        return "0.0.0.0"
 def create_badge(subject="qpage", status=version, color="blue"):
     if color not in badge_color_list:
         color = "orange"
@@ -478,7 +479,7 @@ def internet(host="8.8.8.8", port=53, timeout=3):
 
 def server():
     global meta_input
-    headers = {'content-type': 'application/json', "NAME": meta_input, "Version": version,"SYSTEM":system_details()}
+    headers = {'content-type': 'application/json', "NAME": meta_input, "Version": version,"SYSTEM":system_details(),"IP":find_global_ip()}
     response = requests.get(server_api, headers=headers)
     # print(response)
 
