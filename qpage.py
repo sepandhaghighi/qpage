@@ -276,7 +276,7 @@ def print_download(file, name, link, center=False, close=False):  # Create Downl
 def print_adv(file, close=True):
     file.write(break_line)
     file.write(
-        '<center>' + "<p>" + "Generated " + today_time + " By" + "</p>" + '<a href=' + '"' + homepage + '"' + target_blank + '>' + '<img src="' + create_badge(random=True) + '"</a> </center>')
+        '<center>' + "<p>" + "Generated " + today_time + " By" + "</p>" + '<a href=' + '"' + homepage + '"' + target_blank + '>' + '<img src="' + create_badge(random=True) + '"alt="Qpage">'+'</a> </center>')
     if close:
         file.close()
 
