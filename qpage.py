@@ -11,6 +11,12 @@ import platform
 import random
 meta_input = ""
 
+
+
+def download_badge(address):
+    r = requests.get(address, stream=True)
+    with open(os.path.join(image_dir,"badge.svg"), 'wb') as f:
+        shutil.copyfileobj(r.raw, f)
 def random_badge_color():
     random_index=random.randint(0,len(badge_color_list)-1)
     return badge_color_list[random_index]
@@ -35,7 +41,12 @@ def create_badge(subject="qpage", status=version, color="blue",random=False):
     else:
         if color not in badge_color_list:
             color = "orange"
-    return adv_badge_static + subject + "-" + status + "-" + color + '.svg'
+    badge_adr=adv_badge_static + subject + "-" + status + "-" + color + '.svg'
+    if internet():
+        download_badge(badge_adr)
+        return os.path.join(image_dir,"badge.svg")
+    else:
+        return badge_adr
 
 
 def is_sample_downloaded():
