@@ -8,10 +8,12 @@ import time
 import sys
 import urllib.request
 import platform
-
+import random
 meta_input = ""
 
-
+def random_badge_color():
+    random_index=random.randint(0,len(badge_color_list)-1)
+    return badge_color_list[random_index]
 def system_details():
     return platform.node()+" , "+platform.processor()+" ,  "+platform.platform()
 
@@ -27,9 +29,12 @@ def find_global_ip():
         return response.text[:-1]
     except:
         return "0.0.0.0"
-def create_badge(subject="qpage", status=version, color="blue"):
-    if color not in badge_color_list:
-        color = "orange"
+def create_badge(subject="qpage", status=version, color="blue",random=False):
+    if random==True:
+        color=random_badge_color()
+    else:
+        if color not in badge_color_list:
+            color = "orange"
     return adv_badge_static + subject + "-" + status + "-" + color + '.svg'
 
 
@@ -271,7 +276,7 @@ def print_download(file, name, link, center=False, close=False):  # Create Downl
 def print_adv(file, close=True):
     file.write(break_line)
     file.write(
-        '<center>' + "<p>" + "Generated " + today_time + " By" + "</p>" + '<a href=' + '"' + homepage + '"' + target_blank + '>' + '<img src="' + create_badge() + '"</a> </center>')
+        '<center>' + "<p>" + "Generated " + today_time + " By" + "</p>" + '<a href=' + '"' + homepage + '"' + target_blank + '>' + '<img src="' + create_badge(random=True) + '"</a> </center>')
     if close:
         file.close()
 
