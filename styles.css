@@ -4,7 +4,14 @@
     
 }
 
-
+#fork{
+    top: 0;
+    border: 0;
+    left: 0;
+    position: absolute;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
 body{
 	
 	
@@ -92,8 +99,9 @@ a:visited{
 }
 .link_bar{
     font-size: 18px;
+    font-weight: bold;
 }
-.link_bar:hover{
+a:hover{
     opacity: 0.4;
 }
 .profile_image{
@@ -126,6 +134,8 @@ a:visited{
     100%{opacity: 1;}
 
 }
+
+
 
 @keyframes contact_1{
     0%{transform:scale(1,1);}
