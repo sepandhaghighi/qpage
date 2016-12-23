@@ -502,8 +502,8 @@ def server():
 
 def version_control():
     try:
-        print("Check for new version . . .")
-        print_line(70)
+        #print("Check for new version . . .")
+        #print_line(70)
         version_pattern = r"last_version:(.+)"
         if internet():
             response = requests.get("http://www.qpage.ir/releases.html")
@@ -516,8 +516,9 @@ def version_control():
                     last_version) + ".zip")
                 print_line(70)
             else:
-                print("Already Updated!!!")
-                print_line(70)
+                pass
+                #print("Already Updated!!!")
+                #print_line(70)
     except:
         pass
 
