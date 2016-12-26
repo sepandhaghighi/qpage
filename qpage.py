@@ -366,7 +366,7 @@ def get_color_code():
 def color_code_map():
     [back_color_code, text_color_code] = get_color_code()
     if text_color_code == back_color_code:
-        warnings.append("[Warning] Your text color and background color are same!!")
+        warnings.append(warning_dict["color_warning"]+" Your text color and background color are same!!")
     background_color = color_box[back_color_code]  # convert code to color string in color_box
     text_color = color_box[text_color_code]  # convert code to color string in color_box
     return [background_color, text_color]
@@ -408,7 +408,7 @@ def font_creator(css_file, font_section):
             font_style = "normal"
         font_section = font_section + "font-style:" + font_style + ";\n"
     else:
-        warnings.append("[Warning] There is no specific font set for this website!!")
+        warnings.append(warning_dict["font_warning"]+" There is no specific font set for this website!!")
     return font_section
 
 
@@ -449,16 +449,16 @@ def error_finder():
     if image_counter == 1:
         pass_vector.append("[Pass] Your profile image in OK!!")
     else:
-        error_vector.append("[Error] Your profile image is not in correct format")
+        error_vector.append(error_dict["image_error"]+" Your profile image is not in correct format")
     if len(doc_list) == 0:
-        error_vector.append("[Error] There is no file in doc folder ( index.txt and .pdf file in necessary)")
+        error_vector.append(error_dict["empty_error"]+" There is no file in doc folder ( index.txt and .pdf file in necessary)")
     else:
         if "index.txt" in doc_list:
             pass_vector.append("[Pass] index.txt file OK!")
         else:
-            error_vector.append("[Error] index.txt is not in doc folder!")
+            error_vector.append(error_dict["firstpage_error"]+" index.txt is not in doc folder!")
         if pdf_counter == 0:
-            error_vector.append("[Error] Where Is Your Resume File? It should be in doc folder")
+            error_vector.append(error_dict["resume_error"]+"[Error] Where Is Your Resume File? It should be in doc folder")
         else:
             pass_vector.append("[Pass] Your Resume File is OK!!")
     return [error_vector, pass_vector]
@@ -474,7 +474,7 @@ def icon_creator():
             break
     if "favicon.ico" in os.listdir(work_dir) and icon_flag == 0:
         shutil.copy(os.path.join(work_dir, "favicon.ico"), out_dir)
-        warnings.append("[warning] There is no icon for this website")
+        warnings.append(warning_dict["icon_warning"]+" There is no icon for this website")
 
 
 def robot_maker():  # This Function Create Robots.txt for pages

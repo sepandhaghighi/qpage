@@ -22,7 +22,8 @@ break_line = "<hr/><hr/>\n"
 homepage = "http://www.qpage.ir"
 version = "1.9"
 adv_badge_static="https://img.shields.io/badge/"
-
+error_dict={"image_error":"[Error-1001]","resume_error":"[Error-1002]","firstpage_error":"[Error-1003]","empty_error":"[Error-1004]"}
+warning_dict={"icon_warning":"[Warning-2001]","font_warning":"[Warning-2002]","color_warning":"[Warning-2003]"}
 color_box = ["White", "Black", "Purple", "Yellow", "Orange", "Green", "Blue"]  # Color list for background and text
 size_box = ["50px", "100px", "200px", "360px", "500px"]  # list of size of images
 imformat_box = ["jpg", "bmp", "png", "gif", "tiff","JPG","BMP","PNG","GIF","TIFF"]  # list of supported image format
