@@ -38,6 +38,7 @@ def main_handler_2(time_1=0):
     print("Please Don't Change HTML Files Name")
     address_print()  # print files location
     print_warning()  # print all of the detected warnings
+    file_size()
     logger(True,perf_time=total_perf_time)  # add success run of qpage to local logger
     if internet():  # check internet connection
         server()  # send query to qpage server

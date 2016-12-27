@@ -12,6 +12,21 @@ import random
 meta_input = ""
 
 
+def convert_bytes(num):
+    for x in ['bytes', 'KB', 'MB', 'GB', 'TB']:
+        if num < 1024.0:
+            return "%3.1f %s" % (num, x)
+        num /= 1024.0
+
+def file_size():
+    list_of_files=os.listdir(out_dir)
+    response=0
+    for file in list_of_files:
+        file_info = os.stat(os.path.join(out_dir,file))
+        response=response+file_info.st_size
+    print_line(70,"*")
+    print("Used Space --> "+convert_bytes(response))
+    print_line(70, "*")
 
 def download_badge(address):
     r = requests.get(address, stream=True)
@@ -123,7 +138,7 @@ def name_standard(name):
 
 def address_print():
     print_line(70, "*")
-    print("Where--> " + work_dir)
+    print("Where --> " + work_dir)
     print_line(70, "*")
 
 
