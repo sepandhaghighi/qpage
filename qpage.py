@@ -14,6 +14,10 @@ meta_input = ""
 
 
 def convert_bytes(num):
+    """ convert num to idiomatic byte unit
+
+    :param num: the input number.
+    """
     for x in ['bytes', 'KB', 'MB', 'GB', 'TB']:
         if num < 1024.0:
             return "%3.1f %s" % (num, x)
@@ -21,6 +25,9 @@ def convert_bytes(num):
 
 
 def file_size():
+    """ Print the size of output file
+
+    """
     list_of_files = os.listdir(out_dir)
     response = 0
     for file in list_of_files:
@@ -32,28 +39,47 @@ def file_size():
 
 
 def download_badge(address):
+    """ Download badge for website
+
+    :param address: the address that should get badge
+    """
     r = requests.get(address, stream=True)
     with open(os.path.join(image_dir, "badge.svg"), 'wb') as f:
         shutil.copyfileobj(r.raw, f)
 
 
 def random_badge_color():
+    """return a random color for badge
+
+    """
     random_index = random.randint(0, len(badge_color_list) - 1)
     return badge_color_list[random_index]
 
 
 def system_details():
+    """ Show detail of system that code is runnig on
+
+    """
     return platform.node() + " , " + platform.processor() + " ,  " + platform.platform()
 
 
 def generation_time(time_1=None):
-    if time_1 == None:
+    """ Calculate the generation time
+
+    :param time_1: time that passed but not counted in generation time
+    :return :the amount of time that passed .
+    """
+    if time_1 is None:
         return time.perf_counter()
     else:
         return time.perf_counter() - time_1
 
 
 def find_global_ip():
+    """ Find the ip for use in API
+
+    :return: return the IP.
+    """
     try:
         response = requests.get(ip_finder_api)
         return response.text[:-1]
@@ -76,6 +102,10 @@ def create_badge(subject="qpage", status=version, color="blue", random=False):
 
 
 def is_sample_downloaded():
+    """ Check the sample site material is downloaded
+
+    :return : list of the materials
+    """
     download_list = []
     if "profile.png" not in os.listdir(image_dir):
         download_list.append(0)
@@ -89,6 +119,9 @@ def is_sample_downloaded():
 
 
 def download_lorem():
+    """ Download the lorem file
+
+    """
     if internet():
         urllib.request.urlretrieve("http://www.qpage.ir/sample/Latin-Lipsum.txt", "Latin-Lipsum.txt")
     else:
@@ -96,6 +129,11 @@ def download_lorem():
 
 
 def read_lorem(char=100):
+    """ find and read lorem
+
+    :param char: the amount of char that needed
+    :return : the lorme string
+    """
     try:
         if "Latin-Lipsum.txt" not in os.listdir(work_dir):
             download_lorem()
@@ -108,6 +146,10 @@ def read_lorem(char=100):
 
 
 def sample_site_download(item_list):
+    """Download sample material for make a fake site
+
+    :param item_list: Download items form item_list
+    """
     try:
         if internet():
             for i in item_list:
@@ -126,6 +168,11 @@ def sample_site_download(item_list):
 
 
 def logger(status=False, perf_time=None):
+    """Show the log of the app
+
+    :param status: show status of app.
+    :param perf_time : show the time passed for generate files
+    """
     file = open("build_log.txt", "a")
     if not status:
         file.write("Failed  " + str(datetime.datetime.now()) + "\n")
@@ -136,6 +183,11 @@ def logger(status=False, perf_time=None):
 
 
 def print_line(number, char="-"):
+    """ Print a Line
+
+    :param number: the amount char that in lien
+    :param char  : the char that used to draw line
+    """
     line = ""
     for i in range(number):
         line += char
@@ -143,17 +195,28 @@ def print_line(number, char="-"):
 
 
 def name_standard(name):
+    """ return the Standard version of the input word
+
+    :param name: the name that should be standard
+    :return name: the standard form of word
+    """
     reponse_name = name[0].upper() + name[1:].lower()
     return reponse_name
 
 
 def address_print():
+    """Print the working directory
+
+    """
     print_line(70, "*")
     print("Where --> " + work_dir)
     print_line(70, "*")
 
 
-def create_folder():  # This Function Create Empty Folder At Begin
+def create_folder():
+    """This Function Create Empty Folder At Begin
+
+    """
     folder_flag = 0
     list_of_folders = os.listdir(work_dir)
     for i in ["doc", "image", "output", "font"]:
@@ -170,14 +233,20 @@ def create_folder():  # This Function Create Empty Folder At Begin
     return bool(folder_flag)
 
 
-def page_name_update():  # This Function Update Page Names
+def page_name_update():
+    """This Function Update Page Names
+
+    """
     for i in os.listdir(doc_dir):
         if i.find(".txt") != -1 and i[:-4].upper() != "INDEX":
             actual_name.append(i[:-4])
             page_name.append(i[:-4])
 
 
-def menu_maker():  # Top Menu Maker In each html page
+def menu_maker():
+    """Top Menu Maker In each html page
+
+    """
     result = "<center>"
     for i in range(len(page_name)):
         if page_name[i] == "Home":
@@ -193,7 +262,10 @@ def menu_maker():  # Top Menu Maker In each html page
     return result  # Return All Of The Menu
 
 
-def menu_writer():  # Write menu_maker output in html file
+def menu_writer():  #
+    """Write menu_maker output in html and close file after
+
+    """
     message = menu_maker()
     for i in range(len(page_name)):
         file = open(os.path.join(out_dir, actual_name[i] + ".html"), "a")
@@ -222,7 +294,7 @@ def html_init(name):
 
     :param name: the name of html file.
     """
-    #
+
     html_name = os.path.join(out_dir, name + ".html")
     file = open(html_name, "w")
     file.write("<html>\n")
@@ -264,6 +336,14 @@ def close_files():
 
 
 def LSM_translate(line, center):
+    # TODO : write a document for this function
+    """ ????
+
+    :param line: the input line.
+    :param center: put it in center
+
+    :return : return a list contain text header end and header begin
+    """
     line.strip()
     text = line
     header_start = '<h4 class="color_tag">'
