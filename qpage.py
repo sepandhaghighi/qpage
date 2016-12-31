@@ -300,6 +300,11 @@ def print_download(file, name, link, center=False, close=False):  # Create Downl
 
 
 def print_adv(file, close=True):
+    """ Print the advertisement.
+
+    :param file  : The file that should ad to it.
+    :param close : Close file after add ad
+    """
     file.write(break_line)
     file.write(
         '<center>' + "<p>" + "Generated " + today_time + " By" + "</p>" + '<a href=' + '"' + homepage + '"' + target_blank + '>' + '<img src="' + create_badge(random=True) + '"alt="Qpage">'+'</a> </center>')
@@ -308,6 +313,10 @@ def print_adv(file, close=True):
 
 
 def build_index(file):
+    """ Find and build index page
+
+    :param file: The index file.
+    """
     image_name = ""
     img_format = "jpg"
     file_of_images = os.listdir(image_dir)
@@ -324,6 +333,10 @@ def build_index(file):
 
 
 def build_resume(file):
+    """ Find and build resume page.
+
+    :param file: The resume file.
+    """
     resume_name = ""
     file_of_docs = os.listdir(doc_dir)
     for i in range(len(file_of_docs)):
@@ -336,7 +349,12 @@ def build_resume(file):
     print_download(file, "Download Full Version", "Resume.pdf", center=True)
 
 
-def contain(name):  # main function That Open Each Page HTML File and call other function to write data in it
+def contain(name):
+    """main function That Open Each Page HTML File and call other function to write data in it
+
+    :param name: the name of the file that should be written
+    """
+    #
     file = open(os.path.join(out_dir, name + ".html"), "a")
     text_file = open(os.path.join(doc_dir, name + ".txt"), "r")
     files.append(file)
@@ -351,7 +369,12 @@ def contain(name):  # main function That Open Each Page HTML File and call other
     print_adv(file)
 
 
-def clear_folder(path):  # This Function Get Path Of Foldr And Delte Its Contains
+def clear_folder(path):
+    """This Function Get Path Of Foldr And Delete Its Contains
+
+    :param path: the path that gonna be deleted.
+    """
+
     if os.path.exists(path):
         list_of_files = os.listdir(path)
         for file in list_of_files:
@@ -361,12 +384,19 @@ def clear_folder(path):  # This Function Get Path Of Foldr And Delte Its Contain
 
 
 def print_warning():
+    """ Print Warinigns!
+
+    """
     print(str(len(warnings)) + " Warning , 0 Error")
     for i in range(len(warnings)):
         print(str(i + 1) + "-" + warnings[i])
 
 
 def get_color_code():
+    """Ask for selecting color of text and background
+
+    :return list: background and text color
+    """
     for i in range(len(color_box)):
         print(i, "-", color_box[i])
     back_color_code = int(input("Please enter your background color : "))
@@ -379,6 +409,10 @@ def get_color_code():
 
 
 def color_code_map():
+    """ Check and insert colors that is chosen.
+
+    :return list: background and text color
+    """
     [back_color_code, text_color_code] = get_color_code()
     if text_color_code == back_color_code:
         warnings.append(warning_dict["color_warning"]+" Your text color and background color are same!!")
@@ -388,6 +422,11 @@ def color_code_map():
 
 
 def css_font(font_folder):
+    """ Search and file all fonts.
+
+    :param font_folder: the folder to search.
+    :return list : font_flag and the current format
+    """
     font_flag = 0  # 0 If there is no font file in font_folder
     current_font_format = None
     for i in font_folder:
@@ -401,7 +440,13 @@ def css_font(font_folder):
 
 
 def font_creator(css_file, font_section):
+    """ Ask and Select font.
 
+    :param css_file: the file that font css will be added to.
+    :param font_section: the font section of css file
+
+    :return font_section: the font section of css after edit
+    """
     font_folder = os.listdir(font_dir)
     details = css_font(font_folder)
     current_font_format = details[1]
@@ -427,7 +472,8 @@ def font_creator(css_file, font_section):
     return font_section
 
 
-def css_creator():  # Ask For background and text color in
+def css_creator():
+    """Ask For background and text color in and make css """
     font_section = 'font-family : Georgia , serif;\n'
     colors = color_code_map()
     background_color = colors[0]
@@ -453,6 +499,7 @@ def css_creator():  # Ask For background and text color in
 
 def preview():
     """Preview website in browser """
+    # TODO: not working on unix
 
     webbrowser.open(os.path.join(out_dir, "index.html"))
 
@@ -529,10 +576,12 @@ def server():
     headers = {'content-type': 'application/json', "NAME": meta_input, "Version": version,"SYSTEM":system_details(),"IP":find_global_ip()}
     response = requests.get(server_api, headers=headers)
     # print(response)
+    # TODO : use the server response
 
 
 def version_control():
     """ Check and update Versions. """
+
     try:
         #print("Check for new version . . .")
         #print_line(70)
@@ -548,6 +597,7 @@ def version_control():
                     last_version) + ".zip")
                 print_line(70)
             else:
+                # TODO : fix version control else
                 pass
                 #print("Already Updated!!!")
                 #print_line(70)
