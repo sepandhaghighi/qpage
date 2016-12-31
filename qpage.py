@@ -452,10 +452,13 @@ def css_creator():  # Ask For background and text color in
 
 
 def preview():
+    """Preview website in browser """
+
     webbrowser.open(os.path.join(out_dir, "index.html"))
 
 
 def error_finder():
+    """ Check and find error that display it"""
     error_vector = []
     pass_vector = []
     pdf_counter = 0
@@ -466,20 +469,23 @@ def error_finder():
     else:
         error_vector.append(error_dict["image_error"]+" Your profile image is not in correct format")
     if len(doc_list) == 0:
-        error_vector.append(error_dict["empty_error"]+" There is no file in doc folder ( index.txt and .pdf file in necessary)")
+        error_vector.append(error_dict["empty_error"]+"There is no file in doc folder ( index.txt and .pdf file in "
+                                                      "necessary)")
     else:
         if "index.txt" in doc_list:
             pass_vector.append("[Pass] index.txt file OK!")
         else:
             error_vector.append(error_dict["firstpage_error"]+" index.txt is not in doc folder!")
         if pdf_counter == 0:
-            error_vector.append(error_dict["resume_error"]+"[Error] Where Is Your Resume File? It should be in doc folder")
+            error_vector.append(error_dict["resume_error"]+"[Error] Where Is Your Resume File? It should be in doc "
+                                                           "folder")
         else:
             pass_vector.append("[Pass] Your Resume File is OK!!")
     return [error_vector, pass_vector]
 
 
 def icon_creator():
+    """ Find .ico file and use it as favicon of website."""
     icon_flag = 0
     for file in os.listdir(image_dir):
         if file.endswith('ico'):
@@ -492,7 +498,8 @@ def icon_creator():
         warnings.append(warning_dict["icon_warning"]+" There is no icon for this website")
 
 
-def robot_maker():  # This Function Create Robots.txt for pages
+def robot_maker():
+    """ Create Robots.txt for pages """
     robots = open(os.path.join(out_dir, "robots.txt"), "w")
     robots.write("User-agent: *\n")
     robots.write("Disallow: ")
@@ -500,6 +507,14 @@ def robot_maker():  # This Function Create Robots.txt for pages
 
 
 def internet(host="8.8.8.8", port=53, timeout=3):
+    """ Check Internet Connections.
+
+    :param  host: the host that check connection to
+    :param  port: port that check connection with
+    :param  timeout: times that check the connnection
+
+    :return bool: True if Connection is Stable
+    """
     try:
         socket.setdefaulttimeout(timeout)
         socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((host, port))
@@ -509,6 +524,7 @@ def internet(host="8.8.8.8", port=53, timeout=3):
 
 
 def server():
+    """Get Server response."""
     global meta_input
     headers = {'content-type': 'application/json', "NAME": meta_input, "Version": version,"SYSTEM":system_details(),"IP":find_global_ip()}
     response = requests.get(server_api, headers=headers)
@@ -516,6 +532,7 @@ def server():
 
 
 def version_control():
+    """ Check and update Versions. """
     try:
         #print("Check for new version . . .")
         #print_line(70)
@@ -538,7 +555,11 @@ def version_control():
         pass
 
 
-def enter_to_exit(mode=False):
+def enter_to_exit():
+    """Quit Project by pressing a key.
+
+    """
+
     print_line(70, "*")
     response = input("Enter [R] for restart Qpage and any other key to exit : ")
     if response.upper() != "R":
@@ -546,6 +567,11 @@ def enter_to_exit(mode=False):
 
 
 def wait_func(iteration):
-    for i in range(iteration):
+    """Wait for-in range Iteration.
+
+    :param iteration: the amount of wait.
+    """
+
+    for _ in range(iteration):
         time.sleep(1)
         print(".")
