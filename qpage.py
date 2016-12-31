@@ -9,6 +9,7 @@ import sys
 import urllib.request
 import platform
 import random
+
 meta_input = ""
 
 
@@ -18,48 +19,58 @@ def convert_bytes(num):
             return "%3.1f %s" % (num, x)
         num /= 1024.0
 
+
 def file_size():
-    list_of_files=os.listdir(out_dir)
-    response=0
+    list_of_files = os.listdir(out_dir)
+    response = 0
     for file in list_of_files:
-        file_info = os.stat(os.path.join(out_dir,file))
-        response=response+file_info.st_size
-    print_line(70,"*")
-    print("Used Space --> "+convert_bytes(response))
+        file_info = os.stat(os.path.join(out_dir, file))
+        response += file_info.st_size
     print_line(70, "*")
+    print("Used Space --> " + convert_bytes(response))
+    print_line(70, "*")
+
 
 def download_badge(address):
     r = requests.get(address, stream=True)
-    with open(os.path.join(image_dir,"badge.svg"), 'wb') as f:
+    with open(os.path.join(image_dir, "badge.svg"), 'wb') as f:
         shutil.copyfileobj(r.raw, f)
+
+
 def random_badge_color():
-    random_index=random.randint(0,len(badge_color_list)-1)
+    random_index = random.randint(0, len(badge_color_list) - 1)
     return badge_color_list[random_index]
+
+
 def system_details():
-    return platform.node()+" , "+platform.processor()+" ,  "+platform.platform()
+    return platform.node() + " , " + platform.processor() + " ,  " + platform.platform()
+
 
 def generation_time(time_1=None):
-    if time_1==None:
+    if time_1 == None:
         return time.perf_counter()
     else:
-        return time.perf_counter()-time_1
+        return time.perf_counter() - time_1
+
 
 def find_global_ip():
     try:
-        response=requests.get(ip_finder_api)
+        response = requests.get(ip_finder_api)
         return response.text[:-1]
     except:
         return "0.0.0.0"
-def create_badge(subject="qpage", status=version, color="blue",random=False):
-    if random==True:
-        color=random_badge_color()
+
+
+def create_badge(subject="qpage", status=version, color="blue", random=False):
+    if random:
+        color = random_badge_color()
     else:
         if color not in badge_color_list:
             color = "orange"
-    badge_adr=adv_badge_static + subject + "-" + status + "-" + color + '.svg'
+    badge_adr = adv_badge_static + subject + "-" + status + "-" + color + '.svg'
     if internet():
         download_badge(badge_adr)
-        return os.path.join(image_dir,"badge.svg")
+        return os.path.join(image_dir, "badge.svg")
     else:
         return badge_adr
 
@@ -114,20 +125,20 @@ def sample_site_download(item_list):
         print_line(70)
 
 
-def logger(status=False,perf_time=None):
+def logger(status=False, perf_time=None):
     file = open("build_log.txt", "a")
-    if status == False:
-        file.write("Faild  " + str(datetime.datetime.now()) + "\n")
+    if not status:
+        file.write("Failed  " + str(datetime.datetime.now()) + "\n")
     else:
-        file.write("Sucess " + str(datetime.datetime.now()) + "\n")
-        file.write("Generation Time: "+str(perf_time)+"\n")
+        file.write("Success " + str(datetime.datetime.now()) + "\n")
+        file.write("Generation Time: " + str(perf_time) + "\n")
     file.close()
 
 
 def print_line(number, char="-"):
     line = ""
     for i in range(number):
-        line = line + char
+        line += char
     print(line)
 
 
@@ -151,7 +162,7 @@ def create_folder():  # This Function Create Empty Folder At Begin
             folder_flag += 1
             if i == "doc":
                 file = open(os.path.join(doc_dir, "index.txt"), "w")
-                if read_lorem() == None:
+                if read_lorem() is None:
                     file.write("This is For First Page . . .")
                 else:
                     file.write(read_lorem())
@@ -173,8 +184,9 @@ def menu_maker():  # Top Menu Maker In each html page
             targets_blank = ""
         else:
             targets_blank = 'target="blank"'
-        result = result + '\t<a href="' + actual_name[i] + '.html"' + targets_blank + '>' + name_standard(page_name[
-                                                                                                              i]) + "</a>\n"  # Hyper Link To Each Page In HTML File
+            # Hyper Link To Each Page In HTML File
+            result += '\t<a href="' \
+                      + actual_name[i] + '.html"' + targets_blank + '>' + name_standard(page_name[i]) + "</a>\n"
         result += "&nbsp\n"
     result += "</center>"
     result = result + "\t\t" + break_line  # Add Break line to End Of The Menu
@@ -190,18 +202,27 @@ def menu_writer():  # Write menu_maker output in html file
 
 
 def print_meta():
+    """Add meta to html files
+
+    :return static_meta: The meta that created
+    """
     global meta_input
     meta_input = input("Please Enter Your Name : ")
     static_meta = '<meta name="description" content="Welcome to homepage of ' + meta_input + '"/>\n'
-    static_meta = static_meta + '<meta property="og:title" content="' + meta_input + '"/>\n'
-    static_meta = static_meta + '<meta property="og:site_name" content="' + meta_input + '"/>\n'
-    static_meta = static_meta + '<meta property="og:image" content="favicon.ico" />\n'
+    static_meta += '<meta property="og:title" content="' + meta_input + '"/>\n'
+    static_meta += '<meta property="og:site_name" content="' + meta_input + '"/>\n'
+    static_meta += '<meta property="og:image" content="favicon.ico" />\n'
     if len(meta_input) < 4:
         warnings.append("[Warning] Your input for name is too short!!")
     return static_meta
 
 
-def html_init(name):  # Create Initial Form Of each Html Page Like Title And HTML  And Body Tag
+def html_init(name):
+    """Create Initial Form Of each Html Page Like Title And HTML  And Body Tag.
+
+    :param name: the name of html file.
+    """
+    #
     html_name = os.path.join(out_dir, name + ".html")
     file = open(html_name, "w")
     file.write("<html>\n")
@@ -222,7 +243,11 @@ def html_init(name):  # Create Initial Form Of each Html Page Like Title And HTM
     file.close()
 
 
-def html_end(name):  # Create End Of The Html file
+def html_end(name):
+    """Create End Of The Html and close file
+
+    :param name: The name of html file.
+    """
     html_name = os.path.join(out_dir, name + ".html")
     file = open(html_name, "a")
     file.write("\t</body>\n")
@@ -231,6 +256,9 @@ def html_end(name):  # Create End Of The Html file
 
 
 def close_files():
+    """Close all the files.
+
+    """
     for i in files:
         i.close()
 
@@ -250,7 +278,7 @@ def LSM_translate(line, center):
         text = line[3:]
     elif line.find("[M]") != -1:
         text = line[3:]
-    if center:  # Centerizes Text If Condition Is True For Manual Centering
+    if center:  # Centuries Text If Condition Is True For Manual Centering
         header_start = "<center>" + header_start
         header_end += "</center>"
     if text.find("[center]") != -1:  # Find Center Tag In Each Line
@@ -261,6 +289,18 @@ def LSM_translate(line, center):
 
 
 def print_text(text_file, file, center=False, close=False):  # Write Text Part Of Each Page
+    """Write the text part of each page
+
+    :param text_file: Text tha should be written.
+    :param file     : The file that text will be written inside.
+    :param center   : put the text in center.
+    :param close    : close file after done editing
+
+    :type close : bool
+    :type center: bool
+
+    """
+
     text_code = ""
     for line in text_file:
         if len(line) == 1:
@@ -276,7 +316,15 @@ def print_text(text_file, file, center=False, close=False):  # Write Text Part O
         file.close()
 
 
-def print_image(file, close=False, image_format="jpg"):  # Write Image Part OF The Page
+def print_image(file, image_format="jpg", close=False):
+    """Write Image Part OF The Page.
+
+    :param file: The file that images will be added.
+    :param close : close file after done editing.
+    :param image_format: the format of image
+
+    :type close : bool
+    """
     for i in range(len(size_box)):
         print(i, "-", size_box[i])
     image_size = int(input("Please Enter Profile Image Size : "))  # Choose Profile Image Size
@@ -289,7 +337,19 @@ def print_image(file, close=False, image_format="jpg"):  # Write Image Part OF T
         file.close()
 
 
-def print_download(file, name, link, center=False, close=False):  # Create Download Link In Page
+def print_download(file, name, link, center=False, close=False):
+    """ Create Download Link in page
+
+    :param file: The file that contain html of page.
+    :param name: The name of the link
+    :param link: The place that name is Linked
+    :param center: put the text in center
+    :param close : close file after done editing
+
+    :type center: bool
+    :type close : bool
+
+    """
     link_code = "<a href=" + '"' + link + '"' + target_blank + '>' + name + "</a>"
     if center:
         link_code = "<center>" + link_code + "</center>"
@@ -307,7 +367,8 @@ def print_adv(file, close=True):
     """
     file.write(break_line)
     file.write(
-        '<center>' + "<p>" + "Generated " + today_time + " By" + "</p>" + '<a href=' + '"' + homepage + '"' + target_blank + '>' + '<img src="' + create_badge(random=True) + '"alt="Qpage">'+'</a> </center>')
+        '<center>' + "<p>" + "Generated " + today_time + " By" + "</p>" + '<a href=' + '"' + homepage + '"' + target_blank + '>' + '<img src="' + create_badge(
+            random=True) + '"alt="Qpage">' + '</a> </center>')
     if close:
         file.close()
 
@@ -329,7 +390,7 @@ def build_index(file):
                 image_counter = 1
                 break
     shutil.copyfile(image_name, os.path.join(out_dir, "image." + img_format))
-    print_image(file, image_format=img_format)
+    print_image(file, img_format)
 
 
 def build_resume(file):
@@ -415,7 +476,7 @@ def color_code_map():
     """
     [back_color_code, text_color_code] = get_color_code()
     if text_color_code == back_color_code:
-        warnings.append(warning_dict["color_warning"]+" Your text color and background color are same!!")
+        warnings.append(warning_dict["color_warning"] + " Your text color and background color are same!!")
     background_color = color_box[back_color_code]  # convert code to color string in color_box
     text_color = color_box[text_color_code]  # convert code to color string in color_box
     return [background_color, text_color]
@@ -468,7 +529,7 @@ def font_creator(css_file, font_section):
             font_style = "normal"
         font_section = font_section + "font-style:" + font_style + ";\n"
     else:
-        warnings.append(warning_dict["font_warning"]+" There is no specific font set for this website!!")
+        warnings.append(warning_dict["font_warning"] + " There is no specific font set for this website!!")
     return font_section
 
 
@@ -514,18 +575,18 @@ def error_finder():
     if image_counter == 1:
         pass_vector.append("[Pass] Your profile image in OK!!")
     else:
-        error_vector.append(error_dict["image_error"]+" Your profile image is not in correct format")
+        error_vector.append(error_dict["image_error"] + " Your profile image is not in correct format")
     if len(doc_list) == 0:
-        error_vector.append(error_dict["empty_error"]+"There is no file in doc folder ( index.txt and .pdf file in "
-                                                      "necessary)")
+        error_vector.append(error_dict["empty_error"] + "There is no file in doc folder ( index.txt and .pdf file in "
+                                                        "necessary)")
     else:
         if "index.txt" in doc_list:
             pass_vector.append("[Pass] index.txt file OK!")
         else:
-            error_vector.append(error_dict["firstpage_error"]+" index.txt is not in doc folder!")
+            error_vector.append(error_dict["firstpage_error"] + " index.txt is not in doc folder!")
         if pdf_counter == 0:
-            error_vector.append(error_dict["resume_error"]+"[Error] Where Is Your Resume File? It should be in doc "
-                                                           "folder")
+            error_vector.append(error_dict["resume_error"] + "[Error] Where Is Your Resume File? It should be in doc "
+                                                             "folder")
         else:
             pass_vector.append("[Pass] Your Resume File is OK!!")
     return [error_vector, pass_vector]
@@ -542,7 +603,7 @@ def icon_creator():
             break
     if "favicon.ico" in os.listdir(work_dir) and icon_flag == 0:
         shutil.copy(os.path.join(work_dir, "favicon.ico"), out_dir)
-        warnings.append(warning_dict["icon_warning"]+" There is no icon for this website")
+        warnings.append(warning_dict["icon_warning"] + " There is no icon for this website")
 
 
 def robot_maker():
@@ -573,7 +634,8 @@ def internet(host="8.8.8.8", port=53, timeout=3):
 def server():
     """Get Server response."""
     global meta_input
-    headers = {'content-type': 'application/json', "NAME": meta_input, "Version": version,"SYSTEM":system_details(),"IP":find_global_ip()}
+    headers = {'content-type': 'application/json', "NAME": meta_input, "Version": version, "SYSTEM": system_details(),
+               "IP": find_global_ip()}
     response = requests.get(server_api, headers=headers)
     # print(response)
     # TODO : use the server response
@@ -583,8 +645,8 @@ def version_control():
     """ Check and update Versions. """
 
     try:
-        #print("Check for new version . . .")
-        #print_line(70)
+        # print("Check for new version . . .")
+        # print_line(70)
         version_pattern = r"last_version:(.+)"
         if internet():
             response = requests.get("http://www.qpage.ir/releases.html")
@@ -599,8 +661,8 @@ def version_control():
             else:
                 # TODO : fix version control else
                 pass
-                #print("Already Updated!!!")
-                #print_line(70)
+                # print("Already Updated!!!")
+                # print_line(70)
     except:
         pass
 
