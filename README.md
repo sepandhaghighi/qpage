@@ -36,6 +36,8 @@ Last Version : 1.9
 
 [![Coverage](https://img.shields.io/badge/coverage-87-green.svg)](http://www.qpage.ir/htmlcov/index.html)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d3f9b490b9a42c282b745ae8e2a122c)](https://www.codacy.com/app/sepand-haghighi/qpage?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/qpage&amp;utm_campaign=Badge_Grade)
+
 
 ## Overview
 
