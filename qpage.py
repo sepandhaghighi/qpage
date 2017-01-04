@@ -507,7 +507,8 @@ def contain(name):
         build_resume(file)
 
     print_text(text_file, file)
-    print_adv(file)
+    if name.upper() == "INDEX":
+        print_adv(file)
 
 
 def clear_folder(path):
