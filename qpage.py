@@ -189,8 +189,10 @@ def print_line(number, char="-"):
     :param char  : the char that used to draw line
     """
     line = ""
-    for i in range(number):
-        line += char
+    i=0
+    while(i<number):
+        line+=char
+        i+=1
     print(line)
 
 
@@ -267,7 +269,8 @@ def menu_writer():  #
 
     """
     message = menu_maker()
-    for i,item in enumerate(page_name):
+    page_name_length=len(page_name)
+    for i in range(page_name_length):
         file = open(os.path.join(out_dir, actual_name[i] + ".html"), "a")
         file.write(message)
         file.close()
