@@ -254,8 +254,8 @@ def menu_maker():
         else:
             targets_blank = 'target="blank"'
             # Hyper Link To Each Page In HTML File
-            result += '\t<a href="' \
-                      + actual_name[i] + '.html"' + targets_blank + '>' + name_standard(page_name[i]) + "</a>\n"
+        result += '\t<a href="' \
+                    + actual_name[i] + '.html"' + targets_blank + '>' + name_standard(page_name[i]) + "</a>\n"
         result += "&nbsp\n"
     result += "</center>"
     result = result + "\t\t" + break_line  # Add Break line to End Of The Menu
