@@ -652,7 +652,7 @@ def error_finder():
     error_vector = []
     pass_vector = []
     pdf_counter = 0
-    image_list = os.listdir(image_dir)
+    #image_list = os.listdir(image_dir)
     doc_list = os.listdir(doc_dir)
     if image_counter == 1:
         pass_vector.append("[Pass] Your profile image in OK!!")
@@ -710,6 +710,7 @@ def internet(host="8.8.8.8", port=53, timeout=3):
         socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((host, port))
         return True
     except Exception as ex:
+        print(ex)
         return False
 
 
