@@ -332,7 +332,8 @@ def close_files():
 
     """
     for i in files:
-        i.close()
+        if i.closed==False:
+            i.close()
 
 
 def LSM_translate(line, center):
