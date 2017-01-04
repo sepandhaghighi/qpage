@@ -42,6 +42,8 @@ QPage is written in Python3, in order to run it, you will need a python interper
 
 ## Usage
 
+- Run setup (for the first use to create folders)
+
 - Put your profile picture in image folder (jpg , bmp , tiff , gif , png)
 
 - Put each page details in a text file with page name in doc folder (* In this step you can use [M] , [S] or [L] at the start and [center] at the end of each line to control font size and alignment )
@@ -50,11 +52,17 @@ QPage is written in Python3, in order to run it, you will need a python interper
 
 - Put your font file in font folder (*Optional)
 
-- Run setup.py
+- Put your icon file in image folder (*Optional) suggested site
+
+- Run again setup
+
+- Enter your name
 
 - Choose your profile image size
 
 - Choose your text and background color 
+
+- You can preview your webpage
 
 - Finished!!! Now you can go and upload output folder contains directly in your host
 
