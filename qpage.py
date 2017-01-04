@@ -248,14 +248,14 @@ def menu_maker():
 
     """
     result = "<center>"
-    for i in range(len(page_name)):
-        if page_name[i] == "Home":
+    for i,item in enumerate(page_name):
+        if item == "Home":
             targets_blank = ""
         else:
             targets_blank = 'target="blank"'
             # Hyper Link To Each Page In HTML File
         result += '\t<a href="' \
-                    + actual_name[i] + '.html"' + targets_blank + '>' + name_standard(page_name[i]) + "</a>\n"
+                    + actual_name[i] + '.html"' + targets_blank + '>' + name_standard(item) + "</a>\n"
         result += "&nbsp\n"
     result += "</center>"
     result = result + "\t\t" + break_line  # Add Break line to End Of The Menu
@@ -267,7 +267,7 @@ def menu_writer():  #
 
     """
     message = menu_maker()
-    for i in range(len(page_name)):
+    for i,item in enumerate(page_name):
         file = open(os.path.join(out_dir, actual_name[i] + ".html"), "a")
         file.write(message)
         file.close()
@@ -405,8 +405,8 @@ def print_image(file, image_format="jpg", close=False):
 
     :type close : bool
     """
-    for i in range(len(size_box)):
-        print(i, "-", size_box[i])
+    for i,item in enumerate(size_box):
+        print(i, "-", item)
     image_size = int(input("Please Enter Profile Image Size : "))  # Choose Profile Image Size
     image_size_string = size_box[2]  # Getting Html String From size_box list default mode (Medium)
     if 0 <= image_size < len(size_box):
@@ -461,10 +461,10 @@ def build_index(file):
     image_name = ""
     img_format = "jpg"
     file_of_images = os.listdir(image_dir)
-    for i in range(len(file_of_images)):
+    for i in file_of_images:
         for form in imformat_box:
-            if file_of_images[i].find("." + form) != -1:
-                image_name = os.path.join(image_dir, file_of_images[i])
+            if i.find("." + form) != -1:
+                image_name = os.path.join(image_dir, i)
                 img_format = form
                 global image_counter
                 image_counter = 1
@@ -480,9 +480,9 @@ def build_resume(file):
     """
     resume_name = ""
     file_of_docs = os.listdir(doc_dir)
-    for i in range(len(file_of_docs)):
-        if file_of_docs[i].find(".pdf") != -1:
-            resume_name = os.path.join(doc_dir, file_of_docs[i])
+    for i in file_of_docs:
+        if i.find(".pdf") != -1:
+            resume_name = os.path.join(doc_dir, i)
             global pdf_counter
             pdf_counter = 1
             break
@@ -529,8 +529,8 @@ def print_warning():
 
     """
     print(str(len(warnings)) + " Warning , 0 Error")
-    for i in range(len(warnings)):
-        print(str(i + 1) + "-" + warnings[i])
+    for i,item in enumerate(warnings):
+        print(str(i + 1) + "-" + item)
 
 
 def get_color_code():
@@ -538,8 +538,8 @@ def get_color_code():
 
     :return list: background and text color
     """
-    for i in range(len(color_box)):
-        print(i, "-", color_box[i])
+    for i,item in enumerate(color_box):
+        print(i, "-", item)
     back_color_code = int(input("Please enter your background color : "))
     if back_color_code not in range(7):
         back_color_code = 0
@@ -571,12 +571,12 @@ def css_font(font_folder):
     font_flag = 0  # 0 If there is no font file in font_folder
     current_font_format = None
     for i in font_folder:
-        for j in range(len(font_format)):  # search for other font format in font box
-            if i.lower().find(font_format[j]) != -1:  # If there is a font in font folder
+        for j in font_format:  # search for other font format in font box
+            if i.lower().find(j) != -1:  # If there is a font in font folder
                 shutil.copyfile(os.path.join(font_dir, i),
-                                os.path.join(out_dir, "qpage" + font_format[j]))  # copy font file to output folder
+                                os.path.join(out_dir, "qpage" + j))  # copy font file to output folder
                 font_flag = 1  # Turn Flag On
-                current_font_format = font_format[j]  # font format of current selected font for css editing
+                current_font_format = j  # font format of current selected font for css editing
     return [font_flag, current_font_format]
 
 
@@ -600,8 +600,8 @@ def font_creator(css_file, font_section):
             + ");\n}\n")  # Write font-face in html
 
         font_section = "font-family:qpagefont;\n"  # Update Font Section For Body Tag
-        for i in range(len(fontstyle_box)):
-            print(i, "-", fontstyle_box[i])
+        for i,item in enumerate(fontstyle_box):
+            print(i, "-", item)
         font_style = int(input(" Please choose your font style "))
         if font_style < len(fontstyle_box):
             font_style = fontstyle_box[font_style]

@@ -9,10 +9,10 @@ def error_handler():
     pass_vector = vector_2[1]  # extract pass
     print(str(len(error_vector)) + " Error")  # print  number of errors
     print("Please Check Following :\n")
-    for i in range(len(error_vector)):  # print errors
-        print(str(i + 1) + "-" + error_vector[i])  # print pass
-    for i in range(len(pass_vector)):
-        print(str(i + len(error_vector) + 1) + "-" + pass_vector[i])
+    for i,item in enumerate(error_vector):  # print errors
+        print(str(i + 1) + "-" + item)  # print pass
+    for i,item in enumerate(pass_vector):
+        print(str(i + len(error_vector) + 1) + "-" + item)
     enter_to_exit()  # get input from user to continue
     main_handler()
 
