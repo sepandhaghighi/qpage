@@ -3,7 +3,7 @@
 <img src="http://www.qpage.ir/images/logo.png"/>
 
 </div>
-
+<hr/>
 [![Requirements Status](https://requires.io/github/sepandhaghighi/qpage/requirements.svg?branch=master)](https://requires.io/github/sepandhaghighi/qpage/requirements/?branch=master)
 [![PyPI version](https://badge.fury.io/py/qpage.svg)](https://badge.fury.io/py/qpage)
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=plastic)](https://gitter.im/qpage/Lobby?source=orgpage)
