@@ -1,5 +1,6 @@
 from qpage import *
 import sys
+import gc
 
 
 def error_handler():
@@ -46,6 +47,7 @@ def main_handler_2(time_1=0):
     if browse == 1:  # check browse status
         preview()  # call preview function
         close_files()  # close all of the open files
+    gc.collect()
 
 
 def response_handler(response):
