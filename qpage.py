@@ -716,12 +716,12 @@ def internet(host="8.8.8.8", port=53, timeout=3):
 
 def server():
     """Get Server response."""
-    global meta_input
+    #global meta_input
     headers = {'content-type': 'application/json', "NAME": meta_input, "Version": version, "SYSTEM": system_details(),
                "IP": find_global_ip()}
     response = requests.get(server_api, headers=headers)
-    # print(response)
-    # TODO : use the server response
+    if response.status_code==200:
+        print("Installed Saved!")
 
 
 def version_control():
