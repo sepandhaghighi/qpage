@@ -12,7 +12,13 @@ import random
 
 meta_input = ""
 
-
+def print_logo():
+    if "logo.txt" in os.listdir():
+        with open("logo.txt","r") as logo_file:
+            for line in logo_file:
+                print(line.rstrip())
+    else:
+        pass
 def convert_bytes(num):
     """ convert num to idiomatic byte unit
 

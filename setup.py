@@ -74,6 +74,7 @@ def main_handler(control_flag=True):
         response = create_folder()  # Check Folder and Files Status
         print("QPAGE By S.Haghighi & M.M.Rahimi")
         print("Version : " + version)
+        print_logo()
         address_print()  # Print Files Location
         if control_flag:  # Check if version control passed in prev step
             version_control()  # Check for new version of qpage
