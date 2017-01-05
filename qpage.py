@@ -181,7 +181,7 @@ def sample_site_download(item_list):
 
 
 def logger(status=False, perf_time=None):
-    """Show the log of the app
+    """Show the build log of the app
 
     :param status: show status of app.
     :param perf_time : show the time passed for generate files
@@ -197,6 +197,10 @@ def logger(status=False, perf_time=None):
     file.close()
 
 def error_log(msg):
+    """Show the errorlog of the app
+
+        :param msg: error message
+    """
     if "log" not in os.listdir():
         os.mkdir("log")
     file=open(reduce(os.path.join,[os.getcwd(),"log","error_log.txt"]),"a")
