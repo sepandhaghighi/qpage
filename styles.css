@@ -152,6 +152,10 @@ a:hover{
 }
 
 @media all and (max-width:1024px){
+    .link_bar{
+        font-size:70px;
+    }
+    
     .contact{
         width: 120px;
         height: 120px;
@@ -173,5 +177,8 @@ a:hover{
     text-align:center;
 	
 }
+    .badge{
+        display: none;
+    }
 }
 
