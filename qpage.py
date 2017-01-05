@@ -92,7 +92,8 @@ def find_global_ip():
     try:
         response = requests.get(ip_finder_api)
         return response.text[:-1]
-    except:
+    except Exception as e:
+        print(e)
         return "0.0.0.0"
 
 
