@@ -151,7 +151,7 @@ a:hover{
     100%{color:green;}
 }
 
-@media all and (max-width:768px){
+@media all and (max-width:1024px){
     .link_bar{
         font-size:70px;
     }
