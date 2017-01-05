@@ -10,6 +10,7 @@ import urllib.request
 import platform
 import random
 import datetime
+from functools import reduce
 meta_input = ""
 
 def print_logo():
@@ -185,7 +186,9 @@ def logger(status=False, perf_time=None):
     :param status: show status of app.
     :param perf_time : show the time passed for generate files
     """
-    file = open("build_log.txt", "a")
+    if "log" not in os.listdir():
+        os.mkdir("log")
+    file = open(reduce(os.path.join,[os.getcwd(),"log","build_log.txt"]),"a")
     if not status:
         file.write("Failed  " + str(datetime.datetime.now()) + "\n")
     else:
@@ -194,7 +197,9 @@ def logger(status=False, perf_time=None):
     file.close()
 
 def error_log(msg):
-    file=open("error_log.txt","a")
+    if "log" not in os.listdir():
+        os.mkdir("log")
+    file=open(reduce(os.path.join,[os.getcwd(),"log","error_log.txt"]),"a")
     file.write(str(datetime.datetime.now())+" --> "+str(msg)+"\n")
     file.close()
 
