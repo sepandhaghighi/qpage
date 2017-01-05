@@ -9,7 +9,7 @@ import sys
 import urllib.request
 import platform
 import random
-
+import datetime
 meta_input = ""
 
 def print_logo():
@@ -93,7 +93,7 @@ def find_global_ip():
         response = requests.get(ip_finder_api)
         return response.text[:-1]
     except Exception as e:
-        print(e)
+        error_log(e)
         return "0.0.0.0"
 
 
@@ -152,7 +152,7 @@ def read_lorem(char=100):
         lorem_file.close()
         return " ".join(lorem_text.split(" ")[:char])
     except Exception as e:
-        print(e)
+        error_log(e)
         return None
 
 
@@ -173,7 +173,8 @@ def sample_site_download(item_list):
         else:
             print("Error In Internet Connection!")
             print_line(70)
-    except:
+    except Exception as e:
+        error_log(e)
         print("Error in downloading sample files check your internet conection")
         print_line(70)
 
@@ -192,6 +193,10 @@ def logger(status=False, perf_time=None):
         file.write("Generation Time: " + str(perf_time) + "\n")
     file.close()
 
+def error_log(msg):
+    file=open("error_log.txt","a")
+    file.write(str(datetime.datetime.now())+" --> "+str(msg)+"\n")
+    file.close()
 
 def print_line(number, char="-"):
     """ Print a Line
@@ -724,7 +729,7 @@ def internet(host="8.8.8.8", port=53, timeout=3):
         socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((host, port))
         return True
     except Exception as ex:
-        print(ex)
+        error_log(ex)
         return False
 
 
@@ -760,7 +765,8 @@ def version_control():
                 pass
                 # print("Already Updated!!!")
                 # print_line(70)
-    except:
+    except Exception as e:
+        error_log(e)
         pass
 
 
