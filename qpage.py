@@ -151,7 +151,8 @@ def read_lorem(char=100):
         lorem_text = lorem_file.read()
         lorem_file.close()
         return " ".join(lorem_text.split(" ")[:char])
-    except:
+    except Exception as e:
+        print(e)
         return None
 
 
