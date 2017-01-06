@@ -1,6 +1,7 @@
-doc-warnings: true
+doc-warnings: false
 test-warnings: false
 strictness: veryhigh
 autodetect: true
 python-targets:
+  - 2
   - 3
