@@ -74,8 +74,10 @@ QPage is written in Python3, in order to run it, you will need a python interper
 ## Credits
 
 Homepage : [Link](http://www.qpage.ir)    
-PyPI : [Link](http://pypi.python.org/pypi/qpage)
-SourceForge : [Link](https://sourceforge.net/projects/qpage/)
+PyPI : [Link](http://pypi.python.org/pypi/qpage)                
+
+SourceForge : [Link](https://sourceforge.net/projects/qpage/)               
+
 Coverage Report : [Link](http://www.qpage.ir/htmlcov/index.html)
 
 
