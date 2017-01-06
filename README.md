@@ -13,6 +13,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d3f9b490b9a42c282b745ae8e2a122c)](https://www.codacy.com/app/sepand-haghighi/qpage?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/qpage&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/4d3f9b490b9a42c282b745ae8e2a122c)](https://www.codacy.com/app/sepand-haghighi/qpage?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/qpage&amp;utm_campaign=Badge_Coverage)
 <hr/>
+[![Code Health](https://landscape.io/github/sepandhaghighi/qpage/master/landscape.svg?style=flat)](https://landscape.io/github/sepandhaghighi/qpage/master)
 Free Project For Creating Academic Home page
 
 Last Version : 1.9
