@@ -260,7 +260,7 @@ def create_folder():
     return bool(folder_flag)
 
 
-def PAGE_NAME_update():
+def page_name_update():
     """This Function Update Page Names
 
     """
@@ -752,7 +752,7 @@ def server():
         print("Installed Saved!")
 
 
-def VERSION_control():
+def version_control():
     """ Check and update VERSIONs. """
 
     try:

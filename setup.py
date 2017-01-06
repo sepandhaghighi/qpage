@@ -77,11 +77,11 @@ def main_handler(control_flag=True):
         print_logo()
         address_print()  # Print Files Location
         if control_flag:  # Check if VERSION control passed in prev step
-            VERSION_control()  # Check for new VERSION of qpage
+            version_control()  # Check for new VERSION of qpage
         response_handler(response)  # call response_handler
         sample_handler()  # run sample handler
         clear_folder(OUT_DIR)  # clear all of files in output directory
-        PAGE_NAME_update()  # update page names
+        page_name_update()  # update page names
         main_handler_2(time_1=start_time)  # call part_2 of main_handler
     except FileNotFoundError as e:  # error exception in FileNotFound ( When Something Missed)
         error_log(e)
