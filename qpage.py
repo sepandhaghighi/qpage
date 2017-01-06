@@ -516,7 +516,7 @@ def build_resume(file):
             PDF_COUNTER = 1
             break
     shutil.copyfile(resume_name, os.path.join(OUT_DIR, "Resume.pdf"))
-    print_download(file, "Download Full VERSION", "Resume.pdf", center=True)
+    print_download(file, "Download Full Version", "Resume.pdf", center=True)
 
 
 def contain(name):
