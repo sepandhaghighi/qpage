@@ -19,10 +19,10 @@ def error_handler():
 
 
 def file_handler():
-    for i in actual_name:
+    for i in ACTUAL_NAME:
         html_init(i)  # create pages html files
     menu_writer()  # write menu for each html file
-    for i in actual_name:
+    for i in ACTUAL_NAME:
         contain(i)  # write contains of each page
         html_end(i)  # end tags of each page
     css_creator()  # create css file
@@ -34,7 +34,7 @@ def file_handler():
 def main_handler_2(time_1=0):
     file_handler()  # call file_handler
     total_perf_time=generation_time(time_1)
-    print("Homepage is ready,generated in "+str(total_perf_time)+" sec")
+    print("HOMEPAGE is ready,generated in "+str(total_perf_time)+" sec")
     print("Upload output folder contains directly to your host")
     print("Please Don't Change HTML Files Name")
     address_print()  # print files location
@@ -43,7 +43,7 @@ def main_handler_2(time_1=0):
     logger(True,perf_time=total_perf_time)  # add success run of qpage to local logger
     if internet():  # check internet connection
         server()  # send query to qpage server
-    browse = int(input("Preview Homepage?[1] or Not[2]"))  # get input from user for preview of site
+    browse = int(input("Preview HOMEPAGE?[1] or Not[2]"))  # get input from user for preview of site
     if browse == 1:  # check browse status
         preview()  # call preview function
         close_files()  # close all of the open files
@@ -56,7 +56,7 @@ def response_handler(response):
             "At least one of the folders create for the first time ,\n"
             " please put your data in proper order and run program again\n Program Reboot Automaticly in 3 Sec")
         wait_func(3)  # wait for 3 sec
-        main_handler(False)  # call main_handler again with False version control flag
+        main_handler(False)  # call main_handler again with False VERSION control flag
         sys.exit()  # exit program
 
 
@@ -73,15 +73,15 @@ def main_handler(control_flag=True):
         start_time=generation_time()
         response = create_folder()  # Check Folder and Files Status
         print("QPAGE By S.Haghighi & M.M.Rahimi")
-        print("Version : " + version)
+        print("VERSION : " + VERSION)
         print_logo()
         address_print()  # Print Files Location
-        if control_flag:  # Check if version control passed in prev step
-            version_control()  # Check for new version of qpage
+        if control_flag:  # Check if VERSION control passed in prev step
+            VERSION_control()  # Check for new VERSION of qpage
         response_handler(response)  # call response_handler
         sample_handler()  # run sample handler
-        clear_folder(out_dir)  # clear all of files in output directory
-        page_name_update()  # update page names
+        clear_folder(OUT_DIR)  # clear all of files in output directory
+        PAGE_NAME_update()  # update page names
         main_handler_2(time_1=start_time)  # call part_2 of main_handler
     except FileNotFoundError as e:  # error exception in FileNotFound ( When Something Missed)
         error_log(e)

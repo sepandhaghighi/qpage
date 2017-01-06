@@ -13,7 +13,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/4d3f9b490b9a42c282b745ae8e2a122c)](https://www.codacy.com/app/sepand-haghighi/qpage?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/qpage&amp;utm_campaign=Badge_Coverage)
 [![Code Health](https://landscape.io/github/sepandhaghighi/qpage/master/landscape.svg?style=flat)](https://landscape.io/github/sepandhaghighi/qpage/master)
 <hr/>
-Free Project For Creating Academic Home page
+Free Project For Creating Academic Homepage
 
 Last Version : 1.9
 
@@ -73,7 +73,7 @@ QPage is written in Python3, in order to run it, you will need a python interper
 
 ## Credits
 
-Homepage : [Link](http://www.qpage.ir)    
+Homepage : [Link](http://www.qpage.ir)
 PyPI : [Link](http://pypi.python.org/pypi/qpage)                
 SourceForge : [Link](https://sourceforge.net/projects/qpage/)               
 Coverage Report : [Link](http://www.qpage.ir/htmlcov/index.html)
