@@ -1,6 +1,0 @@
-doc-warnings: false
-test-warnings: false
-strictness: medium
-autodetect: true
-python-targets:
-  - 3
