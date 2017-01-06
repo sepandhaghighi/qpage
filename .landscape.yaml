@@ -4,4 +4,4 @@ strictness: veryhigh
 max-line-length: 180
 autodetect: true
 python-targets:
-  - 2
+  - 3
