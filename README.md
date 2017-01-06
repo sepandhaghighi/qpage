@@ -4,7 +4,6 @@
 
 </div>
 <hr/>
-[![Requirements Status](https://requires.io/github/sepandhaghighi/qpage/requirements.svg?branch=master)](https://requires.io/github/sepandhaghighi/qpage/requirements/?branch=master)
 [![PyPI version](https://badge.fury.io/py/qpage.svg)](https://badge.fury.io/py/qpage)
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=plastic)](https://gitter.im/qpage/Lobby?source=orgpage)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sepandhaghighi/qpage/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sepandhaghighi/qpage/?branch=master)
@@ -37,7 +36,8 @@ QPage is written in Python3, in order to run it, you will need a python interper
 
 ## Dependencies
 
-- [Download](https://www.python.org/downloads/) And Install Last Version Of Python ( * or use exe folder and skip this step * )
+- [Download](https://www.python.org/downloads/) And Install Last Version Of Python ( * or use exe folder and skip this step * )                         
+[![Requirements Status](https://requires.io/github/sepandhaghighi/qpage/requirements.svg?branch=master)](https://requires.io/github/sepandhaghighi/qpage/requirements/?branch=master)
 
 ## Installation
 
@@ -73,7 +73,7 @@ QPage is written in Python3, in order to run it, you will need a python interper
 
 ## Credits
 
-Homepage : [Link](http://www.qpage.ir)
+Homepage : [Link](http://www.qpage.ir)                                                  
 PyPI : [Link](http://pypi.python.org/pypi/qpage)                
 SourceForge : [Link](https://sourceforge.net/projects/qpage/)               
 Coverage Report : [Link](http://www.qpage.ir/htmlcov/index.html)
