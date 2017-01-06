@@ -5,15 +5,13 @@
 </div>
 <hr/>
 [![Requirements Status](https://requires.io/github/sepandhaghighi/qpage/requirements.svg?branch=master)](https://requires.io/github/sepandhaghighi/qpage/requirements/?branch=master)
-[![PyPI version](https://badge.fury.io/py/qpage.svg)](https://badge.fury.io/py/qpage)
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=plastic)](https://gitter.im/qpage/Lobby?source=orgpage)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sepandhaghighi/qpage/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sepandhaghighi/qpage/?branch=master)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/sepandhaghighi/qpage/blob/master/LICENSE)
-[![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://www.qpage.ir)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d3f9b490b9a42c282b745ae8e2a122c)](https://www.codacy.com/app/sepand-haghighi/qpage?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/qpage&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/4d3f9b490b9a42c282b745ae8e2a122c)](https://www.codacy.com/app/sepand-haghighi/qpage?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/qpage&amp;utm_campaign=Badge_Coverage)
-<hr/>
 [![Code Health](https://landscape.io/github/sepandhaghighi/qpage/master/landscape.svg?style=flat)](https://landscape.io/github/sepandhaghighi/qpage/master)
+<hr/>
 Free Project For Creating Academic Home page
 
 Last Version : 1.9
@@ -74,8 +72,8 @@ QPage is written in Python3, in order to run it, you will need a python interper
 
 ## Credits
 
-Homepage : [Link](http://www.qpage.ir)    
-PyPI : [Link] (http://pypi.python.org/pypi/qpage)
+Homepage : [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://www.qpage.ir)    
+PyPI : [![PyPI version](https://badge.fury.io/py/qpage.svg)](https://badge.fury.io/py/qpage)
 
 
 ##License
