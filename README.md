@@ -4,14 +4,17 @@
 
 </div>
 <hr/>
-[![PyPI version](https://badge.fury.io/py/qpage.svg)](https://badge.fury.io/py/qpage)
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=plastic)](https://gitter.im/qpage/Lobby?source=orgpage)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sepandhaghighi/qpage/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sepandhaghighi/qpage/?branch=master)
+<div align="center">
+
+<a href="https://badge.fury.io/py/qpage"><img src="https://badge.fury.io/py/qpage.svg"/></a>
+<a href="https://gitter.im/qpage/Lobby?source=orgpage"><img src="https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=plastic"/></a>
+<a href="https://scrutinizer-ci.com/g/sepandhaghighi/qpage/?branch=master"><img src="https://scrutinizer-ci.com/g/sepandhaghighi/qpage/badges/quality-score.png?b=master"/></a>
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/sepandhaghighi/qpage/blob/master/LICENSE)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d3f9b490b9a42c282b745ae8e2a122c)](https://www.codacy.com/app/sepand-haghighi/qpage?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/qpage&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/4d3f9b490b9a42c282b745ae8e2a122c)](https://www.codacy.com/app/sepand-haghighi/qpage?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/qpage&amp;utm_campaign=Badge_Coverage)
 [![Code Climate](https://codeclimate.com/github/sepandhaghighi/qpage/badges/gpa.svg)](https://codeclimate.com/github/sepandhaghighi/qpage)
 <hr/>
+</div>
 Free Project For Creating Academic Homepage
 
 Last Version : 1.9
