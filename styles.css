@@ -4,13 +4,25 @@
     
 }
 
-#fork{
+#fork-pc{
     top: 0;
     border: 0;
     left: 0;
     position: absolute;
     animation-duration: 4s;
     animation-iteration-count: infinite;
+}
+#fork-mobile{
+    top: 0;
+    border: 0;
+    left: 0;
+    height: 56px;
+    position: absolute;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    border-radius: 23px;
+    position: fixed;
+    opacity: 0.5;
 }
 body{
 	
@@ -33,6 +45,9 @@ a:link{
     text-decoration: none;
     cursor : pointer;
     
+}
+.none-pc{
+    display: none;
 }
 
 
@@ -165,7 +180,7 @@ a:hover{
 	
 	background:linear-gradient(green,white);	
     font-size:40px;
-	font-family: qpage;
+	font-family: monospace;
 	margin-top: 60px;
 	margin-bottom:60px;
 	margin-right: 60px;
@@ -177,8 +192,11 @@ a:hover{
     text-align:center;
 	
 }
-    .badge{
+    .none-mobile{
         display: none;
+    }
+    .none-pc{
+        display: block;
     }
 }
 
