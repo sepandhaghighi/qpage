@@ -114,6 +114,7 @@ a:visited{
 .link_bar{
     font-size: 18px;
     font-weight: bold;
+    text-align: center;
 }
 a:hover{
     opacity: 0.4;
