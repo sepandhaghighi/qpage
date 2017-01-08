@@ -15,8 +15,13 @@ from functools import reduce
 meta_input = ""
 
 
-def show_items(list):
-    for i, item in enumerate(list):  # print errors
+def show_items(enum_list):
+    """ show item of enum_list
+
+    :param enum_list the list that should be shown
+    :type enum_list : list
+    """
+    for i, item in enumerate(enum_list):  # print errors
         print(str(i + 1) + "-" + item)  # print pass
 
 
