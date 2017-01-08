@@ -11,18 +11,27 @@ import platform
 import random
 import datetime
 from functools import reduce
+
 meta_input = ""
+
+
+def show_items(list):
+    for i, item in enumerate(list):  # print errors
+        print(str(i + 1) + "-" + item)  # print pass
+
 
 def print_logo():
     """ print qpage logo by characters
 
     """
     if "logo.txt" in os.listdir():
-        with open("logo.txt","r") as logo_file:
+        with open("logo.txt", "r") as logo_file:
             for line in logo_file:
                 print(line.rstrip())
     else:
         pass
+
+
 def convert_bytes(num):
     """ convert num to idiomatic byte unit
 
@@ -188,13 +197,14 @@ def logger(status=False, perf_time=None):
     """
     if "log" not in os.listdir():
         os.mkdir("log")
-    file = open(reduce(os.path.join,[os.getcwd(),"log","build_log.txt"]),"a")
+    file = open(reduce(os.path.join, [os.getcwd(), "log", "build_log.txt"]), "a")
     if not status:
         file.write("Failed  " + str(datetime.datetime.now()) + "\n")
     else:
         file.write("Success " + str(datetime.datetime.now()) + "\n")
         file.write("Generation Time: " + str(perf_time) + "\n")
     file.close()
+
 
 def error_log(msg):
     """Show the errorlog of the app
@@ -203,9 +213,10 @@ def error_log(msg):
     """
     if "log" not in os.listdir():
         os.mkdir("log")
-    file=open(reduce(os.path.join,[os.getcwd(),"log","error_log.txt"]),"a")
-    file.write(str(datetime.datetime.now())+" --> "+str(msg)+"\n")
+    file = open(reduce(os.path.join, [os.getcwd(), "log", "error_log.txt"]), "a")
+    file.write(str(datetime.datetime.now()) + " --> " + str(msg) + "\n")
     file.close()
+
 
 def print_line(number, char="-"):
     """ Print a Line
@@ -214,10 +225,10 @@ def print_line(number, char="-"):
     :param char  : the char that used to draw line
     """
     line = ""
-    i=0
-    while(i<number):
-        line+=char
-        i+=1
+    i = 0
+    while (i < number):
+        line += char
+        i += 1
     print(line)
 
 
@@ -275,14 +286,14 @@ def menu_maker():
 
     """
     result = "<center>"
-    for i,item in enumerate(PAGE_NAME):
+    for i, item in enumerate(PAGE_NAME):
         if item == "Home":
             targets_blank = ""
         else:
             targets_blank = 'target="blank"'
             # Hyper Link To Each Page In HTML File
         result += '\t<a href="' \
-                    + ACTUAL_NAME[i] + '.html"' + targets_blank + '>' + name_standard(item) + "</a>\n"
+                  + ACTUAL_NAME[i] + '.html"' + targets_blank + '>' + name_standard(item) + "</a>\n"
         result += "&nbsp\n"
     result += "</center>"
     result = result + "\t\t" + BREAK_LINE  # Add Break line to End Of The Menu
@@ -294,7 +305,7 @@ def menu_writer():  #
 
     """
     message = menu_maker()
-    PAGE_NAME_length=len(PAGE_NAME)
+    PAGE_NAME_length = len(PAGE_NAME)
     for i in range(PAGE_NAME_length):
         file = open(os.path.join(OUT_DIR, ACTUAL_NAME[i] + ".html"), "a")
         file.write(message)
@@ -360,7 +371,7 @@ def close_files():
 
     """
     for i in files:
-        if i.closed==False:
+        if i.closed == False:
             i.close()
 
 
@@ -434,7 +445,7 @@ def print_image(file, image_format="jpg", close=False):
 
     :type close : bool
     """
-    for i,item in enumerate(SIZE_BOX):
+    for i, item in enumerate(SIZE_BOX):
         print(i, "-", item)
     image_size = int(input("Please Enter Profile Image Size : "))  # Choose Profile Image Size
     image_size_string = SIZE_BOX[2]  # Getting Html String From SIZE_BOX list default mode (Medium)
@@ -555,12 +566,11 @@ def clear_folder(path):
 
 
 def print_warning():
-    """ Print Warinigns!
+    """ Print Warnings!
 
     """
     print(str(len(warnings)) + " Warning , 0 Error")
-    for i,item in enumerate(warnings):
-        print(str(i + 1) + "-" + item)
+    show_items(warnings)
 
 
 def get_color_code():
@@ -568,7 +578,7 @@ def get_color_code():
 
     :return list: background and text color
     """
-    for i,item in enumerate(COLOR_BOX):
+    for i, item in enumerate(COLOR_BOX):
         print(i, "-", item)
     back_color_code = int(input("Please enter your background color : "))
     if back_color_code not in range(7):
@@ -630,7 +640,7 @@ def font_creator(css_file, font_section):
             + ");\n}\n")  # Write font-face in html
 
         font_section = "font-family:qpagefont;\n"  # Update Font Section For Body Tag
-        for i,item in enumerate(FONTSTYLE_BOX):
+        for i, item in enumerate(FONTSTYLE_BOX):
             print(i, "-", item)
         font_style = int(input(" Please choose your font style "))
         if font_style < len(FONTSTYLE_BOX):
@@ -680,7 +690,7 @@ def error_finder():
     error_vector = []
     pass_vector = []
     PDF_COUNTER = 0
-    #image_list = os.listdir(IMAGE_DIR)
+    # image_list = os.listdir(IMAGE_DIR)
     doc_list = os.listdir(DOC_DIR)
     if IMAGE_COUNTER == 1:
         pass_vector.append("[Pass] Your profile image in OK!!")
@@ -744,11 +754,11 @@ def internet(host="8.8.8.8", port=53, timeout=3):
 
 def server():
     """Get Server response."""
-    #global meta_input
+    # global meta_input
     headers = {'content-type': 'application/json', "NAME": meta_input, "VERSION": VERSION, "SYSTEM": system_details(),
                "IP": find_global_ip()}
     response = requests.get(SERVER_API, headers=headers)
-    if response.status_code==200:
+    if response.status_code == 200:
         print("Installed Saved!")
 
 

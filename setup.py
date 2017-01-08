@@ -10,9 +10,8 @@ def error_handler():
     pass_vector = vector_2[1]  # extract pass
     print(str(len(error_vector)) + " Error")  # print  number of errors
     print("Please Check Following :\n")
-    for i,item in enumerate(error_vector):  # print errors
-        print(str(i + 1) + "-" + item)  # print pass
-    for i,item in enumerate(pass_vector):
+    show_items(error_vector) #pritn error
+    for i, item in enumerate(pass_vector):
         print(str(i + len(error_vector) + 1) + "-" + item)
     enter_to_exit()  # get input from user to continue
     main_handler()
@@ -33,14 +32,14 @@ def file_handler():
 
 def main_handler_2(time_1=0):
     file_handler()  # call file_handler
-    total_perf_time=generation_time(time_1)
-    print("HOMEPAGE is ready,generated in "+str(total_perf_time)+" sec")
+    total_perf_time = generation_time(time_1)
+    print("HOMEPAGE is ready,generated in " + str(total_perf_time) + " sec")
     print("Upload output folder contains directly to your host")
     print("Please Don't Change HTML Files Name")
     address_print()  # print files location
     print_warning()  # print all of the detected warnings
     file_size()
-    logger(True,perf_time=total_perf_time)  # add success run of qpage to local logger
+    logger(True, perf_time=total_perf_time)  # add success run of qpage to local logger
     if internet():  # check internet connection
         server()  # send query to qpage server
     browse = int(input("Preview HOMEPAGE?[1] or Not[2]"))  # get input from user for preview of site
@@ -51,18 +50,19 @@ def main_handler_2(time_1=0):
 
 
 def response_handler(response):
-    if response:  # check reposne status
+    if response:  # check response status
         print(
             "At least one of the folders create for the first time ,\n"
-            " please put your data in proper order and run program again\n Program Reboot Automaticly in 3 Sec")
+            " please put your data in proper order and run program again\n Program Reboot Automatically in 3 Sec")
         wait_func(3)  # wait for 3 sec
         main_handler(False)  # call main_handler again with False VERSION control flag
         sys.exit()  # exit program
 
 
 def sample_handler():
+    # Get Input form user for loading sample files or continue
     response = input(
-        "Press [S] to enter sample site material runing or other keys to continue with your data")  # Get Input form user for loading sample files or continue
+        "Press [S] to enter sample site material running or other keys to continue with your data")
     print_line(70)  # print line
     if response.upper() == "S":  # check response status
         sample_site_download(is_sample_downloaded())  # Call sample download
@@ -70,7 +70,7 @@ def sample_handler():
 
 def main_handler(control_flag=True):
     try:
-        start_time=generation_time()
+        start_time = generation_time()
         response = create_folder()  # Check Folder and Files Status
         print("QPAGE By S.Haghighi & M.M.Rahimi")
         print("VERSION : " + VERSION)
