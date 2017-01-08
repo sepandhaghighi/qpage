@@ -165,3 +165,36 @@ a:hover{
     50%{color:gold;}
     100%{color:green;}
 }
+
+@media all and (max-width:1024px){
+    .link_bar{
+        font-size:45px;
+    }
+    
+    .contact{
+        width: 120px;
+        height: 120px;
+    }
+    body{
+	
+    font-size:40px;
+	font-family: monospace;
+	margin-top: 60px;
+	margin-bottom:60px;
+	margin-right: 60px;
+	margin-left: 60px;
+	border: 10px groove white;
+	padding-top: 10px;
+	padding-bottom: 20px;
+    border-radius: 25px;
+    text-align:center;
+	
+}
+    .none-mobile{
+        display: none;
+    }
+    .none-pc{
+        display: block;
+    }
+}
+
