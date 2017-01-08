@@ -14,6 +14,7 @@
 <a href="https://codeclimate.com/github/sepandhaghighi/qpage"><img src="https://codeclimate.com/github/sepandhaghighi/qpage/badges/gpa.svg" /></a>          
 <a href="https://www.codacy.com/app/sepand-haghighi/qpage?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/qpage&amp;utm_campaign=Badge_Coverage"><img src="https://api.codacy.com/project/badge/Coverage/4d3f9b490b9a42c282b745ae8e2a122c"/></a>
 <a href="https://www.codacy.com/app/sepand-haghighi/qpage?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/qpage&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/4d3f9b490b9a42c282b745ae8e2a122c"/></a>
+<a href="https://scrutinizer-ci.com/g/sepandhaghighi/qpage/"><img src="https://scrutinizer-ci.com/g/sepandhaghighi/qpage/badges/build.png?b=master"/></a>
 <hr/>
 </div>
 Free Project For Creating Academic Homepage
