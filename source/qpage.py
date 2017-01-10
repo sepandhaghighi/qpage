@@ -1,6 +1,6 @@
 import shutil  # Library For Work With File In High Level Like Copy
 import webbrowser
-from params import *
+from source.params import *
 import socket
 import requests
 import re
@@ -29,8 +29,9 @@ def print_logo():
     """ print qpage logo by characters
 
     """
-    if "logo.txt" in os.listdir():
-        with open("logo.txt", "r") as logo_file:
+    if "logo.txt" in os.listdir(RESOURCE_DIR):
+        logo_path = os.path.join(RESOURCE_DIR, 'logo.txt')
+        with open(logo_path, "r") as logo_file:
             for line in logo_file:
                 print(line.rstrip())
     else:
@@ -148,7 +149,8 @@ def download_lorem():
 
     """
     if internet():
-        urllib.request.urlretrieve("http://www.qpage.ir/sample/Latin-Lipsum.txt", "Latin-Lipsum.txt")
+        lorem_path = os.path.join(RESOURCE_DIR, 'Latin-Lipsum.txt')
+        urllib.request.urlretrieve("http://www.qpage.ir/sample/Latin-Lipsum.txt", lorem_path)
     else:
         print("Error In Download Lorem")
 
@@ -160,9 +162,10 @@ def read_lorem(char=100):
     :return : the lorme string
     """
     try:
-        if "Latin-Lipsum.txt" not in os.listdir(WORK_DIR):
+        if "Latin-Lipsum.txt" not in os.listdir(RESOURCE_DIR):
             download_lorem()
-        lorem_file = open("Latin-Lipsum.txt", "r")
+        lorem_path = os.path.join(RESOURCE_DIR, 'Latin-Lipsum.txt')
+        lorem_file = open(lorem_path, "r")
         lorem_text = lorem_file.read()
         lorem_file.close()
         return " ".join(lorem_text.split(" ")[:char])
@@ -252,7 +255,7 @@ def address_print():
 
     """
     print_line(70, "*")
-    print("Where --> " + WORK_DIR)
+    print("Where --> " + SOURCE_DIR)
     print_line(70, "*")
 
 
@@ -261,7 +264,7 @@ def create_folder():
 
     """
     folder_flag = 0
-    list_of_folders = os.listdir(WORK_DIR)
+    list_of_folders = os.listdir(SOURCE_DIR)
     for i in ["doc", "image", "output", "font"]:
         if i not in list_of_folders:
             os.mkdir(i)
@@ -726,8 +729,8 @@ def icon_creator():
             os.rename(os.path.join(OUT_DIR, file), os.path.join(OUT_DIR, 'favicon.ico'))
             icon_flag = 1
             break
-    if "favicon.ico" in os.listdir(WORK_DIR) and icon_flag == 0:
-        shutil.copy(os.path.join(WORK_DIR, "favicon.ico"), OUT_DIR)
+    if "favicon.ico" in os.listdir(SOURCE_DIR) and icon_flag == 0:
+        shutil.copy(os.path.join(SOURCE_DIR, "favicon.ico"), OUT_DIR)
         warnings.append(WARNING_DICT["icon_warning"] + " There is no icon for this website")
 
 
