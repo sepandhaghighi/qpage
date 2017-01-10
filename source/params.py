@@ -3,11 +3,12 @@ import datetime
 
 IP_FINDER_API = "http://ipinfo.io/ip"
 SERVER_API = "http://sepkjaer.pythonanywhere.com/install"
-WORK_DIR = os.getcwd()  # Get Current Directory
-IMAGE_DIR = os.path.join(WORK_DIR, 'image')
-DOC_DIR = os.path.join(WORK_DIR, 'doc')
-OUT_DIR = os.path.join(WORK_DIR, 'output')
-FONT_DIR = os.path.join(WORK_DIR, 'font')
+SOURCE_DIR = os.getcwd()  # Get Current Directory
+RESOURCE_DIR = os.path.join(os.pardir, 'resource')
+IMAGE_DIR = os.path.join(SOURCE_DIR, 'image')
+DOC_DIR = os.path.join(SOURCE_DIR, 'doc')
+OUT_DIR = os.path.join(SOURCE_DIR, 'output')
+FONT_DIR = os.path.join(SOURCE_DIR, 'font')
 SAMPLE_DICT_ADDR = {os.path.join(IMAGE_DIR, "profile.png"): "http://www.qpage.ir/sample/profile.png",
                     os.path.join(FONT_DIR, "font.TTF"): "http://www.qpage.ir/sample/font.TTF",
                     os.path.join(DOC_DIR, "resume.pdf"): "http://www.qpage.ir/sample/resume.pdf",

@@ -1,4 +1,4 @@
-from qpage import *
+from source.qpage import *
 import sys
 import gc
 
@@ -10,7 +10,7 @@ def error_handler():
     pass_vector = vector_2[1]  # extract pass
     print(str(len(error_vector)) + " Error")  # print  number of errors
     print("Please Check Following :\n")
-    show_items(error_vector) #pritn error
+    show_items(error_vector)  # print error
     for i, item in enumerate(pass_vector):
         print(str(i + len(error_vector) + 1) + "-" + item)
     enter_to_exit()  # get input from user to continue
