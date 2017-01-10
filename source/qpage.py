@@ -1,6 +1,6 @@
 import shutil  # Library For Work With File In High Level Like Copy
 import webbrowser
-from source.params import *
+from params import *
 import socket
 import requests
 import re

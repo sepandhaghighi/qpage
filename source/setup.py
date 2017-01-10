@@ -1,4 +1,4 @@
-from source.qpage import *
+from qpage import *
 import sys
 import gc
 
