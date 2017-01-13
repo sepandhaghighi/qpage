@@ -46,7 +46,7 @@ QPage is written in Python3, in order to run it, you will need a python interper
 
 ## Installation
 
-- [Download](https://github.com/sepandhaghighi/qpage/archive/v1.9.zip) QPage
+- [Download](https://github.com/sepandhaghighi/qpage/archive/v1.9.zip) QPage (or `pip install qpage`)
 
 - Just Unzip It !
 
