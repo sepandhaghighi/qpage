@@ -1,7 +1,7 @@
 <div align="center">
 
 <img src="http://www.qpage.ir/images/logo.png"/>
-
+<h2>QPage</h2>
 </div>
 <hr/>
 <div align="center">
