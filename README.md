@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/sepandhaghighi/qpage.png?label=ready&title=Ready)](https://waffle.io/sepandhaghighi/qpage)
 <div align="center">
 
 <img src="http://www.qpage.ir/images/logo.png"/>
