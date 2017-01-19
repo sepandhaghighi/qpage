@@ -4,6 +4,7 @@
 <img src="http://www.qpage.ir/images/logo.png"/>
 <h2>QPage</h2>
 <a href="https://waffle.io/sepandhaghighi/qpage"><img src="https://badge.waffle.io/sepandhaghighi/qpage.png?label=ready&title=Ready"/></a>
+<a href="http://www.qpage.ir/document.html"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
 </div>
 <hr/>
 <div align="center">
@@ -84,6 +85,7 @@ Homepage : [Link](http://www.qpage.ir)
 PyPI : [Link](http://pypi.python.org/pypi/qpage)                
 SourceForge : [Link](https://sourceforge.net/projects/qpage/)               
 Coverage Report : [Link](http://www.qpage.ir/htmlcov/index.html)
+Code Documents: [Link](http://www.qpage.ir/doc/index.html)
 
 
 ##License
