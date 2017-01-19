@@ -4,6 +4,9 @@ import gc
 
 
 def error_handler():
+    """ Colse files and check errors and start again main
+
+    """
     close_files()  # Close all of the open files
     vector_2 = error_finder()  # load error and pass vector
     error_vector = vector_2[0]  # extract errors
@@ -18,6 +21,9 @@ def error_handler():
 
 
 def file_handler():
+    """ Write files
+
+    """
     for i in ACTUAL_NAME:
         html_init(i)  # create pages html files
     menu_writer()  # write menu for each html file
@@ -31,6 +37,10 @@ def file_handler():
 
 
 def main_handler_2(time_1=0):
+    """ Second part of main handler
+
+    :param time_1: time that passed but not counted in generation time
+    """
     file_handler()  # call file_handler
     total_perf_time = generation_time(time_1)
     print("HOMEPAGE is ready,generated in " + str(total_perf_time) + " sec")
@@ -50,6 +60,10 @@ def main_handler_2(time_1=0):
 
 
 def response_handler(response):
+    """ Calculate the generation time
+
+    :param response: if there was a response run main handler again
+    """
     if response:  # check response status
         print(
             "At least one of the folders create for the first time ,\n"
@@ -60,6 +74,9 @@ def response_handler(response):
 
 
 def sample_handler():
+    """ Ask for run sample website
+
+    """
     # Get Input form user for loading sample files or continue
     response = input(
         "Press [S] to enter sample site material running or other keys to continue with your data")
@@ -69,6 +86,10 @@ def sample_handler():
 
 
 def main_handler(control_flag=True):
+    """ Main Handler
+
+    :param control_flag: Check if VERSION control passed in prev step then Check for new VERSION of qpage
+    """
     try:
         start_time = generation_time()
         response = create_folder()  # Check Folder and Files Status
