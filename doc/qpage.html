@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>QPage: module qpage</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>qpage.py Functions&nbsp;    <a href="index.html">setup.py</a></strong></big></font></td>
+    <td>
+        <a href="http://www.qpage.ir">Home</a>
+    </td>
+    </tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-LSM_translate"><strong>LSM_translate</strong></a>(line, center)</dt><dd><tt>????<br>
+&nbsp;<br>
+:param&nbsp;line:&nbsp;the&nbsp;input&nbsp;line.<br>
+:param&nbsp;center:&nbsp;put&nbsp;it&nbsp;in&nbsp;center<br>
+&nbsp;<br>
+:return&nbsp;:&nbsp;return&nbsp;a&nbsp;list&nbsp;contain&nbsp;text&nbsp;header&nbsp;end&nbsp;and&nbsp;header&nbsp;begin</tt></dd></dl>
+ <dl><dt><a name="-address_print"><strong>address_print</strong></a>()</dt><dd><tt>Print&nbsp;the&nbsp;working&nbsp;directory</tt></dd></dl>
+ <dl><dt><a name="-build_index"><strong>build_index</strong></a>(file)</dt><dd><tt>Find&nbsp;and&nbsp;build&nbsp;index&nbsp;page<br>
+&nbsp;<br>
+:param&nbsp;file:&nbsp;The&nbsp;index&nbsp;file.</tt></dd></dl>
+ <dl><dt><a name="-build_resume"><strong>build_resume</strong></a>(file)</dt><dd><tt>Find&nbsp;and&nbsp;build&nbsp;resume&nbsp;page.<br>
+&nbsp;<br>
+:param&nbsp;file:&nbsp;The&nbsp;resume&nbsp;file.</tt></dd></dl>
+ <dl><dt><a name="-clear_folder"><strong>clear_folder</strong></a>(path)</dt><dd><tt>This&nbsp;Function&nbsp;Get&nbsp;Path&nbsp;Of&nbsp;Foldr&nbsp;And&nbsp;Delete&nbsp;Its&nbsp;Contains<br>
+&nbsp;<br>
+:param&nbsp;path:&nbsp;the&nbsp;path&nbsp;that&nbsp;gonna&nbsp;be&nbsp;deleted.</tt></dd></dl>
+ <dl><dt><a name="-close_files"><strong>close_files</strong></a>()</dt><dd><tt>Close&nbsp;all&nbsp;the&nbsp;files.</tt></dd></dl>
+ <dl><dt><a name="-color_code_map"><strong>color_code_map</strong></a>()</dt><dd><tt>Check&nbsp;and&nbsp;insert&nbsp;colors&nbsp;that&nbsp;is&nbsp;chosen.<br>
+&nbsp;<br>
+:return&nbsp;list:&nbsp;background&nbsp;and&nbsp;text&nbsp;color</tt></dd></dl>
+ <dl><dt><a name="-contain"><strong>contain</strong></a>(name)</dt><dd><tt>main&nbsp;function&nbsp;That&nbsp;Open&nbsp;Each&nbsp;Page&nbsp;HTML&nbsp;File&nbsp;and&nbsp;call&nbsp;other&nbsp;function&nbsp;to&nbsp;write&nbsp;data&nbsp;in&nbsp;it<br>
+&nbsp;<br>
+:param&nbsp;name:&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;file&nbsp;that&nbsp;should&nbsp;be&nbsp;written</tt></dd></dl>
+ <dl><dt><a name="-convert_bytes"><strong>convert_bytes</strong></a>(num)</dt><dd><tt>convert&nbsp;num&nbsp;to&nbsp;idiomatic&nbsp;byte&nbsp;unit<br>
+&nbsp;<br>
+:param&nbsp;num:&nbsp;the&nbsp;input&nbsp;number.</tt></dd></dl>
+ <dl><dt><a name="-create_badge"><strong>create_badge</strong></a>(subject='qpage', status='1.9', color='blue', random=False)</dt></dl>
+ <dl><dt><a name="-create_folder"><strong>create_folder</strong></a>()</dt><dd><tt>This&nbsp;Function&nbsp;Create&nbsp;Empty&nbsp;Folder&nbsp;At&nbsp;Begin</tt></dd></dl>
+ <dl><dt><a name="-css_creator"><strong>css_creator</strong></a>()</dt><dd><tt>Ask&nbsp;For&nbsp;background&nbsp;and&nbsp;text&nbsp;color&nbsp;in&nbsp;and&nbsp;make&nbsp;css</tt></dd></dl>
+ <dl><dt><a name="-css_font"><strong>css_font</strong></a>(font_folder)</dt><dd><tt>Search&nbsp;and&nbsp;file&nbsp;all&nbsp;fonts.<br>
+&nbsp;<br>
+:param&nbsp;font_folder:&nbsp;the&nbsp;folder&nbsp;to&nbsp;search.<br>
+:return&nbsp;list&nbsp;:&nbsp;font_flag&nbsp;and&nbsp;the&nbsp;current&nbsp;format</tt></dd></dl>
+ <dl><dt><a name="-download_badge"><strong>download_badge</strong></a>(address)</dt><dd><tt>Download&nbsp;badge&nbsp;for&nbsp;website<br>
+&nbsp;<br>
+:param&nbsp;address:&nbsp;the&nbsp;address&nbsp;that&nbsp;should&nbsp;get&nbsp;badge</tt></dd></dl>
+ <dl><dt><a name="-download_lorem"><strong>download_lorem</strong></a>()</dt><dd><tt>Download&nbsp;the&nbsp;lorem&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-enter_to_exit"><strong>enter_to_exit</strong></a>()</dt><dd><tt>Quit&nbsp;Project&nbsp;by&nbsp;pressing&nbsp;a&nbsp;key.</tt></dd></dl>
+ <dl><dt><a name="-error_finder"><strong>error_finder</strong></a>()</dt><dd><tt>Check&nbsp;and&nbsp;find&nbsp;error&nbsp;that&nbsp;display&nbsp;it</tt></dd></dl>
+ <dl><dt><a name="-error_log"><strong>error_log</strong></a>(msg)</dt><dd><tt>Show&nbsp;the&nbsp;errorlog&nbsp;of&nbsp;the&nbsp;app<br>
+&nbsp;<br>
+:param&nbsp;msg:&nbsp;error&nbsp;message</tt></dd></dl>
+ <dl><dt><a name="-file_size"><strong>file_size</strong></a>()</dt><dd><tt>Print&nbsp;the&nbsp;size&nbsp;of&nbsp;output&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-find_global_ip"><strong>find_global_ip</strong></a>()</dt><dd><tt>Find&nbsp;the&nbsp;ip&nbsp;for&nbsp;use&nbsp;in&nbsp;API<br>
+&nbsp;<br>
+:return:&nbsp;return&nbsp;the&nbsp;IP.</tt></dd></dl>
+ <dl><dt><a name="-font_creator"><strong>font_creator</strong></a>(css_file, font_section)</dt><dd><tt>Ask&nbsp;and&nbsp;Select&nbsp;font.<br>
+&nbsp;<br>
+:param&nbsp;css_file:&nbsp;the&nbsp;file&nbsp;that&nbsp;font&nbsp;css&nbsp;will&nbsp;be&nbsp;added&nbsp;to.<br>
+:param&nbsp;font_section:&nbsp;the&nbsp;font&nbsp;section&nbsp;of&nbsp;css&nbsp;file<br>
+&nbsp;<br>
+:return&nbsp;font_section:&nbsp;the&nbsp;font&nbsp;section&nbsp;of&nbsp;css&nbsp;after&nbsp;edit</tt></dd></dl>
+ <dl><dt><a name="-generation_time"><strong>generation_time</strong></a>(time_1=None)</dt><dd><tt>Calculate&nbsp;the&nbsp;generation&nbsp;time<br>
+&nbsp;<br>
+:param&nbsp;time_1:&nbsp;time&nbsp;that&nbsp;passed&nbsp;but&nbsp;not&nbsp;counted&nbsp;in&nbsp;generation&nbsp;time<br>
+:return&nbsp;:the&nbsp;amount&nbsp;of&nbsp;time&nbsp;that&nbsp;passed&nbsp;.</tt></dd></dl>
+ <dl><dt><a name="-get_color_code"><strong>get_color_code</strong></a>()</dt><dd><tt>Ask&nbsp;for&nbsp;selecting&nbsp;color&nbsp;of&nbsp;text&nbsp;and&nbsp;background<br>
+&nbsp;<br>
+:return&nbsp;list:&nbsp;background&nbsp;and&nbsp;text&nbsp;color</tt></dd></dl>
+ <dl><dt><a name="-html_end"><strong>html_end</strong></a>(name)</dt><dd><tt>Create&nbsp;End&nbsp;Of&nbsp;The&nbsp;Html&nbsp;and&nbsp;close&nbsp;file<br>
+&nbsp;<br>
+:param&nbsp;name:&nbsp;The&nbsp;name&nbsp;of&nbsp;html&nbsp;file.</tt></dd></dl>
+ <dl><dt><a name="-html_init"><strong>html_init</strong></a>(name)</dt><dd><tt>Create&nbsp;Initial&nbsp;Form&nbsp;Of&nbsp;each&nbsp;Html&nbsp;Page&nbsp;Like&nbsp;Title&nbsp;And&nbsp;HTML&nbsp;&nbsp;And&nbsp;Body&nbsp;Tag.<br>
+&nbsp;<br>
+:param&nbsp;name:&nbsp;the&nbsp;name&nbsp;of&nbsp;html&nbsp;file.</tt></dd></dl>
+ <dl><dt><a name="-icon_creator"><strong>icon_creator</strong></a>()</dt><dd><tt>Find&nbsp;.ico&nbsp;file&nbsp;and&nbsp;use&nbsp;it&nbsp;as&nbsp;favicon&nbsp;of&nbsp;website.</tt></dd></dl>
+ <dl><dt><a name="-internet"><strong>internet</strong></a>(host='8.8.8.8', port=53, timeout=3)</dt><dd><tt>Check&nbsp;Internet&nbsp;Connections.<br>
+&nbsp;<br>
+:param&nbsp;&nbsp;host:&nbsp;the&nbsp;host&nbsp;that&nbsp;check&nbsp;connection&nbsp;to<br>
+:param&nbsp;&nbsp;port:&nbsp;port&nbsp;that&nbsp;check&nbsp;connection&nbsp;with<br>
+:param&nbsp;&nbsp;timeout:&nbsp;times&nbsp;that&nbsp;check&nbsp;the&nbsp;connnection<br>
+&nbsp;<br>
+:return&nbsp;bool:&nbsp;True&nbsp;if&nbsp;Connection&nbsp;is&nbsp;Stable</tt></dd></dl>
+ <dl><dt><a name="-is_sample_downloaded"><strong>is_sample_downloaded</strong></a>()</dt><dd><tt>Check&nbsp;the&nbsp;sample&nbsp;site&nbsp;material&nbsp;is&nbsp;downloaded<br>
+&nbsp;<br>
+:return&nbsp;:&nbsp;list&nbsp;of&nbsp;the&nbsp;materials</tt></dd></dl>
+ <dl><dt><a name="-logger"><strong>logger</strong></a>(status=False, perf_time=None)</dt><dd><tt>Show&nbsp;the&nbsp;build&nbsp;log&nbsp;of&nbsp;the&nbsp;app<br>
+&nbsp;<br>
+:param&nbsp;status:&nbsp;show&nbsp;status&nbsp;of&nbsp;app.<br>
+:param&nbsp;perf_time&nbsp;:&nbsp;show&nbsp;the&nbsp;time&nbsp;passed&nbsp;for&nbsp;generate&nbsp;files</tt></dd></dl>
+ <dl><dt><a name="-menu_maker"><strong>menu_maker</strong></a>()</dt><dd><tt>Top&nbsp;Menu&nbsp;Maker&nbsp;In&nbsp;each&nbsp;html&nbsp;page</tt></dd></dl>
+ <dl><dt><a name="-menu_writer"><strong>menu_writer</strong></a>()</dt><dd><tt>Write&nbsp;menu_maker&nbsp;output&nbsp;in&nbsp;html&nbsp;and&nbsp;close&nbsp;file&nbsp;after</tt></dd></dl>
+ <dl><dt><a name="-name_standard"><strong>name_standard</strong></a>(name)</dt><dd><tt>return&nbsp;the&nbsp;Standard&nbsp;VERSION&nbsp;of&nbsp;the&nbsp;input&nbsp;word<br>
+&nbsp;<br>
+:param&nbsp;name:&nbsp;the&nbsp;name&nbsp;that&nbsp;should&nbsp;be&nbsp;standard<br>
+:return&nbsp;name:&nbsp;the&nbsp;standard&nbsp;form&nbsp;of&nbsp;word</tt></dd></dl>
+ <dl><dt><a name="-page_name_update"><strong>page_name_update</strong></a>()</dt><dd><tt>This&nbsp;Function&nbsp;Update&nbsp;Page&nbsp;Names</tt></dd></dl>
+ <dl><dt><a name="-preview"><strong>preview</strong></a>()</dt><dd><tt>Preview&nbsp;website&nbsp;in&nbsp;browser</tt></dd></dl>
+ <dl><dt><a name="-print_adv"><strong>print_adv</strong></a>(file, close=True)</dt><dd><tt>Print&nbsp;the&nbsp;advertisement.<br>
+&nbsp;<br>
+:param&nbsp;file&nbsp;&nbsp;:&nbsp;The&nbsp;file&nbsp;that&nbsp;should&nbsp;ad&nbsp;to&nbsp;it.<br>
+:param&nbsp;close&nbsp;:&nbsp;Close&nbsp;file&nbsp;after&nbsp;add&nbsp;ad</tt></dd></dl>
+ <dl><dt><a name="-print_download"><strong>print_download</strong></a>(file, name, link, center=False, close=False)</dt><dd><tt>Create&nbsp;Download&nbsp;Link&nbsp;in&nbsp;page<br>
+&nbsp;<br>
+:param&nbsp;file:&nbsp;The&nbsp;file&nbsp;that&nbsp;contain&nbsp;html&nbsp;of&nbsp;page.<br>
+:param&nbsp;name:&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;link<br>
+:param&nbsp;link:&nbsp;The&nbsp;place&nbsp;that&nbsp;name&nbsp;is&nbsp;Linked<br>
+:param&nbsp;center:&nbsp;put&nbsp;the&nbsp;text&nbsp;in&nbsp;center<br>
+:param&nbsp;close&nbsp;:&nbsp;close&nbsp;file&nbsp;after&nbsp;done&nbsp;editing<br>
+&nbsp;<br>
+:type&nbsp;center:&nbsp;bool<br>
+:type&nbsp;close&nbsp;:&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-print_image"><strong>print_image</strong></a>(file, image_format='jpg', close=False)</dt><dd><tt>Write&nbsp;Image&nbsp;Part&nbsp;OF&nbsp;The&nbsp;Page.<br>
+&nbsp;<br>
+:param&nbsp;file:&nbsp;The&nbsp;file&nbsp;that&nbsp;images&nbsp;will&nbsp;be&nbsp;added.<br>
+:param&nbsp;close&nbsp;:&nbsp;close&nbsp;file&nbsp;after&nbsp;done&nbsp;editing.<br>
+:param&nbsp;image_format:&nbsp;the&nbsp;format&nbsp;of&nbsp;image<br>
+&nbsp;<br>
+:type&nbsp;close&nbsp;:&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-print_line"><strong>print_line</strong></a>(number, char='-')</dt><dd><tt>Print&nbsp;a&nbsp;Line<br>
+&nbsp;<br>
+:param&nbsp;number:&nbsp;the&nbsp;amount&nbsp;char&nbsp;that&nbsp;in&nbsp;lien<br>
+:param&nbsp;char&nbsp;&nbsp;:&nbsp;the&nbsp;char&nbsp;that&nbsp;used&nbsp;to&nbsp;draw&nbsp;line</tt></dd></dl>
+ <dl><dt><a name="-print_logo"><strong>print_logo</strong></a>()</dt><dd><tt>print&nbsp;qpage&nbsp;logo&nbsp;by&nbsp;characters</tt></dd></dl>
+ <dl><dt><a name="-print_meta"><strong>print_meta</strong></a>()</dt><dd><tt>Add&nbsp;meta&nbsp;to&nbsp;html&nbsp;files<br>
+&nbsp;<br>
+:return&nbsp;static_meta:&nbsp;The&nbsp;meta&nbsp;that&nbsp;created</tt></dd></dl>
+ <dl><dt><a name="-print_text"><strong>print_text</strong></a>(text_file, file, center=False, close=False)</dt><dd><tt>Write&nbsp;the&nbsp;text&nbsp;part&nbsp;of&nbsp;each&nbsp;page<br>
+&nbsp;<br>
+:param&nbsp;text_file:&nbsp;Text&nbsp;tha&nbsp;should&nbsp;be&nbsp;written.<br>
+:param&nbsp;file&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;The&nbsp;file&nbsp;that&nbsp;text&nbsp;will&nbsp;be&nbsp;written&nbsp;inside.<br>
+:param&nbsp;center&nbsp;&nbsp;&nbsp;:&nbsp;put&nbsp;the&nbsp;text&nbsp;in&nbsp;center.<br>
+:param&nbsp;close&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;close&nbsp;file&nbsp;after&nbsp;done&nbsp;editing<br>
+&nbsp;<br>
+:type&nbsp;close&nbsp;:&nbsp;bool<br>
+:type&nbsp;center:&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-print_warning"><strong>print_warning</strong></a>()</dt><dd><tt>Print&nbsp;Warnings!</tt></dd></dl>
+ <dl><dt><a name="-random_badge_color"><strong>random_badge_color</strong></a>()</dt><dd><tt>return&nbsp;a&nbsp;random&nbsp;color&nbsp;for&nbsp;badge</tt></dd></dl>
+ <dl><dt><a name="-read_lorem"><strong>read_lorem</strong></a>(char=100)</dt><dd><tt>find&nbsp;and&nbsp;read&nbsp;lorem<br>
+&nbsp;<br>
+:param&nbsp;char:&nbsp;the&nbsp;amount&nbsp;of&nbsp;char&nbsp;that&nbsp;needed<br>
+:return&nbsp;:&nbsp;the&nbsp;lorme&nbsp;string</tt></dd></dl>
+ <dl><dt><a name="-reduce"><strong>reduce</strong></a>(...)</dt><dd><tt><a href="#-reduce">reduce</a>(function,&nbsp;sequence[,&nbsp;initial])&nbsp;-&gt;&nbsp;value<br>
+&nbsp;<br>
+Apply&nbsp;a&nbsp;function&nbsp;of&nbsp;two&nbsp;arguments&nbsp;cumulatively&nbsp;to&nbsp;the&nbsp;items&nbsp;of&nbsp;a&nbsp;sequence,<br>
+from&nbsp;left&nbsp;to&nbsp;right,&nbsp;so&nbsp;as&nbsp;to&nbsp;reduce&nbsp;the&nbsp;sequence&nbsp;to&nbsp;a&nbsp;single&nbsp;value.<br>
+For&nbsp;example,&nbsp;<a href="#-reduce">reduce</a>(lambda&nbsp;x,&nbsp;y:&nbsp;x+y,&nbsp;[1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5])&nbsp;calculates<br>
+((((1+2)+3)+4)+5).&nbsp;&nbsp;If&nbsp;initial&nbsp;is&nbsp;present,&nbsp;it&nbsp;is&nbsp;placed&nbsp;before&nbsp;the&nbsp;items<br>
+of&nbsp;the&nbsp;sequence&nbsp;in&nbsp;the&nbsp;calculation,&nbsp;and&nbsp;serves&nbsp;as&nbsp;a&nbsp;default&nbsp;when&nbsp;the<br>
+sequence&nbsp;is&nbsp;empty.</tt></dd></dl>
+ <dl><dt><a name="-robot_maker"><strong>robot_maker</strong></a>()</dt><dd><tt>Create&nbsp;Robots.txt&nbsp;for&nbsp;pages</tt></dd></dl>
+ <dl><dt><a name="-sample_site_download"><strong>sample_site_download</strong></a>(item_list)</dt><dd><tt>Download&nbsp;sample&nbsp;material&nbsp;for&nbsp;make&nbsp;a&nbsp;fake&nbsp;site<br>
+&nbsp;<br>
+:param&nbsp;item_list:&nbsp;Download&nbsp;items&nbsp;form&nbsp;item_list</tt></dd></dl>
+ <dl><dt><a name="-server"><strong>server</strong></a>()</dt><dd><tt>Get&nbsp;Server&nbsp;response.</tt></dd></dl>
+ <dl><dt><a name="-show_items"><strong>show_items</strong></a>(enum_list)</dt><dd><tt>show&nbsp;item&nbsp;of&nbsp;enum_list<br>
+&nbsp;<br>
+:param&nbsp;enum_list&nbsp;the&nbsp;list&nbsp;that&nbsp;should&nbsp;be&nbsp;shown<br>
+:type&nbsp;enum_list&nbsp;:&nbsp;list</tt></dd></dl>
+ <dl><dt><a name="-system_details"><strong>system_details</strong></a>()</dt><dd><tt>Show&nbsp;detail&nbsp;of&nbsp;system&nbsp;that&nbsp;code&nbsp;is&nbsp;runnig&nbsp;on</tt></dd></dl>
+ <dl><dt><a name="-version_control"><strong>version_control</strong></a>()</dt><dd><tt>Check&nbsp;and&nbsp;update&nbsp;VERSIONs.</tt></dd></dl>
+ <dl><dt><a name="-wait_func"><strong>wait_func</strong></a>(iteration)</dt><dd><tt>Wait&nbsp;for-in&nbsp;range&nbsp;Iteration.<br>
+&nbsp;<br>
+:param&nbsp;iteration:&nbsp;the&nbsp;amount&nbsp;of&nbsp;wait.</tt></dd></dl>
+</td></tr></table><p>
+
+</body></html>
