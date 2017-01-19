@@ -17,15 +17,53 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>setup.py Functions &nbsp;</strong></big></font></td>
     </tr>
     
+   
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-error_handler"><strong>error_handler</strong></a>()</dt><dd><tt>Colse&nbsp;files&nbsp;and&nbsp;check&nbsp;errors&nbsp;and&nbsp;start&nbsp;again&nbsp;main</tt></dd></dl>
- <dl><dt><a name="-file_handler"><strong>file_handler</strong></a>()</dt><dd><tt>Write&nbsp;files</tt></dd></dl>
+<td width="100%"><dl><dt><a name="-error_handler"><strong>error_handler</strong></a>()</dt><dd><tt>Close&nbsp;files&nbsp;and&nbsp;check&nbsp;errors&nbsp;and&nbsp;start&nbsp;again&nbsp;main<br>
+call:<br>
+-close_files<br>
+-error_finder<br>
+-Show_items<br>
+-enter_to_exit<br>
+-main_handler</tt></dd></dl>
+ <dl><dt><a name="-file_handler"><strong>file_handler</strong></a>()</dt><dd><tt>Write&nbsp;files<br>
+call:<br>
+-html_init<br>
+-contain<br>
+-css_creator<br>
+-icon_creator<br>
+-robot_maker<br>
+-close_files</tt></dd></dl>
  <dl><dt><a name="-main_handler"><strong>main_handler</strong></a>(control_flag=True)</dt><dd><tt>Main&nbsp;Handler<br>
 &nbsp;<br>
-:param&nbsp;control_flag:&nbsp;Check&nbsp;if&nbsp;VERSION&nbsp;control&nbsp;passed&nbsp;in&nbsp;prev&nbsp;step&nbsp;then&nbsp;Check&nbsp;for&nbsp;new&nbsp;VERSION&nbsp;of&nbsp;qpage</tt></dd></dl>
+:param&nbsp;control_flag:&nbsp;Check&nbsp;if&nbsp;VERSION&nbsp;control&nbsp;passed&nbsp;in&nbsp;prev&nbsp;step&nbsp;then&nbsp;Check&nbsp;for&nbsp;new&nbsp;VERSION&nbsp;of&nbsp;qpage<br>
+&nbsp;&nbsp;&nbsp;&nbsp;call:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-generation_time<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-create_folder<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-print_logo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-address_print<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-version_control<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-sample_handler<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-response_handler<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-page_name_update<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-main_handler_2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-error_log<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-logger<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-close_files<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-enter_to_exi</tt></dd></dl>
  <dl><dt><a name="-main_handler_2"><strong>main_handler_2</strong></a>(time_1=0)</dt><dd><tt>Second&nbsp;part&nbsp;of&nbsp;main&nbsp;handler<br>
 &nbsp;<br>
-:param&nbsp;time_1:&nbsp;time&nbsp;that&nbsp;passed&nbsp;but&nbsp;not&nbsp;counted&nbsp;in&nbsp;generation&nbsp;time</tt></dd></dl>
+:param&nbsp;time_1:&nbsp;time&nbsp;that&nbsp;passed&nbsp;but&nbsp;not&nbsp;counted&nbsp;in&nbsp;generation&nbsp;time<br>
+&nbsp;<br>
+call:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-file_handler<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-address_print<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-print_warning<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-file_size<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-internet<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-server<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-preview<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-close_files</tt></dd></dl>
  <dl><dt><a name="-reduce"><strong>reduce</strong></a>(...)</dt><dd><tt><a href="#-reduce">reduce</a>(function,&nbsp;sequence[,&nbsp;initial])&nbsp;-&gt;&nbsp;value<br>
 &nbsp;<br>
 Apply&nbsp;a&nbsp;function&nbsp;of&nbsp;two&nbsp;arguments&nbsp;cumulatively&nbsp;to&nbsp;the&nbsp;items&nbsp;of&nbsp;a&nbsp;sequence,<br>
@@ -36,8 +74,13 @@ of&nbsp;the&nbsp;sequence&nbsp;in&nbsp;the&nbsp;calculation,&nbsp;and&nbsp;serve
 sequence&nbsp;is&nbsp;empty.</tt></dd></dl>
  <dl><dt><a name="-response_handler"><strong>response_handler</strong></a>(response)</dt><dd><tt>Calculate&nbsp;the&nbsp;generation&nbsp;time<br>
 &nbsp;<br>
-:param&nbsp;response:&nbsp;if&nbsp;there&nbsp;was&nbsp;a&nbsp;response&nbsp;run&nbsp;main&nbsp;handler&nbsp;again</tt></dd></dl>
- <dl><dt><a name="-sample_handler"><strong>sample_handler</strong></a>()</dt><dd><tt>Ask&nbsp;for&nbsp;run&nbsp;sample&nbsp;website</tt></dd></dl>
-</td></tr></table><p>
+:param&nbsp;response:&nbsp;if&nbsp;there&nbsp;was&nbsp;a&nbsp;response&nbsp;run&nbsp;main&nbsp;handler&nbsp;again<br>
+call:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-wait_func<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-main_handler</tt></dd></dl>
+ <dl><dt><a name="-sample_handler"><strong>sample_handler</strong></a>()</dt><dd><tt>Ask&nbsp;for&nbsp;run&nbsp;sample&nbsp;website<br>
+call:<br>
+-sample_site_download<br>
+-is_sample_downloaded</tt></dd></dl>
 
 </body></html>
