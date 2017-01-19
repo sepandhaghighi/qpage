@@ -4,8 +4,13 @@ import gc
 
 
 def error_handler():
-    """ Colse files and check errors and start again main
-
+    """ Close files and check errors and start again main
+        call:
+        -close_files
+        -error_finder
+        -Show_items
+        -enter_to_exit
+        -main_handler
     """
     close_files()  # Close all of the open files
     vector_2 = error_finder()  # load error and pass vector
@@ -22,7 +27,13 @@ def error_handler():
 
 def file_handler():
     """ Write files
-
+        call:
+        -html_init
+        -contain
+        -css_creator
+        -icon_creator
+        -robot_maker
+        -close_files
     """
     for i in ACTUAL_NAME:
         html_init(i)  # create pages html files
@@ -40,6 +51,16 @@ def main_handler_2(time_1=0):
     """ Second part of main handler
 
     :param time_1: time that passed but not counted in generation time
+
+    call:
+        -file_handler
+        -address_print
+        -print_warning
+        -file_size
+        -internet
+        -server
+        -preview
+        -close_files
     """
     file_handler()  # call file_handler
     total_perf_time = generation_time(time_1)
@@ -63,6 +84,9 @@ def response_handler(response):
     """ Calculate the generation time
 
     :param response: if there was a response run main handler again
+    call:
+        -wait_func
+        -main_handler
     """
     if response:  # check response status
         print(
@@ -75,7 +99,9 @@ def response_handler(response):
 
 def sample_handler():
     """ Ask for run sample website
-
+        call:
+        -sample_site_download
+        -is_sample_downloaded
     """
     # Get Input form user for loading sample files or continue
     response = input(
@@ -89,6 +115,22 @@ def main_handler(control_flag=True):
     """ Main Handler
 
     :param control_flag: Check if VERSION control passed in prev step then Check for new VERSION of qpage
+        call:
+        -generation_time
+        -create_folder
+        -print_logo
+        -address_print
+        -version_control
+        -sample_handler
+        -response_handler
+        -page_name_update
+        -main_handler_2
+        -error_log
+        -logger
+        -close_files
+        -enter_to_exi
+
+
     """
     try:
         start_time = generation_time()
