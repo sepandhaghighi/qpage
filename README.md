@@ -1,7 +1,9 @@
+
 <div align="center">
 
 <img src="http://www.qpage.ir/images/logo.png"/>
-
+<h2>QPage</h2>
+<a href="https://waffle.io/sepandhaghighi/qpage"><img src="https://badge.waffle.io/sepandhaghighi/qpage.png?label=ready&title=Ready"/></a>
 </div>
 <hr/>
 <div align="center">
@@ -46,7 +48,7 @@ QPage is written in Python3, in order to run it, you will need a python interper
 
 ## Installation
 
-- [Download](https://github.com/sepandhaghighi/qpage/archive/v1.9.zip) QPage
+- [Download](https://github.com/sepandhaghighi/qpage/archive/v1.9.zip) QPage (or `pip install qpage`)
 
 - Just Unzip It !
 
