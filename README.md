@@ -54,7 +54,7 @@ QPage is written in Python3, in order to run it, you will need a python interper
 
 ## Usage
 <div align="center">
-<img src="http://www.qpage.ir/images/qpage.gif"/ alt="QPage animation">
+<img src="http://www.qpage.ir/help/qpage.gif"/ alt="QPage animation">
 
 </div>
 - Run setup (for the first use wait to create folders)
