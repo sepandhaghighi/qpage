@@ -69,7 +69,7 @@ def download_badge(address):
     :param address: the address that should get badge
     """
     r = requests.get(address, stream=True)
-    with open(os.path.join(IMAGE_DIR, "badge.svg"), 'wb') as f:
+    with open(os.path.join(OUT_DIR, "badge.svg"), 'wb') as f:
         shutil.copyfileobj(r.raw, f)
 
 
@@ -120,11 +120,7 @@ def create_badge(subject="qpage", status=VERSION, color="blue", random=False):
         if color not in BADGE_COLOR_LIST:
             color = "orange"
     badge_adr = ADV_BADGE_STATIC + subject + "-" + status + "-" + color + '.svg'
-    if internet():
-        download_badge(badge_adr)
-        return os.path.join(IMAGE_DIR, "badge.svg")
-    else:
-        return badge_adr
+    return badge_adr
 
 
 def is_sample_downloaded():
