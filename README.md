@@ -17,6 +17,7 @@
 <a href="https://www.codacy.com/app/sepand-haghighi/qpage?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/qpage&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/4d3f9b490b9a42c282b745ae8e2a122c"/></a>
 <a href="https://scrutinizer-ci.com/g/sepandhaghighi/qpage/"><img src="https://scrutinizer-ci.com/g/sepandhaghighi/qpage/badges/build.png?b=master"/></a>
 <hr/>
+
 </div>
 Free Project For Creating Academic Homepage
 
@@ -52,9 +53,14 @@ QPage is written in Python3, in order to run it, you will need a python interper
 - Just Unzip It !
 
 ## Usage
+<div align="center">
+<img src="http://www.qpage.ir/images/qpage.gif"/ alt="QPage animation">
 
-- Run setup (for the first use to create folders)
+</div>
+- Run setup (for the first use wait to create folders)
 
+- You can download samples and run in test mode (*Optional)
+ 
 - Put your profile picture in image folder (jpg , bmp , tiff , gif , png)
 
 - Put each page details in a text file with page name in doc folder (* In this step you can use [M] , [S] or [L] at the start and [center] at the end of each line to control font size and alignment )
@@ -64,8 +70,6 @@ QPage is written in Python3, in order to run it, you will need a python interper
 - Put your font file in font folder (*Optional)
 
 - Put your icon file in image folder (*Optional) suggested site
-
-- Run again setup
 
 - Enter your name
 
