@@ -92,7 +92,9 @@ QPage is written in Python3, in order to run it, you will need a python interper
 - Coverage Report : [Link](http://www.qpage.ir/htmlcov/index.html)	
 - Code Documents: [Link](http://www.qpage.ir/doc/index.html)
                                                  
-               
+## Bug Reports
+
+Go to [http://github.com/sepandhaghighi/qpage](http://github.com/sepandhaghighi/qpage) or send an email to [sepand.haghighi@gmail.com](mailto:sepand.haghighi@gmail.com "sepand.haghighi@gmail.com").             
              
 ##License
 
