@@ -17,16 +17,19 @@ function func1(w){
         b[0].style.background="linear-gradient(black,white)";
     }
     else if (w==2){
-        b[0].style.background="linear-gradient(red,white)";
+        b[0].style.background="linear-gradient(yellow,blue)";
     }
     else if (w==3){
-        b[0].style.background="linear-gradient(pink,white)";
+        b[0].style.background="linear-gradient(red,white)";
     }
     else if (w==5){
-        b[0].style.background="linear-gradient(green,white)";
+        b[0].style.background="linear-gradient(gray,white)";
     }
     else if (w==6){
         b[0].style.background="linear-gradient(blue,white)";
+    }
+    else if (w==7){
+        b[0].style.background="linear-gradient(yellow,brown)";
     }
     else{
         b[0].style.background="linear-gradient(orange,white)";
