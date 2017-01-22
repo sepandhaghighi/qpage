@@ -19,7 +19,7 @@
 <hr/>
 
 </div>
-Free Project For Creating Academic Homepage
+Free Project For Creating Academic Homepage Without Any Code
 
 
 
@@ -94,7 +94,7 @@ QPage is written in Python3, in order to run it, you will need a python interper
                                                  
 ## Bug Reports
 
-Go to [http://github.com/sepandhaghighi/qpage](http://github.com/sepandhaghighi/qpage) or send an email to [sepand.haghighi@gmail.com](mailto:sepand.haghighi@gmail.com "sepand.haghighi@gmail.com").             
+Go to [http://github.com/sepandhaghighi/qpage](http://github.com/sepandhaghighi/qpage) or send an email to [report@qpage.ir](mailto:report@qpage.ir "report@qpage.ir").             
              
 ##License
 
