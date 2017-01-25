@@ -208,23 +208,28 @@ def download_lorem():
         print("Error In Download Lorem")
 
 
-def read_lorem(char=100):
+def read_lorem(char=100,external=False):
     """
     find and read lorem
     :param char: the amount of char that needed to print
+    :param external: falg for using external of internal resource for lorem_ipsum
     :type char:int
+    :type external:bool
     :return : the lorem string
     >>> read_lorem(5)
     'Lorem ipsum dolor sit amet,'
     """
     try:
-        if "Latin-Lipsum.txt" not in os.listdir(RESOURCE_DIR):
-            download_lorem()
-        lorem_path = os.path.join(RESOURCE_DIR, 'Latin-Lipsum.txt')
-        lorem_file = open(lorem_path, "r")
-        lorem_text = lorem_file.read()
-        lorem_file.close()
-        return " ".join(lorem_text.split(" ")[:char])
+        if external==True:
+            if "Latin-Lipsum.txt" not in os.listdir(RESOURCE_DIR):
+                download_lorem()
+            lorem_path = os.path.join(RESOURCE_DIR, 'Latin-Lipsum.txt')
+            lorem_file = open(lorem_path, "r")
+            lorem_text = lorem_file.read()
+            lorem_file.close()
+            return " ".join(lorem_text.split(" ")[:char])
+        else:
+            return " ".join(LOREM_IPSUM.split(" ")[:char])
     except Exception as e:
         error_log(e)
         return None
