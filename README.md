@@ -28,9 +28,9 @@ QPage or QuickPage is a Free Project For Creating Academic Homepage Without Any 
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Sample Sites](#samples)
+- [Sample Sites](#sample-sites)
 - [Credits](#credits)
-- [Bug Reports](#report)
+- [Bug Reports](#bug-report)
 - [License](#license)
 
 
