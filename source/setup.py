@@ -4,7 +4,9 @@ import gc
 
 
 def error_handler():
-    """ Close files and check errors and start again main
+    """
+    Close files and check errors and start again main
+    :return:None
         call:
         -close_files
         -error_finder
@@ -26,7 +28,9 @@ def error_handler():
 
 
 def file_handler():
-    """ Write files
+    """
+    Write files
+    :return:None
         call:
         -html_init
         -contain
@@ -48,10 +52,11 @@ def file_handler():
 
 
 def main_handler_2(time_1=0):
-    """ Second part of main handler
-
+    """
+    Second part of main handler
     :param time_1: time that passed but not counted in generation time
-
+    :type time_1:float
+    :return:None
     call:
         -file_handler
         -address_print
@@ -81,9 +86,11 @@ def main_handler_2(time_1=0):
 
 
 def response_handler(response):
-    """ Calculate the generation time
-
-    :param response: if there was a response run main handler again
+    """
+    Calculate the generation time
+    :param response: response flag , if there was a response run main handler again
+    :type response:bool
+    :return:None
     call:
         -wait_func
         -main_handler
@@ -98,7 +105,9 @@ def response_handler(response):
 
 
 def sample_handler():
-    """ Ask for run sample website
+    """
+    Ask for run sample website
+    :return:None
         call:
         -sample_site_download
         -is_sample_downloaded
@@ -112,9 +121,11 @@ def sample_handler():
 
 
 def main_handler(control_flag=True):
-    """ Main Handler
-
+    """
+    Main Handler
     :param control_flag: Check if VERSION control passed in prev step then Check for new VERSION of qpage
+    :type control_flag:bool
+    :return:None
         call:
         -generation_time
         -create_folder
@@ -128,7 +139,7 @@ def main_handler(control_flag=True):
         -error_log
         -logger
         -close_files
-        -enter_to_exi
+        -enter_to_exit
 
 
     """

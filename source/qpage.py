@@ -16,7 +16,8 @@ meta_input = ""
 
 
 def show_items(enum_list):
-    """ show item of enum_list
+    """
+    show item of enum_list
     :param enum_list the list that should be shown
     :type enum_list : list
     """
@@ -50,8 +51,8 @@ def print_logo(external=False):
 
 
 def convert_bytes(num):
-    """ convert num to idiomatic byte unit
-
+    """
+    convert num to idiomatic byte unit
     :param num: the input number.
     :type num:int
     :return: str
@@ -69,12 +70,13 @@ def convert_bytes(num):
 
 
 def file_size():
-    """ Print the size of output file
-        :return: None
-        >>> file_size() # if there is no output directory
-        Access Error
-        >>> file_size() # if there is a valid output directory
-        Used SPACE --> 78.1 KB
+    """
+    Print the size of output file
+    :return: None
+    >>> file_size() # if there is no output directory
+    Access Error
+    >>> file_size() # if there is a valid output directory
+    Used SPACE --> 78.1 KB
     """
     try:
         list_of_files = os.listdir(OUT_DIR)
@@ -91,7 +93,8 @@ def file_size():
 
 def download_badge(address):
 
-    """ Download badge for website
+    """
+    Download badge for website
     :param address: the address that should get badge
     :type address : str
     :return: None
@@ -102,7 +105,8 @@ def download_badge(address):
 
 
 def random_badge_color():
-    """return a random color for badge
+    """
+    return a random color for badge
     :return: badge color as string
     >>> random.seed(1)
     >>> random_badge_color()
@@ -123,8 +127,8 @@ def system_details():
 
 
 def generation_time(time_1=None):
-    """ Calculate the generation time
-
+    """
+    Calculate the generation time
     :param time_1: time that passed but not counted in generation time
     :type time_1:float
     :return :the amount of time that passed  as float
@@ -136,7 +140,8 @@ def generation_time(time_1=None):
 
 
 def find_global_ip():
-    """ Find the global IP for using in API
+    """
+    Find the global IP for using in API
     :return: return the IP as string
     """
     try:
@@ -175,7 +180,8 @@ def create_badge(subject="qpage", status=VERSION, color="blue", random=False):
 
 
 def is_sample_downloaded():
-    """ Check the sample site material is downloaded of not
+    """
+    Check the sample site material is downloaded of not
     :return : index of materials that downloaded as list
     """
     download_list = []
@@ -191,7 +197,8 @@ def is_sample_downloaded():
 
 
 def download_lorem():
-    """ Download the lorem file
+    """
+    Download the lorem file
     :return: None
     """
     if internet():
@@ -202,7 +209,8 @@ def download_lorem():
 
 
 def read_lorem(char=100):
-    """ find and read lorem
+    """
+    find and read lorem
     :param char: the amount of char that needed to print
     :type char:int
     :return : the lorem string
@@ -223,7 +231,8 @@ def read_lorem(char=100):
 
 
 def sample_site_download(item_list):
-    """Download sample material for make a fake site
+    """
+    Download sample material for make a fake site
     :param item_list: Download items form item_list
     :type item_list:list
     """
@@ -246,7 +255,8 @@ def sample_site_download(item_list):
 
 
 def logger(status=False, perf_time=None):
-    """Create the build log of the app
+    """
+    Create the build log of the app
     :param status: show status of app.
     :param perf_time : show the time passed for generate files
     :type status:bool
@@ -264,10 +274,10 @@ def logger(status=False, perf_time=None):
 
 
 def error_log(msg):
-    """Create the errorlog of the app
-
-        :param msg: error message
-        :type msg:str
+    """
+    Create the errorlog of the app
+    :param msg: error message
+    :type msg:str
     """
     if "log" not in os.listdir():
         os.mkdir("log")
@@ -277,7 +287,8 @@ def error_log(msg):
 
 
 def print_line(number, char="-"):
-    """ Print a Line
+    """
+    Print a Line
     :param number: the amount char that in lien
     :param char  : the char that used to draw line
     :type number :int
@@ -296,7 +307,8 @@ def print_line(number, char="-"):
 
 
 def name_standard(name):
-    """ return the Standard VERSION of the input word
+    """
+    return the Standard VERSION of the input word
     :param name: the name that should be standard
     :type name:str
     :return name: the standard form of word as string
@@ -485,8 +497,8 @@ def LSM_translate(line, center):
 
 
 def print_text(text_file, file, center=False, close=False):  # Write Text Part Of Each Page
-    """Write the text part of each page
-
+    """
+    Write the text part of each page
     :param text_file: Text that should be written.
     :param file     : The file that text will be written inside.
     :param center: flag of putting text in center
@@ -514,8 +526,8 @@ def print_text(text_file, file, center=False, close=False):  # Write Text Part O
 
 
 def print_image(file, image_format="jpg", close=False):
-    """Write Image Part OF The Page.
-
+    """
+    Write Image Part OF The Page.
     :param file: The file that images will be added.
     :param close : flag of closing file after editing
     :param image_format: the format of image
@@ -537,8 +549,8 @@ def print_image(file, image_format="jpg", close=False):
 
 
 def print_download(file, name, link, center=False, close=False):
-    """ Create Download Link in page
-
+    """
+    Create Download Link in page
     :param file: The file that contain html of page.
     :param name: The name of the link
     :param link: The place that name is Linked
@@ -856,7 +868,8 @@ def robot_maker():
 
 
 def internet(host="8.8.8.8", port=53, timeout=3):
-    """ Check Internet Connections.
+    """
+    Check Internet Connections.
     :param  host: the host that check connection to
     :param  port: port that check connection with
     :param  timeout: times that check the connnection
