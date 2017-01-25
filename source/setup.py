@@ -146,11 +146,11 @@ def main_handler(control_flag=True):
     try:
         start_time = generation_time()
         response = create_folder()  # Check Folder and Files Status
-        print("QPAGE By S.Haghighi & M.M.Rahimi")
-        print("VERSION : " + VERSION)
-        print_logo()
         address_print()  # Print Files Location
         if control_flag:  # Check if VERSION control passed in prev step
+            print("QPAGE By S.Haghighi & M.M.Rahimi")
+            print("VERSION : " + VERSION)
+            print_logo()
             version_control()  # Check for new VERSION of qpage
         response_handler(response)  # call response_handler
         sample_handler()  # run sample handler
