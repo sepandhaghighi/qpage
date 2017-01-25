@@ -30,7 +30,7 @@ QPage or QuickPage is a Free Project For Creating Academic Homepage Without Any 
 - [Usage](#usage)
 - [Sample Sites](#sample-sites)
 - [Credits](#credits)
-- [Bug Reports](#bug-report)
+- [Bug Reports](#bug-reports)
 - [License](#license)
 
 
