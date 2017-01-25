@@ -20,14 +20,15 @@ def show_items(enum_list):
     :param enum_list the list that should be shown
     :type enum_list : list
     """
-    for i, item in enumerate(enum_list):  # print errors
-        print(str(i + 1) + "-" + item)  # print pass
+    for i, item in enumerate(enum_list):
+        print(str(i + 1) + "-" + item)
 
 
 def print_logo(external=False):
     '''
-    print qpage logo by characters
-    :param external: bool , choose internal or external logo
+    print qpage logo by sequential characters
+    :param external: flag for choosing internal or external logo
+    :type external:bool
     :return: None
     >>> print_logo()
       ____    ___
@@ -52,6 +53,8 @@ def convert_bytes(num):
     """ convert num to idiomatic byte unit
 
     :param num: the input number.
+    :type num:int
+    :return: str
     >>> convert_bytes(200)
     '200.0 bytes'
     >>> convert_bytes(6000)
@@ -67,22 +70,31 @@ def convert_bytes(num):
 
 def file_size():
     """ Print the size of output file
-
+        :return: None
+        >>> file_size() # if there is no output directory
+        Access Error
+        >>> file_size() # if there is a valid output directory
+        Used SPACE --> 78.1 KB
     """
-    list_of_files = os.listdir(OUT_DIR)
-    response = 0
-    for file in list_of_files:
-        file_info = os.stat(os.path.join(OUT_DIR, file))
-        response += file_info.st_size
-    print_line(70, "*")
-    print("Used SPACE --> " + convert_bytes(response))
-    print_line(70, "*")
+    try:
+        list_of_files = os.listdir(OUT_DIR)
+        response = 0
+        for file in list_of_files:
+            file_info = os.stat(os.path.join(OUT_DIR, file))
+            response += file_info.st_size
+        print_line(70, "*")
+        print("Used SPACE --> " + convert_bytes(response))
+        print_line(70, "*")
+    except:
+        print("Access Error!")
 
 
 def download_badge(address):
-    """ Download badge for website
 
+    """ Download badge for website
     :param address: the address that should get badge
+    :type address : str
+    :return: None
     """
     r = requests.get(address, stream=True)
     with open(os.path.join(OUT_DIR, "badge.svg"), 'wb') as f:
@@ -91,6 +103,7 @@ def download_badge(address):
 
 def random_badge_color():
     """return a random color for badge
+    :return: badge color as string
     >>> random.seed(1)
     >>> random_badge_color()
     'yellowgreen'
@@ -100,8 +113,11 @@ def random_badge_color():
 
 
 def system_details():
-    """ Show detail of system that code is runnig on
-
+    """
+    Show detail of system that code is runnig on
+    :return: system details as string (node , processor , platform)
+    >>> system_details()
+    'DESKTOP-B16C9BR , Intel64 Family 6 Model 94 Stepping 3, GenuineIntel ,  Windows-10-10.0.10240-SP0'
     """
     return platform.node() + " , " + platform.processor() + " ,  " + platform.platform()
 
@@ -110,7 +126,8 @@ def generation_time(time_1=None):
     """ Calculate the generation time
 
     :param time_1: time that passed but not counted in generation time
-    :return :the amount of time that passed .
+    :type time_1:float
+    :return :the amount of time that passed  as float
     """
     if time_1 is None:
         return time.perf_counter()
@@ -119,9 +136,8 @@ def generation_time(time_1=None):
 
 
 def find_global_ip():
-    """ Find the ip for use in API
-
-    :return: return the IP.
+    """ Find the global IP for using in API
+    :return: return the IP as string
     """
     try:
         response = requests.get(IP_FINDER_API)
@@ -133,11 +149,16 @@ def find_global_ip():
 
 def create_badge(subject="qpage", status=VERSION, color="blue", random=False):
     '''
-    :param subject:
-    :param status:
-    :param color:
-    :param random:
-    :return:
+    this function use shields.io template for creating  badges
+    :param subject: badge subject
+    :param status: badge status ( in our case version)
+    :param color: badge color
+    :param random: randomization flag
+    :type subject:str
+    :type status:str
+    :type color:str
+    :type random:bool
+    :return: shields.io badge addresses as string
     >>> create_badge()
     'https://img.shields.io/badge/qpage-1.9-blue.svg'
     >>> random.seed(1)
@@ -154,9 +175,8 @@ def create_badge(subject="qpage", status=VERSION, color="blue", random=False):
 
 
 def is_sample_downloaded():
-    """ Check the sample site material is downloaded
-
-    :return : list of the materials
+    """ Check the sample site material is downloaded of not
+    :return : index of materials that downloaded as list
     """
     download_list = []
     if "profile.png" not in os.listdir(IMAGE_DIR):
@@ -172,7 +192,7 @@ def is_sample_downloaded():
 
 def download_lorem():
     """ Download the lorem file
-
+    :return: None
     """
     if internet():
         lorem_path = os.path.join(RESOURCE_DIR, 'Latin-Lipsum.txt')
@@ -183,9 +203,9 @@ def download_lorem():
 
 def read_lorem(char=100):
     """ find and read lorem
-
-    :param char: the amount of char that needed
-    :return : the lorme string
+    :param char: the amount of char that needed to print
+    :type char:int
+    :return : the lorem string
     >>> read_lorem(5)
     'Lorem ipsum dolor sit amet,'
     """
@@ -204,8 +224,8 @@ def read_lorem(char=100):
 
 def sample_site_download(item_list):
     """Download sample material for make a fake site
-
     :param item_list: Download items form item_list
+    :type item_list:list
     """
     try:
         if internet():
@@ -226,10 +246,11 @@ def sample_site_download(item_list):
 
 
 def logger(status=False, perf_time=None):
-    """Show the build log of the app
-
+    """Create the build log of the app
     :param status: show status of app.
     :param perf_time : show the time passed for generate files
+    :type status:bool
+    :type perf_time:float
     """
     if "log" not in os.listdir():
         os.mkdir("log")
@@ -243,9 +264,10 @@ def logger(status=False, perf_time=None):
 
 
 def error_log(msg):
-    """Show the errorlog of the app
+    """Create the errorlog of the app
 
         :param msg: error message
+        :type msg:str
     """
     if "log" not in os.listdir():
         os.mkdir("log")
@@ -256,9 +278,10 @@ def error_log(msg):
 
 def print_line(number, char="-"):
     """ Print a Line
-
     :param number: the amount char that in lien
     :param char  : the char that used to draw line
+    :type number :int
+    :type char : str
     >>> print_line(4)
     ----
     >>> print_line(5,"%")
@@ -274,9 +297,9 @@ def print_line(number, char="-"):
 
 def name_standard(name):
     """ return the Standard VERSION of the input word
-
     :param name: the name that should be standard
-    :return name: the standard form of word
+    :type name:str
+    :return name: the standard form of word as string
     >>> name_standard('test')
     'Test'
     >>> name_standard('TesT')
@@ -287,8 +310,9 @@ def name_standard(name):
 
 
 def address_print():
-    """Print the working directory
-
+    """
+    Print the working directory
+    :return:None
     """
     print_line(70, "*")
     print("Where --> " + SOURCE_DIR)
@@ -296,8 +320,9 @@ def address_print():
 
 
 def create_folder():
-    """This Function Create Empty Folder At Begin
-
+    """
+    This Function Create Empty Folder At Begin
+    :return:folder status as boolean
     """
     folder_flag = 0
     list_of_folders = os.listdir(SOURCE_DIR)
@@ -316,8 +341,9 @@ def create_folder():
 
 
 def page_name_update():
-    """This Function Update Page Names
-
+    """
+    This Function Update Page Names
+    :return: None
     """
     for i in os.listdir(DOC_DIR):
         if i.find(".txt") != -1 and i[:-4].upper() != "INDEX":
@@ -326,8 +352,9 @@ def page_name_update():
 
 
 def menu_maker():
-    """Top Menu Maker In each html page
-
+    """
+    Top Menu Maker In each html page
+    :return:site menu as string
     """
     result = "<center>"
     for i, item in enumerate(PAGE_NAME):
@@ -345,8 +372,9 @@ def menu_maker():
 
 
 def menu_writer():  #
-    """Write menu_maker output in html and close file after
-
+    """
+    Write menu_maker output in html and close file after
+    :return:None
     """
     message = menu_maker()
     PAGE_NAME_length = len(PAGE_NAME)
@@ -357,8 +385,8 @@ def menu_writer():  #
 
 
 def print_meta():
-    """Add meta to html files
-
+    """
+    Add meta to html files
     :return static_meta: The meta that created
     """
     global meta_input
@@ -373,9 +401,10 @@ def print_meta():
 
 
 def html_init(name):
-    """Create Initial Form Of each Html Page Like Title And HTML  And Body Tag.
-
+    """
+    Create Initial Form Of each Html Page Like Title And HTML  And Body Tag.
     :param name: the name of html file.
+    :type name:str
     """
 
     html_name = os.path.join(OUT_DIR, name + ".html")
@@ -399,9 +428,10 @@ def html_init(name):
 
 
 def html_end(name):
-    """Create End Of The Html and close file
-
+    """
+    Create End Of The Html and close file
     :param name: The name of html file.
+    :type name:str
     """
     html_name = os.path.join(OUT_DIR, name + ".html")
     file = open(html_name, "a")
@@ -411,8 +441,9 @@ def html_end(name):
 
 
 def close_files():
-    """Close all the files.
-
+    """
+    Close all the files.
+    :return:None
     """
     for i in files:
         if i.closed == False:
@@ -421,12 +452,13 @@ def close_files():
 
 def LSM_translate(line, center):
     # TODO : write a document for this function
-    """ ????
-
+    """
+    Convert size and style of each line in input plaintext
     :param line: the input line.
-    :param center: put it in center
-
-    :return : return a list contain text header end and header begin
+    :param center: flag of putting text in center
+    :type center:bool
+    :type line:str
+    :return : return a list contain text,header_end and header_begin
     """
     line.strip()
     text = line
@@ -455,14 +487,15 @@ def LSM_translate(line, center):
 def print_text(text_file, file, center=False, close=False):  # Write Text Part Of Each Page
     """Write the text part of each page
 
-    :param text_file: Text tha should be written.
+    :param text_file: Text that should be written.
     :param file     : The file that text will be written inside.
-    :param center   : put the text in center.
-    :param close    : close file after done editing
-
+    :param center: flag of putting text in center
+    :param close : flag of closing file after editing
     :type close : bool
     :type center: bool
-
+    :type file:_io.TextIOWrapper
+    :type text_file:str
+    :return:None
     """
 
     text_code = ""
@@ -484,10 +517,12 @@ def print_image(file, image_format="jpg", close=False):
     """Write Image Part OF The Page.
 
     :param file: The file that images will be added.
-    :param close : close file after done editing.
+    :param close : flag of closing file after editing
     :param image_format: the format of image
-
     :type close : bool
+    :type image_format:str
+    :type file:_io.TextIOWrapper
+    :return:None
     """
     for i, item in enumerate(SIZE_BOX):
         print(i, "-", item)
@@ -509,10 +544,12 @@ def print_download(file, name, link, center=False, close=False):
     :param link: The place that name is Linked
     :param center: put the text in center
     :param close : close file after done editing
-
     :type center: bool
     :type close : bool
-
+    :type link:str
+    :type name:str
+    :type file:_io.TextIOWrapper
+    :return:None
     """
     link_code = "<a href=" + '"' + link + '"' + TARGET_BLANK + '>' + name + "</a>"
     if center:
@@ -524,10 +561,13 @@ def print_download(file, name, link, center=False, close=False):
 
 
 def print_adv(file, close=True):
-    """ Print the advertisement.
-
-    :param file  : The file that should ad to it.
-    :param close : Close file after add ad
+    """
+    Print the advertisement (qpage footer)
+    :param file  : The file that should adv to it.
+    :param close : Close file after add
+    :type file:_io.TextIOWrapper
+    :type close:bool
+    :return: None
     """
     file.write(BREAK_LINE)
     file.write(
@@ -538,9 +578,11 @@ def print_adv(file, close=True):
 
 
 def build_index(file):
-    """ Find and build index page
-
+    """
+    Find and build index page
     :param file: The index file.
+    :type file:_io.TextIOWrapper
+    :return:None
     """
     image_name = ""
     img_format = "jpg"
@@ -558,9 +600,11 @@ def build_index(file):
 
 
 def build_resume(file):
-    """ Find and build resume page.
-
+    """
+    Find and build resume page.
     :param file: The resume file.
+    :type file:_io.TextIOWrapper
+    :return:None
     """
     resume_name = ""
     file_of_docs = os.listdir(DOC_DIR)
@@ -575,9 +619,11 @@ def build_resume(file):
 
 
 def contain(name):
-    """main function That Open Each Page HTML File and call other function to write data in it
-
+    """
+    Main function that open each page HTML file and call other function to write data in it
     :param name: the name of the file that should be written
+    :type name:str
+    :return:None
     """
     #
     file = open(os.path.join(OUT_DIR, name + ".html"), "a")
@@ -596,9 +642,11 @@ def contain(name):
 
 
 def clear_folder(path):
-    """This Function Get Path Of Foldr And Delete Its Contains
-
+    """
+    This function get path of folder and delete its contains
     :param path: the path that gonna be deleted.
+    :type path:str
+    :return: None
     """
 
     if os.path.exists(path):
@@ -610,16 +658,17 @@ def clear_folder(path):
 
 
 def print_warning():
-    """ Print Warnings!
-
+    """
+     Print warnings!
+    :return:None
     """
     print(str(len(warnings)) + " Warning , 0 Error")
     show_items(warnings)
 
 
 def get_color_code():
-    """Ask for selecting color of text and background
-
+    """
+    Ask for selecting color of text and background
     :return list: background and text color
     >>> get_color_code()
     0 - White
@@ -645,8 +694,8 @@ def get_color_code():
 
 
 def color_code_map():
-    """ Check and insert colors that is chosen.
-
+    """
+    Check and insert colors that is chosen.
     :return list: background and text color
     """
     [back_color_code, text_color_code] = get_color_code()
@@ -658,9 +707,10 @@ def color_code_map():
 
 
 def css_font(font_folder):
-    """ Search and file all fonts.
-
+    """
+     Search and file all fonts.
     :param font_folder: the folder to search.
+    :type font_folder:list
     :return list : font_flag and the current format
     """
     font_flag = 0  # 0 If there is no font file in font_folder
@@ -676,12 +726,13 @@ def css_font(font_folder):
 
 
 def font_creator(css_file, font_section):
-    """ Ask and Select font.
-
+    """
+     Ask and Select font.
     :param css_file: the file that font css will be added to.
     :param font_section: the font section of css file
-
-    :return font_section: the font section of css after edit
+    :type css_file:_io.TextIOWrapper
+    :type font_section:str
+    :return font_section: the font section of css after edit as string
     """
     font_folder = os.listdir(FONT_DIR)
     details = css_font(font_folder)
@@ -709,7 +760,10 @@ def font_creator(css_file, font_section):
 
 
 def css_creator():
-    """Ask For background and text color in and make css """
+    """
+    Ask For background and text color in and make css base
+    :return:None
+     """
     font_section = 'font-family : Georgia , serif;\n'
     colors = color_code_map()
     background_color = colors[0]
@@ -734,14 +788,20 @@ def css_creator():
 
 
 def preview():
-    """Preview website in browser """
+    """
+    Preview website in browser
+    :return:None
+     """
     # TODO: not working on unix
 
     webbrowser.open(os.path.join(OUT_DIR, "index.html"))
 
 
 def error_finder():
-    """ Check and find error that display it"""
+    """
+    Check and find error that display it
+    :return : error and pass vector as list
+    """
     error_vector = []
     pass_vector = []
     PDF_COUNTER = 0
@@ -768,7 +828,10 @@ def error_finder():
 
 
 def icon_creator():
-    """ Find .ico file and use it as favicon of website."""
+    """
+     Find .ico file and use it as favicon of website.
+     :return:None
+     """
     icon_flag = 0
     for file in os.listdir(IMAGE_DIR):
         if file.endswith('ico'):
@@ -782,7 +845,10 @@ def icon_creator():
 
 
 def robot_maker():
-    """ Create Robots.txt for pages """
+    """
+     Create Robots.txt for pages
+     :return:None
+    """
     robots = open(os.path.join(OUT_DIR, "robots.txt"), "w")
     robots.write("User-agent: *\n")
     robots.write("Disallow: ")
@@ -791,11 +857,12 @@ def robot_maker():
 
 def internet(host="8.8.8.8", port=53, timeout=3):
     """ Check Internet Connections.
-
     :param  host: the host that check connection to
     :param  port: port that check connection with
     :param  timeout: times that check the connnection
-
+    :type host:str
+    :type port:int
+    :type timeout:int
     :return bool: True if Connection is Stable
     >>> internet() # if there is stable internet connection
     True
@@ -812,7 +879,9 @@ def internet(host="8.8.8.8", port=53, timeout=3):
 
 
 def server():
-    """Get Server response.
+    """
+    Get Server response.
+    :return:None
     >>> server()
     Installed Saved!
     """
@@ -825,7 +894,10 @@ def server():
 
 
 def version_control():
-    """ Check and update VERSIONs. """
+    """
+     Check and update version status
+     :return:None
+    """
 
     try:
         # print("Check for new VERSION . . .")
@@ -852,8 +924,9 @@ def version_control():
 
 
 def enter_to_exit():
-    """Quit Project by pressing a key.
-
+    """
+    Quit Project by pressing a key.
+    :return:None
     """
 
     print_line(70, "*")
@@ -863,9 +936,11 @@ def enter_to_exit():
 
 
 def wait_func(iteration=2):
-    """Wait for-in range Iteration.
-
+    """
+    Wait for-in range Iteration.
     :param iteration: the amount of wait.
+    :type iteration:int
+    :return:None
     >>> wait_func(4)
     .
     .
