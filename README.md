@@ -20,7 +20,7 @@
 <hr/>
 
 </div>
-Free Project For Creating Academic Homepage Without Any Code
+QPage or QuickPage is a Free Project For Creating Academic Homepage Without Any Code
 
 
 
