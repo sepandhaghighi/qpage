@@ -11,7 +11,7 @@ import platform
 import random
 import datetime
 from functools import reduce
-
+import doctest
 meta_input = ""
 
 
@@ -621,6 +621,17 @@ def get_color_code():
     """Ask for selecting color of text and background
 
     :return list: background and text color
+    >>> get_color_code()
+    0 - White
+    1 - Black
+    2 - Purple
+    3 - Yellow
+    4 - Orange
+    5 - Green
+    6 - Blue
+    Please enter your background color : 1
+    Please enter your text color : 2
+    [1, 2]
     """
     for i, item in enumerate(COLOR_BOX):
         print(i, "-", item)
@@ -786,6 +797,10 @@ def internet(host="8.8.8.8", port=53, timeout=3):
     :param  timeout: times that check the connnection
 
     :return bool: True if Connection is Stable
+    >>> internet() # if there is stable internet connection
+    True
+    >>> internet() # if there is no stable internet connection
+    False
     """
     try:
         socket.setdefaulttimeout(timeout)
@@ -797,7 +812,10 @@ def internet(host="8.8.8.8", port=53, timeout=3):
 
 
 def server():
-    """Get Server response."""
+    """Get Server response.
+    >>> server()
+    Installed Saved!
+    """
     # global meta_input
     headers = {'content-type': 'application/json', "NAME": meta_input, "VERSION": VERSION, "SYSTEM": system_details(),
                "IP": find_global_ip()}
@@ -844,12 +862,22 @@ def enter_to_exit():
         sys.exit()
 
 
-def wait_func(iteration):
+def wait_func(iteration=2):
     """Wait for-in range Iteration.
 
     :param iteration: the amount of wait.
+    >>> wait_func(4)
+    .
+    .
+    .
+    .
+    >>> wait_func()
+    .
+    .
     """
 
     for _ in range(iteration):
         time.sleep(1)
         print(".")
+if __name__=="__main__":
+    doctest.testmod()
