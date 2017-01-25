@@ -29,6 +29,12 @@ def print_logo(external=False):
     print qpage logo by characters
     :param external: bool , choose internal or external logo
     :return: None
+    >>> print_logo()
+      ____    ___
+     / __ \  / _ \___ ____ ____
+    / /_/ / / ___/ _ `/ _ `/ -_)
+    \___\_\/_/   \_,_/\_, /\__/
+                     /___/
     '''
     if external==True:
         if "logo.txt" in os.listdir(RESOURCE_DIR):
@@ -46,6 +52,12 @@ def convert_bytes(num):
     """ convert num to idiomatic byte unit
 
     :param num: the input number.
+    >>> convert_bytes(200)
+    '200.0 bytes'
+    >>> convert_bytes(6000)
+    '5.9 KB'
+    >>> convert_bytes(80000)
+    '78.1 KB'
     """
     for x in ['bytes', 'KB', 'MB', 'GB', 'TB']:
         if num < 1024.0:
@@ -79,7 +91,9 @@ def download_badge(address):
 
 def random_badge_color():
     """return a random color for badge
-
+    >>> random.seed(1)
+    >>> random_badge_color()
+    'yellowgreen'
     """
     random_index = random.randint(0, len(BADGE_COLOR_LIST) - 1)
     return BADGE_COLOR_LIST[random_index]
@@ -118,6 +132,18 @@ def find_global_ip():
 
 
 def create_badge(subject="qpage", status=VERSION, color="blue", random=False):
+    '''
+    :param subject:
+    :param status:
+    :param color:
+    :param random:
+    :return:
+    >>> create_badge()
+    'https://img.shields.io/badge/qpage-1.9-blue.svg'
+    >>> random.seed(1)
+    >>> create_badge(random=True)
+    'https://img.shields.io/badge/qpage-1.9-yellowgreen.svg'
+    '''
     if random:
         color = random_badge_color()
     else:
@@ -160,6 +186,8 @@ def read_lorem(char=100):
 
     :param char: the amount of char that needed
     :return : the lorme string
+    >>> read_lorem(5)
+    'Lorem ipsum dolor sit amet,'
     """
     try:
         if "Latin-Lipsum.txt" not in os.listdir(RESOURCE_DIR):
@@ -231,6 +259,10 @@ def print_line(number, char="-"):
 
     :param number: the amount char that in lien
     :param char  : the char that used to draw line
+    >>> print_line(4)
+    ----
+    >>> print_line(5,"%")
+    %%%%%
     """
     line = ""
     i = 0
@@ -245,6 +277,10 @@ def name_standard(name):
 
     :param name: the name that should be standard
     :return name: the standard form of word
+    >>> name_standard('test')
+    'Test'
+    >>> name_standard('TesT')
+    'Test'
     """
     reponse_name = name[0].upper() + name[1:].lower()
     return reponse_name
