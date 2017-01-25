@@ -13,8 +13,6 @@ import datetime
 from functools import reduce
 import doctest
 meta_input = ""
-
-
 def show_items(enum_list):
     """
     show item of enum_list
@@ -23,8 +21,6 @@ def show_items(enum_list):
     """
     for i, item in enumerate(enum_list):
         print(str(i + 1) + "-" + item)
-
-
 def print_logo(external=False):
     '''
     print qpage logo by sequential characters
@@ -48,8 +44,6 @@ def print_logo(external=False):
             pass
     else:
         print(LOGO)
-
-
 def convert_bytes(num):
     """
     convert num to idiomatic byte unit
@@ -67,8 +61,6 @@ def convert_bytes(num):
         if num < 1024.0:
             return "%3.1f %s" % (num, x)
         num /= 1024.0
-
-
 def file_size():
     """
     Print the size of output file
@@ -89,8 +81,6 @@ def file_size():
         print_line(70, "*")
     except:
         print("Access Error!")
-
-
 def download_badge(address):
 
     """
@@ -102,8 +92,6 @@ def download_badge(address):
     r = requests.get(address, stream=True)
     with open(os.path.join(OUT_DIR, "badge.svg"), 'wb') as f:
         shutil.copyfileobj(r.raw, f)
-
-
 def random_badge_color():
     """
     return a random color for badge
@@ -114,8 +102,6 @@ def random_badge_color():
     """
     random_index = random.randint(0, len(BADGE_COLOR_LIST) - 1)
     return BADGE_COLOR_LIST[random_index]
-
-
 def system_details():
     """
     Show detail of system that code is runnig on
@@ -124,8 +110,6 @@ def system_details():
     'DESKTOP-B16C9BR , Intel64 Family 6 Model 94 Stepping 3, GenuineIntel ,  Windows-10-10.0.10240-SP0'
     """
     return platform.node() + " , " + platform.processor() + " ,  " + platform.platform()
-
-
 def generation_time(time_1=None):
     """
     Calculate the generation time
@@ -137,8 +121,6 @@ def generation_time(time_1=None):
         return time.perf_counter()
     else:
         return time.perf_counter() - time_1
-
-
 def find_global_ip():
     """
     Find the global IP for using in API
@@ -150,8 +132,6 @@ def find_global_ip():
     except Exception as e:
         error_log(e)
         return "0.0.0.0"
-
-
 def create_badge(subject="qpage", status=VERSION, color="blue", random=False):
     '''
     this function use shields.io template for creating  badges
@@ -177,8 +157,6 @@ def create_badge(subject="qpage", status=VERSION, color="blue", random=False):
             color = "orange"
     badge_adr = ADV_BADGE_STATIC + subject + "-" + status + "-" + color + '.svg'
     return badge_adr
-
-
 def is_sample_downloaded():
     """
     Check the sample site material is downloaded of not
@@ -194,8 +172,6 @@ def is_sample_downloaded():
     if "icon.ico" not in os.listdir(IMAGE_DIR):
         download_list.append(4)
     return download_list
-
-
 def download_lorem():
     """
     Download the lorem file
@@ -206,8 +182,6 @@ def download_lorem():
         urllib.request.urlretrieve("http://www.qpage.ir/sample/Latin-Lipsum.txt", lorem_path)
     else:
         print("Error In Download Lorem")
-
-
 def read_lorem(char=100,external=False):
     """
     find and read lorem
@@ -233,8 +207,6 @@ def read_lorem(char=100,external=False):
     except Exception as e:
         error_log(e)
         return None
-
-
 def sample_site_download(item_list):
     """
     Download sample material for make a fake site
@@ -257,8 +229,6 @@ def sample_site_download(item_list):
         error_log(e)
         print("Error in downloading sample files check your internet conection")
         print_line(70)
-
-
 def logger(status=False, perf_time=None):
     """
     Create the build log of the app
@@ -276,8 +246,6 @@ def logger(status=False, perf_time=None):
         file.write("Success " + str(datetime.datetime.now()) + "\n")
         file.write("Generation Time: " + str(perf_time) + "\n")
     file.close()
-
-
 def error_log(msg):
     """
     Create the errorlog of the app
@@ -289,8 +257,6 @@ def error_log(msg):
     file = open(reduce(os.path.join, [os.getcwd(), "log", "error_log.txt"]), "a")
     file.write(str(datetime.datetime.now()) + " --> " + str(msg) + "\n")
     file.close()
-
-
 def print_line(number, char="-"):
     """
     Print a Line
@@ -309,8 +275,6 @@ def print_line(number, char="-"):
         line += char
         i += 1
     print(line)
-
-
 def name_standard(name):
     """
     return the Standard VERSION of the input word
@@ -324,8 +288,6 @@ def name_standard(name):
     """
     reponse_name = name[0].upper() + name[1:].lower()
     return reponse_name
-
-
 def address_print():
     """
     Print the working directory
@@ -334,8 +296,6 @@ def address_print():
     print_line(70, "*")
     print("Where --> " + SOURCE_DIR)
     print_line(70, "*")
-
-
 def create_folder():
     """
     This Function Create Empty Folder At Begin
@@ -355,8 +315,6 @@ def create_folder():
                     file.write(read_lorem())
                 file.close()
     return bool(folder_flag)
-
-
 def page_name_update():
     """
     This Function Update Page Names
@@ -366,8 +324,6 @@ def page_name_update():
         if i.find(".txt") != -1 and i[:-4].upper() != "INDEX":
             ACTUAL_NAME.append(i[:-4])
             PAGE_NAME.append(i[:-4])
-
-
 def menu_maker():
     """
     Top Menu Maker In each html page
@@ -386,8 +342,6 @@ def menu_maker():
     result += "</center>"
     result = result + "\t\t" + BREAK_LINE  # Add Break line to End Of The Menu
     return result  # Return All Of The Menu
-
-
 def menu_writer():  #
     """
     Write menu_maker output in html and close file after
@@ -399,8 +353,6 @@ def menu_writer():  #
         file = open(os.path.join(OUT_DIR, ACTUAL_NAME[i] + ".html"), "a")
         file.write(message)
         file.close()
-
-
 def print_meta():
     """
     Add meta to html files
@@ -415,8 +367,6 @@ def print_meta():
     if len(meta_input) < 4:
         warnings.append("[Warning] Your input for name is too short!!")
     return static_meta
-
-
 def html_init(name):
     """
     Create Initial Form Of each Html Page Like Title And HTML  And Body Tag.
@@ -442,8 +392,6 @@ def html_init(name):
     file.write("\t</head>\n")
     file.write('\t<body class="body_tag">\n')
     file.close()
-
-
 def html_end(name):
     """
     Create End Of The Html and close file
@@ -455,8 +403,6 @@ def html_end(name):
     file.write("\t</body>\n")
     file.write("</html>")
     file.close()
-
-
 def close_files():
     """
     Close all the files.
@@ -465,8 +411,6 @@ def close_files():
     for i in files:
         if i.closed == False:
             i.close()
-
-
 def LSM_translate(line, center):
     # TODO : write a document for this function
     """
@@ -499,8 +443,6 @@ def LSM_translate(line, center):
         header_end += "</center>"
         text = text[:text.find("[center]")]
     return [text, header_end, header_start]
-
-
 def print_text(text_file, file, center=False, close=False):  # Write Text Part Of Each Page
     """
     Write the text part of each page
@@ -514,7 +456,6 @@ def print_text(text_file, file, center=False, close=False):  # Write Text Part O
     :type text_file:str
     :return:None
     """
-
     text_code = ""
     for line in text_file:
         if len(line) == 1:
@@ -528,8 +469,6 @@ def print_text(text_file, file, center=False, close=False):  # Write Text Part O
         file.write(text_code)
     if close:
         file.close()
-
-
 def print_image(file, image_format="jpg", close=False):
     """
     Write Image Part OF The Page.
@@ -551,8 +490,6 @@ def print_image(file, image_format="jpg", close=False):
     file.write(image_code)
     if close:
         file.close()
-
-
 def print_download(file, name, link, center=False, close=False):
     """
     Create Download Link in page
@@ -575,8 +512,6 @@ def print_download(file, name, link, center=False, close=False):
     file.write(BREAK_LINE)
     if close:
         file.close()
-
-
 def print_adv(file, close=True):
     """
     Print the advertisement (qpage footer)
@@ -592,8 +527,6 @@ def print_adv(file, close=True):
             random=True) + '"alt="Qpage">' + '</a> </center>')
     if close:
         file.close()
-
-
 def build_index(file):
     """
     Find and build index page
@@ -614,8 +547,6 @@ def build_index(file):
                 break
     shutil.copyfile(image_name, os.path.join(OUT_DIR, "image." + img_format))
     print_image(file, img_format)
-
-
 def build_resume(file):
     """
     Find and build resume page.
@@ -633,8 +564,6 @@ def build_resume(file):
             break
     shutil.copyfile(resume_name, os.path.join(OUT_DIR, "Resume.pdf"))
     print_download(file, "Download Full Version", "Resume.pdf", center=True)
-
-
 def contain(name):
     """
     Main function that open each page HTML file and call other function to write data in it
@@ -656,8 +585,6 @@ def contain(name):
     print_text(text_file, file)
     if name.upper() == "INDEX":
         print_adv(file)
-
-
 def clear_folder(path):
     """
     This function get path of folder and delete its contains
@@ -665,15 +592,12 @@ def clear_folder(path):
     :type path:str
     :return: None
     """
-
     if os.path.exists(path):
         list_of_files = os.listdir(path)
         for file in list_of_files:
             os.remove(os.path.join(path, file))
     else:
         os.mkdir(path)
-
-
 def print_warning():
     """
      Print warnings!
@@ -681,8 +605,6 @@ def print_warning():
     """
     print(str(len(warnings)) + " Warning , 0 Error")
     show_items(warnings)
-
-
 def get_color_code():
     """
     Ask for selecting color of text and background
@@ -708,8 +630,6 @@ def get_color_code():
     if text_color_code not in range(7):
         text_color_code = 1
     return [back_color_code, text_color_code]
-
-
 def color_code_map():
     """
     Check and insert colors that is chosen.
@@ -721,8 +641,6 @@ def color_code_map():
     background_color = COLOR_BOX[back_color_code]  # convert code to color string in COLOR_BOX
     text_color = COLOR_BOX[text_color_code]  # convert code to color string in COLOR_BOX
     return [background_color, text_color]
-
-
 def css_font(font_folder):
     """
      Search and file all fonts.
@@ -740,8 +658,6 @@ def css_font(font_folder):
                 font_flag = 1  # Turn Flag On
                 current_FONT_FORMAT = j  # font format of current selected font for css editing
     return [font_flag, current_FONT_FORMAT]
-
-
 def font_creator(css_file, font_section):
     """
      Ask and Select font.
@@ -755,7 +671,6 @@ def font_creator(css_file, font_section):
     details = css_font(font_folder)
     current_FONT_FORMAT = details[1]
     font_flag = details[0]
-
     if font_flag == 1:  # check flag if it is 1
         css_file.write(
             "@font-face{\nfont-family:qpagefont;\nsrc:url(qpage"
@@ -774,8 +689,6 @@ def font_creator(css_file, font_section):
     else:
         warnings.append(WARNING_DICT["font_warning"] + " There is no specific font set for this website!!")
     return font_section
-
-
 def css_creator():
     """
     Ask For background and text color in and make css base
@@ -798,22 +711,16 @@ def css_creator():
         + CSS_MARGIN
         + CSS_ANIMATION_1
         + "}\n")  # write body tag
-
     css_file.write(".color_tag{\n" + "color:" + text_color + ";\n}")  # write color_tag in css
     css_file.write(CSS_ANIMATION_2)
     css_file.close()  # close css file
-
-
 def preview():
     """
     Preview website in browser
     :return:None
      """
     # TODO: not working on unix
-
     webbrowser.open(os.path.join(OUT_DIR, "index.html"))
-
-
 def error_finder():
     """
     Check and find error that display it
@@ -842,8 +749,6 @@ def error_finder():
         else:
             pass_vector.append("[Pass] Your Resume File is OK!!")
     return [error_vector, pass_vector]
-
-
 def icon_creator():
     """
      Find .ico file and use it as favicon of website.
@@ -859,8 +764,6 @@ def icon_creator():
     if "favicon.ico" in os.listdir(SOURCE_DIR) and icon_flag == 0:
         shutil.copy(os.path.join(SOURCE_DIR, "favicon.ico"), OUT_DIR)
         warnings.append(WARNING_DICT["icon_warning"] + " There is no icon for this website")
-
-
 def robot_maker():
     """
      Create Robots.txt for pages
@@ -870,8 +773,6 @@ def robot_maker():
     robots.write("User-agent: *\n")
     robots.write("Disallow: ")
     robots.close()
-
-
 def internet(host="8.8.8.8", port=53, timeout=3):
     """
     Check Internet Connections.
@@ -894,8 +795,6 @@ def internet(host="8.8.8.8", port=53, timeout=3):
     except Exception as ex:
         error_log(ex)
         return False
-
-
 def server():
     """
     Get Server response.
@@ -909,14 +808,11 @@ def server():
     response = requests.get(SERVER_API, headers=headers)
     if response.status_code == 200:
         print("Installed Saved!")
-
-
 def version_control():
     """
      Check and update version status
      :return:None
     """
-
     try:
         # print("Check for new VERSION . . .")
         # print_line(70)
@@ -939,8 +835,6 @@ def version_control():
     except Exception as e:
         error_log(e)
         pass
-
-
 def enter_to_exit():
     """
     Quit Project by pressing a key.
@@ -951,8 +845,6 @@ def enter_to_exit():
     response = input("Enter [R] for restart Qpage and any other key to exit : ")
     if response.upper() != "R":
         sys.exit()
-
-
 def wait_func(iteration=2):
     """
     Wait for-in range Iteration.

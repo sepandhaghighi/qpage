@@ -1,8 +1,6 @@
 from qpage import *
 import sys
 import gc
-
-
 def error_handler():
     """
     Close files and check errors and start again main
@@ -25,8 +23,6 @@ def error_handler():
         print(str(i + len(error_vector) + 1) + "-" + item)
     enter_to_exit()  # get input from user to continue
     main_handler()
-
-
 def file_handler():
     """
     Write files
@@ -49,8 +45,6 @@ def file_handler():
     icon_creator()
     robot_maker()
     close_files()
-
-
 def main_handler_2(time_1=0):
     """
     Second part of main handler
@@ -83,8 +77,6 @@ def main_handler_2(time_1=0):
         preview()  # call preview function
         close_files()  # close all of the open files
     gc.collect()
-
-
 def response_handler(response):
     """
     Calculate the generation time
@@ -102,8 +94,6 @@ def response_handler(response):
         wait_func(3)  # wait for 3 sec
         main_handler(False)  # call main_handler again with False VERSION control flag
         sys.exit()  # exit program
-
-
 def sample_handler():
     """
     Ask for run sample website
@@ -118,8 +108,6 @@ def sample_handler():
     print_line(70)  # print line
     if response.upper() == "S":  # check response status
         sample_site_download(is_sample_downloaded())  # Call sample download
-
-
 def main_handler(control_flag=True):
     """
     Main Handler
@@ -140,8 +128,6 @@ def main_handler(control_flag=True):
         -logger
         -close_files
         -enter_to_exit
-
-
     """
     try:
         start_time = generation_time()
@@ -174,8 +160,6 @@ def main_handler(control_flag=True):
         print("Files Is Open By Another Program")
         close_files()  # Close all of the open files
         enter_to_exit()  # get input from user to continue
-        main_handler()  # call part_1 of main_handler , resetart from the first
-
-
+        main_handler()  # call part_1 of main_handler , restart from the first
 if __name__ == "__main__":
     main_handler()
