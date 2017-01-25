@@ -1,0 +1,35 @@
+@font-face{
+font-family:qpagefont;
+src:url(qpage.ttf);
+}
+.body_tag{
+background-color:White;
+font-family:qpagefont;
+font-style:oblique;
+margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+    border : 10px groove white;
+    padding-top:10px;
+    padding-bottom:20px;
+    padding-left:10px;
+    padding-right:10px;
+    
+   animation-name: anim1;
+    animation-duration: 4s;
+    animation-fill-mode: both;
+}
+.color_tag{
+color:Black;
+}
+@keyframes anim1{
+    0%{opacity: 0;}
+    25%{opacity: 0.4;}
+    50%{opacity:0.5;}
+    75%{opacity:0.7;}
+    100%{opacity: 1;}
+
+}
+
+
