@@ -793,7 +793,7 @@ def internet(host="8.8.8.8", port=53, timeout=3):
         socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((host, port))
         return True
     except Exception as ex:
-        error_log(ex)
+        error_log(str(ex))
         return False
 def server():
     """
@@ -805,9 +805,12 @@ def server():
     # global meta_input
     headers = {'content-type': 'application/json', "NAME": meta_input, "VERSION": VERSION, "SYSTEM": system_details(),
                "IP": find_global_ip()}
-    response = requests.get(SERVER_API, headers=headers)
-    if response.status_code == 200:
-        print("Installed Saved!")
+    try:
+        response = requests.get(SERVER_API, headers=headers)
+        if response.status_code == 200:
+            print("Installed Saved!")
+    except Exception as e:
+        error_log(str(e))
 def version_control():
     """
      Check and update version status
