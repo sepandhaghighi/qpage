@@ -14,29 +14,31 @@
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
 <td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>setup.py Functions &nbsp;</strong></big></font></td>
-    </tr>
+
+<font color="#ffffff" face="helvetica, arial"><big><strong>setup.py Functions</strong></big></font></td></tr>
     
-   
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl><dt><a name="-error_handler"><strong>error_handler</strong></a>()</dt><dd><tt>Close&nbsp;files&nbsp;and&nbsp;check&nbsp;errors&nbsp;and&nbsp;start&nbsp;again&nbsp;main<br>
-call:<br>
--close_files<br>
--error_finder<br>
--Show_items<br>
--enter_to_exit<br>
--main_handler</tt></dd></dl>
+:return:None<br>
+&nbsp;&nbsp;&nbsp;&nbsp;call:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-close_files<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-error_finder<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-Show_items<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-enter_to_exit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-main_handler</tt></dd></dl>
  <dl><dt><a name="-file_handler"><strong>file_handler</strong></a>()</dt><dd><tt>Write&nbsp;files<br>
-call:<br>
--html_init<br>
--contain<br>
--css_creator<br>
--icon_creator<br>
--robot_maker<br>
--close_files</tt></dd></dl>
+:return:None<br>
+&nbsp;&nbsp;&nbsp;&nbsp;call:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-html_init<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-contain<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-css_creator<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-icon_creator<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-robot_maker<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-close_files</tt></dd></dl>
  <dl><dt><a name="-main_handler"><strong>main_handler</strong></a>(control_flag=True)</dt><dd><tt>Main&nbsp;Handler<br>
-&nbsp;<br>
 :param&nbsp;control_flag:&nbsp;Check&nbsp;if&nbsp;VERSION&nbsp;control&nbsp;passed&nbsp;in&nbsp;prev&nbsp;step&nbsp;then&nbsp;Check&nbsp;for&nbsp;new&nbsp;VERSION&nbsp;of&nbsp;qpage<br>
+:type&nbsp;control_flag:bool<br>
+:return:None<br>
 &nbsp;&nbsp;&nbsp;&nbsp;call:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-generation_time<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-create_folder<br>
@@ -50,11 +52,11 @@ call:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-error_log<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-logger<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-close_files<br>
-&nbsp;&nbsp;&nbsp;&nbsp;-enter_to_exi</tt></dd></dl>
+&nbsp;&nbsp;&nbsp;&nbsp;-enter_to_exit</tt></dd></dl>
  <dl><dt><a name="-main_handler_2"><strong>main_handler_2</strong></a>(time_1=0)</dt><dd><tt>Second&nbsp;part&nbsp;of&nbsp;main&nbsp;handler<br>
-&nbsp;<br>
 :param&nbsp;time_1:&nbsp;time&nbsp;that&nbsp;passed&nbsp;but&nbsp;not&nbsp;counted&nbsp;in&nbsp;generation&nbsp;time<br>
-&nbsp;<br>
+:type&nbsp;time_1:float<br>
+:return:None<br>
 call:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-file_handler<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-address_print<br>
@@ -64,23 +66,17 @@ call:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-server<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-preview<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-close_files</tt></dd></dl>
- <dl><dt><a name="-reduce"><strong>reduce</strong></a>(...)</dt><dd><tt><a href="#-reduce">reduce</a>(function,&nbsp;sequence[,&nbsp;initial])&nbsp;-&gt;&nbsp;value<br>
-&nbsp;<br>
-Apply&nbsp;a&nbsp;function&nbsp;of&nbsp;two&nbsp;arguments&nbsp;cumulatively&nbsp;to&nbsp;the&nbsp;items&nbsp;of&nbsp;a&nbsp;sequence,<br>
-from&nbsp;left&nbsp;to&nbsp;right,&nbsp;so&nbsp;as&nbsp;to&nbsp;reduce&nbsp;the&nbsp;sequence&nbsp;to&nbsp;a&nbsp;single&nbsp;value.<br>
-For&nbsp;example,&nbsp;<a href="#-reduce">reduce</a>(lambda&nbsp;x,&nbsp;y:&nbsp;x+y,&nbsp;[1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5])&nbsp;calculates<br>
-((((1+2)+3)+4)+5).&nbsp;&nbsp;If&nbsp;initial&nbsp;is&nbsp;present,&nbsp;it&nbsp;is&nbsp;placed&nbsp;before&nbsp;the&nbsp;items<br>
-of&nbsp;the&nbsp;sequence&nbsp;in&nbsp;the&nbsp;calculation,&nbsp;and&nbsp;serves&nbsp;as&nbsp;a&nbsp;default&nbsp;when&nbsp;the<br>
-sequence&nbsp;is&nbsp;empty.</tt></dd></dl>
  <dl><dt><a name="-response_handler"><strong>response_handler</strong></a>(response)</dt><dd><tt>Calculate&nbsp;the&nbsp;generation&nbsp;time<br>
-&nbsp;<br>
-:param&nbsp;response:&nbsp;if&nbsp;there&nbsp;was&nbsp;a&nbsp;response&nbsp;run&nbsp;main&nbsp;handler&nbsp;again<br>
+:param&nbsp;response:&nbsp;response&nbsp;flag&nbsp;,&nbsp;if&nbsp;there&nbsp;was&nbsp;a&nbsp;response&nbsp;run&nbsp;main&nbsp;handler&nbsp;again<br>
+:type&nbsp;response:bool<br>
+:return:None<br>
 call:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-wait_func<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-main_handler</tt></dd></dl>
  <dl><dt><a name="-sample_handler"><strong>sample_handler</strong></a>()</dt><dd><tt>Ask&nbsp;for&nbsp;run&nbsp;sample&nbsp;website<br>
-call:<br>
--sample_site_download<br>
--is_sample_downloaded</tt></dd></dl>
+:return:None<br>
+&nbsp;&nbsp;&nbsp;&nbsp;call:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-sample_site_download<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-is_sample_downloaded</tt></dd></dl>
 
 </body></html>
