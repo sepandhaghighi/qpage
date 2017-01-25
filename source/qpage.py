@@ -17,7 +17,6 @@ meta_input = ""
 
 def show_items(enum_list):
     """ show item of enum_list
-
     :param enum_list the list that should be shown
     :type enum_list : list
     """
@@ -25,17 +24,22 @@ def show_items(enum_list):
         print(str(i + 1) + "-" + item)  # print pass
 
 
-def print_logo():
-    """ print qpage logo by characters
-
-    """
-    if "logo.txt" in os.listdir(RESOURCE_DIR):
-        logo_path = os.path.join(RESOURCE_DIR, 'logo.txt')
-        with open(logo_path, "r") as logo_file:
-            for line in logo_file:
-                print(line.rstrip())
+def print_logo(external=False):
+    '''
+    print qpage logo by characters
+    :param external: bool , choose internal or external logo
+    :return: None
+    '''
+    if external==True:
+        if "logo.txt" in os.listdir(RESOURCE_DIR):
+            logo_path = os.path.join(RESOURCE_DIR, 'logo.txt')
+            with open(logo_path, "r") as logo_file:
+                for line in logo_file:
+                    print(line.rstrip())
+        else:
+            pass
     else:
-        pass
+        print(LOGO)
 
 
 def convert_bytes(num):

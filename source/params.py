@@ -66,3 +66,12 @@ CSS_ANIMATION_2 = '''
 files = []
 warnings = []
 today_time = str(datetime.date.today())  # Get Today Date By datetime module
+
+
+LOGO='''
+  ____    ___
+ / __ \  / _ \___ ____ ____
+/ /_/ / / ___/ _ `/ _ `/ -_)
+\___\_\/_/   \_,_/\_, /\__/
+                 /___/
+'''
