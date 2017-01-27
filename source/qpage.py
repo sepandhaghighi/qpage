@@ -13,6 +13,18 @@ import datetime
 from functools import reduce
 import doctest
 meta_input = ""
+def email_at(text,USE_RE=False,replace_char=" at "):
+    '''
+    :param text: input text of pages
+    :param USE_RE: flag for using regular expression (default False)
+    :param replace_char: replace char for @
+    :type text:str
+    :type USE_RE:bool
+    :type replace_char:str
+    :return: replaced string
+    '''
+    if USE_RE==False:
+        return text.replace("@",replace_char)
 def show_items(enum_list):
     """
     show item of enum_list
@@ -463,7 +475,7 @@ def print_text(text_file, file, center=False, close=False):  # Write Text Part O
             text_code = SPACE
         else:
             text_header = LSM_translate(line, center)
-            text = text_header[0]
+            text = email_at(text=text_header[0])
             header_end = text_header[1]
             header_start = text_header[2]
             text_code = header_start + text + header_end + "\n"
