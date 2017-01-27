@@ -413,7 +413,7 @@ def html_end(name):
     """
     html_name = os.path.join(OUT_DIR, name + ".html")
     file = open(html_name, "a")
-    file.write("\t</body>\n")
+    file.write("\n\t</body>\n")
     file.write("</html>")
     file.close()
 def close_files():
