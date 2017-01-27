@@ -334,7 +334,8 @@ def menu_maker():
         if item == "Home":
             targets_blank = ""
         else:
-            targets_blank = 'target="blank"'
+            #targets_blank = 'target="blank"'
+            targets_blank = ''
             # Hyper Link To Each Page In HTML File
         result += '\t<a href="' \
                   + ACTUAL_NAME[i] + '.html"' + targets_blank + '>' + name_standard(item) + "</a>\n"
