@@ -22,6 +22,9 @@ def email_at(text,USE_RE=False,replace_char=" at "):
     :type USE_RE:bool
     :type replace_char:str
     :return: replaced string
+    >>> email_at("example@yahoo.com")
+    'example at yahoo.com'
+    >>>
     '''
     if USE_RE==False:
         return text.replace("@",replace_char)
