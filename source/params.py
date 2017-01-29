@@ -9,6 +9,7 @@ IMAGE_DIR = os.path.join(SOURCE_DIR, 'image')
 DOC_DIR = os.path.join(SOURCE_DIR, 'doc')
 OUT_DIR = os.path.join(SOURCE_DIR, 'output')
 FONT_DIR = os.path.join(SOURCE_DIR, 'font')
+SAMPLE_SITE_LIST=["http://www.qpage.ir/sample/sample-site1","http://www.qpage.ir/sample/sample-site2"]
 SAMPLE_DICT_ADDR = {os.path.join(IMAGE_DIR, "profile.png"): "http://www.qpage.ir/sample/profile.png",
                     os.path.join(FONT_DIR, "font.TTF"): "http://www.qpage.ir/sample/font.TTF",
                     os.path.join(DOC_DIR, "resume.pdf"): "http://www.qpage.ir/sample/resume.pdf",

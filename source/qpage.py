@@ -13,6 +13,23 @@ import datetime
 from functools import reduce
 import doctest
 meta_input = ""
+def sample_browser(sample_number=1,randomize=True):
+    '''
+    Choose a sample site and open it with browser
+    :param sample_number: choose which sample site default value is 1
+    :type sample_number:int
+    :return: None
+    '''
+    try:
+        response=input("Please enter [S] key if you want see a sample site of qpage (or any other key to ignore this step)")
+        if response.upper()=="S":
+            if randomize==True:
+                webbrowser.open(SAMPLE_SITE_LIST[random.randint(0,len(SAMPLE_SITE_LIST)-1)])
+            elif sample_number<len(SAMPLE_SITE_LIST):
+                webbrowser.open(SAMPLE_SITE_LIST[sample_number])
+    except Exception as e:
+        print("Error In Sample Browsing")
+        error_log(str(e))
 def list_randomize(input_list):
     '''
     :param input_list: raw_input list
@@ -875,7 +892,7 @@ def version_control():
                 # print("Already Updated!!!")
                 # print_line(70)
     except Exception as e:
-        error_log(e)
+        error_log(str(e))
         pass
 def enter_to_exit():
     """
@@ -902,7 +919,6 @@ def wait_func(iteration=2):
     .
     .
     """
-
     for _ in range(iteration):
         time.sleep(1)
         print(".")

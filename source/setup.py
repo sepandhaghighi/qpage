@@ -139,6 +139,7 @@ def main_handler(control_flag=True):
             print_logo()
             version_control()  # Check for new VERSION of qpage
         response_handler(response)  # call response_handler
+        sample_browser()
         sample_handler()  # run sample handler
         clear_folder(OUT_DIR)  # clear all of files in output directory
         page_name_update()  # update page names
