@@ -13,6 +13,21 @@ import datetime
 from functools import reduce
 import doctest
 meta_input = ""
+def list_randomize(input_list):
+    '''
+    :param input_list: raw_input list
+    :type input_list:list
+    :return: randomized list
+    >>> random.seed(1)
+    >>> list_randomize([1,2,3,5,6])
+    [2, 1, 5, 3, 6]
+    '''
+    response=[]
+    input_list_copy=input_list
+    iteration_number=len(input_list_copy)
+    for i in range(iteration_number):
+        response.append(input_list_copy.pop(random.randint(0,len(input_list_copy)-1)))
+    return response
 def email_at(text,USE_RE=False,replace_char=" at "):
     '''
     :param text: input text of pages
@@ -197,13 +212,15 @@ def download_lorem():
         urllib.request.urlretrieve("http://www.qpage.ir/sample/Latin-Lipsum.txt", lorem_path)
     else:
         print("Error In Download Lorem")
-def read_lorem(char=100,external=False):
+def read_lorem(char=100,external=False,randomize=True):
     """
     find and read lorem
     :param char: the amount of char that needed to print
-    :param external: falg for using external of internal resource for lorem_ipsum
+    :param external: flag for using external of internal resource for lorem_ipsum
+    :param randomize: flag for using randomization
     :type char:int
     :type external:bool
+    :type randomize:bool
     :return : the lorem string
     >>> read_lorem(5)
     'Lorem ipsum dolor sit amet,'
@@ -216,11 +233,17 @@ def read_lorem(char=100,external=False):
             lorem_file = open(lorem_path, "r")
             lorem_text = lorem_file.read()
             lorem_file.close()
-            return " ".join(lorem_text.split(" ")[:char])
+            if randomize==True:
+                return " ".join(list_randomize(lorem_text.split(" ")[:char]))
+            else:
+                return " ".join(lorem_text.split(" ")[:char])
         else:
-            return " ".join(LOREM_IPSUM.split(" ")[:char])
+            if randomize==True:
+                return " ".join(list_randomize(LOREM_IPSUM.split(" ")[:char]))
+            else:
+                return " ".join(LOREM_IPSUM.split(" ")[:char])
     except Exception as e:
-        error_log(e)
+        error_log(str(e))
         return None
 def sample_site_download(item_list):
     """
