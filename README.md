@@ -23,7 +23,7 @@
 QPage or QuickPage is a Free Project For Creating Academic Homepage Without Any Code
 
 
-
+- [Authors](https://github.com/sepandhaghighi/qpage/blob/master/AUTHORS.md)
 - [Overview](#overview)
 - [Dependencies](#dependencies)
 - [Installation](#installation)
@@ -32,6 +32,7 @@ QPage or QuickPage is a Free Project For Creating Academic Homepage Without Any 
 - [Credits](#credits)
 - [Bug Reports](#bug-reports)
 - [License](#license)
+- [Citing](#citing)
 
 
 
@@ -109,4 +110,12 @@ Go to [http://github.com/sepandhaghighi/qpage](http://github.com/sepandhaghighi/
 ##License
 
 <a href="https://github.com/sepandhaghighi/qpage/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg"/></a>
+
+##Citing
+
+If you use QPage , please cite this:
+
+<blockquote>
+<p>Sepand Haghighi, & Mohammad Mahdi Rahimi. (2017, January 31). QPage (Free Project For Creating Academic Homepage Without Any Code). Zenodo. doi:10.5281/zenodo.265544</p>
+</blockquote>
 
