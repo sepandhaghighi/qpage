@@ -116,6 +116,6 @@ Go to [http://github.com/sepandhaghighi/qpage](http://github.com/sepandhaghighi/
 If you use QPage , please cite this:
 
 <blockquote>
-<p>Sepand Haghighi, & Mohammad Mahdi Rahimi. (2017, January 31). QPage (Free Project For Creating Academic Homepage Without Any Code). Zenodo. doi:10.5281/zenodo.265544</p>
+<p>Sepand Haghighi, & Mohammad Mahdi Rahimi. (2017). QPage - Free Project For Creating Academic Homepage Without Any Code [Data set]. Zenodo. http://doi.org/10.5281/zenodo.265544</p>
 </blockquote>
 
