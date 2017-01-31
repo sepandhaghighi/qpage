@@ -14,7 +14,7 @@
 <a href="https://badge.fury.io/py/qpage"><img src="https://badge.fury.io/py/qpage.svg"/></a>
 <a href="https://gitter.im/qpage/Lobby?source=orgpage"><img src="https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=plastic"/></a>
 <a href="https://scrutinizer-ci.com/g/sepandhaghighi/qpage/?branch=master"><img src="https://scrutinizer-ci.com/g/sepandhaghighi/qpage/badges/quality-score.png?b=master"/></a>
-<a href="https://codeclimate.com/github/sepandhaghighi/qpage"><img src="https://codeclimate.com/github/sepandhaghighi/qpage/badges/gpa.svg" /></a>          
+<a href="https://zenodo.org/badge/latestdoi/43780325"><img src="https://zenodo.org/badge/43780325.svg" alt="DOI"></a>         
 <a href="https://www.codacy.com/app/sepand-haghighi/qpage?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/qpage&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/4d3f9b490b9a42c282b745ae8e2a122c"/></a>
 <a href="https://scrutinizer-ci.com/g/sepandhaghighi/qpage/"><img src="https://scrutinizer-ci.com/g/sepandhaghighi/qpage/badges/build.png?b=master"/></a>
 <hr/>
@@ -52,7 +52,7 @@ QPage is written in Python3, in order to run it, you will need a python interper
 
 ## Installation
 
-- [Download](https://github.com/sepandhaghighi/qpage/archive/v1.9.zip) QPage (or `pip install qpage`)
+- [Download](https://github.com/sepandhaghighi/qpage/archive/v2.0.zip) QPage (or `pip install qpage`)
 
 - Just Unzip It !
 
