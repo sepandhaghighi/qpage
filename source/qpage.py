@@ -817,8 +817,9 @@ def icon_creator():
             os.rename(os.path.join(OUT_DIR, file), os.path.join(OUT_DIR, 'favicon.ico'))
             icon_flag = 1
             break
-    if "favicon.ico" in os.listdir(SOURCE_DIR) and icon_flag == 0:
-        shutil.copy(os.path.join(SOURCE_DIR, "favicon.ico"), OUT_DIR)
+    if icon_flag == 0:
+        if  "favicon.ico" in os.listdir(SOURCE_DIR):
+            shutil.copy(os.path.join(SOURCE_DIR, "favicon.ico"), OUT_DIR)
         warnings.append(WARNING_DICT["icon_warning"] + " There is no icon for this website")
 def robot_maker():
     """
