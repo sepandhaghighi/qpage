@@ -25,7 +25,7 @@ PAGE_NAME = ["Home"]  # list of default HOMEPAGE Name
 ACTUAL_NAME = ["index"]  # List of Actual Name Like Home.Html
 BREAK_LINE = "<hr/><hr/>\n"
 HOMEPAGE = "http://www.qpage.ir"
-VERSION = "1.9"
+VERSION = "2.0"
 ADV_BADGE_STATIC = "https://img.shields.io/badge/"
 ERROR_DICT = {"image_error": "[Error-1001]", "resume_error": "[Error-1002]", "firstpage_error": "[Error-1003]",
               "empty_error": "[Error-1004]"}
