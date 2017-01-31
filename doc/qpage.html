@@ -17,6 +17,7 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>qpage.py Functions</strong></big></font></td>
     </tr>
     
+    
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl><dt><a name="-LSM_translate"><strong>LSM_translate</strong></a>(line, center)</dt><dd><tt>Convert&nbsp;size&nbsp;and&nbsp;style&nbsp;of&nbsp;each&nbsp;line&nbsp;in&nbsp;input&nbsp;plaintext<br>
 :param&nbsp;line:&nbsp;the&nbsp;input&nbsp;line.<br>
@@ -85,6 +86,16 @@
 :return:&nbsp;None</tt></dd></dl>
  <dl><dt><a name="-download_lorem"><strong>download_lorem</strong></a>()</dt><dd><tt>Download&nbsp;the&nbsp;lorem&nbsp;file<br>
 :return:&nbsp;None</tt></dd></dl>
+ <dl><dt><a name="-email_at"><strong>email_at</strong></a>(text, USE_RE=False, replace_char=' at ')</dt><dd><tt>:param&nbsp;text:&nbsp;input&nbsp;text&nbsp;of&nbsp;pages<br>
+:param&nbsp;USE_RE:&nbsp;flag&nbsp;for&nbsp;using&nbsp;regular&nbsp;expression&nbsp;(default&nbsp;False)<br>
+:param&nbsp;replace_char:&nbsp;replace&nbsp;char&nbsp;for&nbsp;@<br>
+:type&nbsp;text:str<br>
+:type&nbsp;USE_RE:bool<br>
+:type&nbsp;replace_char:str<br>
+:return:&nbsp;replaced&nbsp;string<br>
+&gt;&gt;&gt;&nbsp;<a href="#-email_at">email_at</a>("example@yahoo.com")<br>
+'example&nbsp;at&nbsp;yahoo.com'<br>
+&gt;&gt;&gt;</tt></dd></dl>
  <dl><dt><a name="-enter_to_exit"><strong>enter_to_exit</strong></a>()</dt><dd><tt>Quit&nbsp;Project&nbsp;by&nbsp;pressing&nbsp;a&nbsp;key.<br>
 :return:None</tt></dd></dl>
  <dl><dt><a name="-error_finder"><strong>error_finder</strong></a>()</dt><dd><tt>Check&nbsp;and&nbsp;find&nbsp;error&nbsp;that&nbsp;display&nbsp;it<br>
@@ -145,6 +156,12 @@ True<br>
 False</tt></dd></dl>
  <dl><dt><a name="-is_sample_downloaded"><strong>is_sample_downloaded</strong></a>()</dt><dd><tt>Check&nbsp;the&nbsp;sample&nbsp;site&nbsp;material&nbsp;is&nbsp;downloaded&nbsp;of&nbsp;not<br>
 :return&nbsp;:&nbsp;index&nbsp;of&nbsp;materials&nbsp;that&nbsp;downloaded&nbsp;as&nbsp;list</tt></dd></dl>
+ <dl><dt><a name="-list_randomize"><strong>list_randomize</strong></a>(input_list)</dt><dd><tt>:param&nbsp;input_list:&nbsp;raw_input&nbsp;list<br>
+:type&nbsp;input_list:list<br>
+:return:&nbsp;randomized&nbsp;list<br>
+&gt;&gt;&gt;&nbsp;random.seed(1)<br>
+&gt;&gt;&gt;&nbsp;<a href="#-list_randomize">list_randomize</a>([1,2,3,5,6])<br>
+[2,&nbsp;1,&nbsp;5,&nbsp;3,&nbsp;6]</tt></dd></dl>
  <dl><dt><a name="-logger"><strong>logger</strong></a>(status=False, perf_time=None)</dt><dd><tt>Create&nbsp;the&nbsp;build&nbsp;log&nbsp;of&nbsp;the&nbsp;app<br>
 :param&nbsp;status:&nbsp;show&nbsp;status&nbsp;of&nbsp;app.<br>
 :param&nbsp;perf_time&nbsp;:&nbsp;show&nbsp;the&nbsp;time&nbsp;passed&nbsp;for&nbsp;generate&nbsp;files<br>
@@ -230,14 +247,27 @@ False</tt></dd></dl>
 &gt;&gt;&gt;&nbsp;random.seed(1)<br>
 &gt;&gt;&gt;&nbsp;<a href="#-random_badge_color">random_badge_color</a>()<br>
 'yellowgreen'</tt></dd></dl>
- <dl><dt><a name="-read_lorem"><strong>read_lorem</strong></a>(char=100)</dt><dd><tt>find&nbsp;and&nbsp;read&nbsp;lorem<br>
+ <dl><dt><a name="-read_lorem"><strong>read_lorem</strong></a>(char=100, external=False, randomize=True)</dt><dd><tt>find&nbsp;and&nbsp;read&nbsp;lorem<br>
 :param&nbsp;char:&nbsp;the&nbsp;amount&nbsp;of&nbsp;char&nbsp;that&nbsp;needed&nbsp;to&nbsp;print<br>
+:param&nbsp;external:&nbsp;flag&nbsp;for&nbsp;using&nbsp;external&nbsp;of&nbsp;internal&nbsp;resource&nbsp;for&nbsp;lorem_ipsum<br>
+:param&nbsp;randomize:&nbsp;flag&nbsp;for&nbsp;using&nbsp;randomization<br>
 :type&nbsp;char:int<br>
+:type&nbsp;external:bool<br>
+:type&nbsp;randomize:bool<br>
 :return&nbsp;:&nbsp;the&nbsp;lorem&nbsp;string<br>
 &gt;&gt;&gt;&nbsp;<a href="#-read_lorem">read_lorem</a>(5)<br>
 'Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,'</tt></dd></dl>
+ <dl><dt><a name="-reduce"><strong>reduce</strong></a>(...)</dt><dd><tt><a href="#-reduce">reduce</a>(function,&nbsp;sequence[,&nbsp;initial])&nbsp;-&gt;&nbsp;value<br>
+&nbsp;<br>
+Apply&nbsp;a&nbsp;function&nbsp;of&nbsp;two&nbsp;arguments&nbsp;cumulatively&nbsp;to&nbsp;the&nbsp;items&nbsp;of&nbsp;a&nbsp;sequence,<br>
+from&nbsp;left&nbsp;to&nbsp;right,&nbsp;so&nbsp;as&nbsp;to&nbsp;reduce&nbsp;the&nbsp;sequence&nbsp;to&nbsp;a&nbsp;single&nbsp;value.<br>
+For&nbsp;example,&nbsp;<a href="#-reduce">reduce</a>(lambda&nbsp;x,&nbsp;y:&nbsp;x+y,&nbsp;[1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5])&nbsp;calculates<br>
+((((1+2)+3)+4)+5).&nbsp;&nbsp;If&nbsp;initial&nbsp;is&nbsp;present,&nbsp;it&nbsp;is&nbsp;placed&nbsp;before&nbsp;the&nbsp;items<br>
+of&nbsp;the&nbsp;sequence&nbsp;in&nbsp;the&nbsp;calculation,&nbsp;and&nbsp;serves&nbsp;as&nbsp;a&nbsp;default&nbsp;when&nbsp;the<br>
+sequence&nbsp;is&nbsp;empty.</tt></dd></dl>
  <dl><dt><a name="-robot_maker"><strong>robot_maker</strong></a>()</dt><dd><tt>Create&nbsp;Robots.txt&nbsp;for&nbsp;pages<br>
 :return:None</tt></dd></dl>
+ <dl><dt><a name="-sample_browser"><strong>sample_browser</strong></a>(sample_number=1)</dt></dl>
  <dl><dt><a name="-sample_site_download"><strong>sample_site_download</strong></a>(item_list)</dt><dd><tt>Download&nbsp;sample&nbsp;material&nbsp;for&nbsp;make&nbsp;a&nbsp;fake&nbsp;site<br>
 :param&nbsp;item_list:&nbsp;Download&nbsp;items&nbsp;form&nbsp;item_list<br>
 :type&nbsp;item_list:list</tt></dd></dl>
