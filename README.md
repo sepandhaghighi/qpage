@@ -105,7 +105,13 @@ QPage is written in Python3, in order to run it, you will need a python interper
                                                  
 ## Bug Reports
 
-Go to [http://github.com/sepandhaghighi/qpage](http://github.com/sepandhaghighi/qpage) or send an email to [report@qpage.ir](mailto:report@qpage.ir "report@qpage.ir").             
+Go to [http://github.com/sepandhaghighi/qpage](http://github.com/sepandhaghighi/qpage) or send an email to [report@qpage.ir](mailto:report@qpage.ir "report@qpage.ir"). 			
+
+## Contribution			
+
+You can fork the repository, improve or fix some part of it and then send the pull requests back if you want to see them here. I really appreciate that. ❤️			
+
+Remember to write a few tests for your code before sending pull requests.     			  
     
 
 ## Similar Works
