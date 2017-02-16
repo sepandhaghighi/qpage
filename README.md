@@ -108,7 +108,7 @@ QPage is written in Python3, in order to run it, you will need a python interper
 Go to [http://github.com/sepandhaghighi/qpage](http://github.com/sepandhaghighi/qpage) or send an email to [report@qpage.ir](mailto:report@qpage.ir "report@qpage.ir").             
     
 
-## Simmilar Works
+## Similar Works
 - [Statick](https://getstatik.com) Multi-purpose static web site generator aimed at developers
 - [Jekyll](http://jekyllrb.com) Transform plain text into static websites and blogs.
 - [Hugo](https://github.com/spf13/hugo) A Fast and Modern Static Web Engine
