@@ -30,7 +30,7 @@ QPage or QuickPage is a Free Project For Creating Academic Homepage Without Any 
 - [Usage](#usage)
 - [Sample Sites](#sample-sites)
 - [Credits](#credits)
-- [Bug Reports](#bug-reports)
+- [Issues & Bug Reports](#issues-&-bug-reports)
 - [License](#license)
 - [Citing](#citing)
 
@@ -103,9 +103,10 @@ QPage is written in Python3, in order to run it, you will need a python interper
 - Coverage Report : [Link](http://www.qpage.ir/htmlcov/index.html)	
 - Code Documents: [Link](http://www.qpage.ir/doc/index.html)
                                                  
-## Bug Reports
+## Issues & Bug Reports			
 
-Go to [http://github.com/sepandhaghighi/qpage](http://github.com/sepandhaghighi/qpage) or send an email to [report@qpage.ir](mailto:report@qpage.ir "report@qpage.ir"). 			
+Just fill an issue and describe it. I'll check it ASAP!							
+or send an email to [report@qpage.ir](mailto:report@qpage.ir "report@qpage.ir"). 			
 
 ## Contribution			
 
