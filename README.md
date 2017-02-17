@@ -102,7 +102,20 @@ QPage is written in Python3, in order to run it, you will need a python interper
 ## Issues & Bug Reports			
 
 Just fill an issue and describe it. I'll check it ASAP!							
-or send an email to [report@qpage.ir](mailto:report@qpage.ir "report@qpage.ir"). 			
+or send an email to [report@qpage.ir](mailto:report@qpage.ir "report@qpage.ir"). 
+
+## TODO		
+
+- [ ] Items
+  - [x] Font
+  - [x] Icon
+  - [ ] In-Text Link
+  - [ ] In-Text Pic
+- [x] Meta-Tags
+- [ ] Inline Markup 
+- [ ] GUI
+- [ ] FTP-Uploader	
+- [ ] Template Gen	
 
 ## Contribution			
 
@@ -115,6 +128,7 @@ Remember to write a few tests for your code before sending pull requests.
 - [Statick](https://getstatik.com) Multi-purpose static web site generator aimed at developers
 - [Jekyll](http://jekyllrb.com) Transform plain text into static websites and blogs.
 - [Hugo](https://github.com/spf13/hugo) A Fast and Modern Static Web Engine
+- [Jemdoc](https://github.com/jem/jemdoc) Light text markup for creating websites
 
 
 ##License
@@ -126,5 +140,5 @@ Remember to write a few tests for your code before sending pull requests.
 If you use QPage , please cite this:
 
 <blockquote>
-<p>Sepand Haghighi, & Mohammad Mahdi Rahimi. (2017). QPage - Free Project For Creating Academic Homepage Without Any Code [Data set]. Zenodo. http://doi.org/10.5281/zenodo.265544</p>
+<p>Sepand Haghighi, & Mohammad Mahdi Rahimi. (2017, January 31). QPage - Free Project For Creating Academic Homepage Without Any Code. Zenodo. doi:10.5281/zenodo.265544</p>
 </blockquote>
