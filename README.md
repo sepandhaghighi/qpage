@@ -137,7 +137,7 @@ Remember to write a few tests for your code before sending pull requests.
 
 ##Citing
 
-If you use QPage , please cite this:
+If you use QPage for your project homepage or something like this , please cite this ;-)
 
 <blockquote>
 <p>Sepand Haghighi, & Mohammad Mahdi Rahimi. (2017, January 31). QPage - Free Project For Creating Academic Homepage Without Any Code. Zenodo. doi:10.5281/zenodo.265544</p>
