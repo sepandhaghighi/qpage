@@ -5,7 +5,6 @@
 <h2>QPage</h2>
 <a href="https://waffle.io/sepandhaghighi/qpage"><img src="https://badge.waffle.io/sepandhaghighi/qpage.png?label=ready&title=Ready"/></a>
 <a href="http://www.qpage.ir/doc"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
-<a href="https://www.codacy.com/app/sepand-haghighi/qpage?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/qpage&amp;utm_campaign=Badge_Coverage"><img src="https://api.codacy.com/project/badge/Coverage/4d3f9b490b9a42c282b745ae8e2a122c"/></a>
 
 </div>
 <hr/>
