@@ -31,8 +31,10 @@
 QPage or QuickPage is a Free Project For Creating Academic Homepage Without Any Code			
 We developed QPage on Windows but it also run in Linux and Mac-OSX.
 QPage is written in Python3, in order to run it, you will need a python interpereter.
-
-
+<div align="center">
+<img src="http://www.qpage.ir/images/blockdiagram.jpg" height=400px width=600px alt="qpage blockdigram">
+<p>Block Diagram</p>
+</div>
 ## Dependencies
 
 - [Download](https://www.python.org/downloads/) And Install Last Version Of Python ( * or use exe folder and skip this step * )         
