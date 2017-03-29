@@ -34,7 +34,8 @@ QPage is written in Python3, in order to run it, you will need a python interper
 <div align="center">
 <img src="http://www.qpage.ir/images/blockdiagram.jpg" height=400px width=600px alt="qpage blockdigram">
 <p>Block Diagram</p>
-</div>
+</div>							
+
 ## Dependencies
 
 - [Download](https://www.python.org/downloads/) And Install Last Version Of Python ( * or use exe folder and skip this step * )         
@@ -132,12 +133,14 @@ Remember to write a few tests for your code before sending pull requests.
 - [Hugo](https://github.com/spf13/hugo) A Fast and Modern Static Web Engine
 - [Jemdoc](https://github.com/jem/jemdoc) Light text markup for creating websites
 
+													
 
-##License
+## License
 
-<a href="https://github.com/sepandhaghighi/qpage/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg"/></a>
+<a href="https://github.com/sepandhaghighi/qpage/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg"/></a>					
+						
 
-##Citing
+## Citing
 
 If you use QPage for your project homepage or something like this , please cite this ;-)
 
