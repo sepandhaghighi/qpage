@@ -150,13 +150,13 @@ If you use QPage for your project homepage or something like this , please cite 
 
 ## Donate to our project
 
-Beerpay :					
+<h3>Beerpay :</h3>					
 
 Hey dude! Help me out for a couple of :beers:!
 
 [![Beerpay](https://beerpay.io/sepandhaghighi/qpage/badge.svg?style=beer-square)](https://beerpay.io/sepandhaghighi/qpage)  [![Beerpay](https://beerpay.io/sepandhaghighi/qpage/make-wish.svg?style=flat-square)](https://beerpay.io/sepandhaghighi/qpage?focus=wish)
 
-Payping (For Iranian citizens) :
+<h3>Payping (For Iranian citizens) :</h3>
 
-<a href="http://www.payping.net/sepandhaghighi"><img src="http://www.qpage.ir/images/payping.png" height=100px width=100px></a>
+<a href="http://www.payping.net/sepandhaghighi" target="__blank"><img src="http://www.qpage.ir/images/payping.png" height=100px width=100px></a>
 
