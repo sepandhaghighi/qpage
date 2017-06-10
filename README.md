@@ -147,3 +147,8 @@ If you use QPage for your project homepage or something like this , please cite 
 <blockquote>
 <p>Sepand Haghighi, & Mohammad Mahdi Rahimi. (2017, January 31). QPage - Free Project For Creating Academic Homepage Without Any Code. Zenodo. doi:10.5281/zenodo.265544</p>
 </blockquote>
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/sepandhaghighi/qpage/badge.svg?style=beer-square)](https://beerpay.io/sepandhaghighi/qpage)  [![Beerpay](https://beerpay.io/sepandhaghighi/qpage/make-wish.svg?style=flat-square)](https://beerpay.io/sepandhaghighi/qpage?focus=wish)
