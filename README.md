@@ -154,7 +154,12 @@ If you use QPage for your project homepage or something like this , please cite 
 
 Hey dude! Help me out for a couple of :beers:!
 
-[![Beerpay](https://beerpay.io/sepandhaghighi/qpage/badge.svg?style=beer-square)](https://beerpay.io/sepandhaghighi/qpage)  [![Beerpay](https://beerpay.io/sepandhaghighi/qpage/make-wish.svg?style=flat-square)](https://beerpay.io/sepandhaghighi/qpage?focus=wish)
+[![Beerpay](https://beerpay.io/sepandhaghighi/qpage/badge.svg?style=beer-square)](https://beerpay.io/sepandhaghighi/qpage)  [![Beerpay](https://beerpay.io/sepandhaghighi/qpage/make-wish.svg?style=flat-square)](https://beerpay.io/sepandhaghighi/qpage?focus=wish)								
+
+<h3>Bitcoin :</h3>					
+
+```1XGr9qbZjBpUQJJSB6WtgBQbDTgrhPLPA```			
+
 
 <h3>Payping (For Iranian citizens) :</h3>
 
