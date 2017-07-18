@@ -119,6 +119,8 @@ or send an email to [report@qpage.ir](mailto:report@qpage.ir "report@qpage.ir").
 - [ ] GUI
 - [ ] FTP-Uploader	
 - [ ] Template Gen	
+- [ ] Javascript
+- [ ] Mobile View
 
 ## Contribution			
 
