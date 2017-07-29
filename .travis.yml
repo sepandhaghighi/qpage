@@ -1,0 +1,11 @@
+sudo: true
+
+language: python
+
+python:
+  - 3.5
+
+
+script:
+  - cd source
+  - python3 setup.py test
