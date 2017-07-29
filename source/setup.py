@@ -1,6 +1,7 @@
 from qpage import *
 import sys
 import gc
+import doctest
 def error_handler():
     """
     Close files and check errors and start again main
@@ -163,4 +164,11 @@ def main_handler(control_flag=True):
         enter_to_exit()  # get input from user to continue
         main_handler()  # call part_1 of main_handler , restart from the first
 if __name__ == "__main__":
-    main_handler()
+    args=sys.argv
+    if len(args)>1:
+        if args[1].upper()=="TEST":
+            doctest.testfile("test.py",verbose=True)
+        else:
+            print("Bad Input")
+    else:
+        main_handler()
