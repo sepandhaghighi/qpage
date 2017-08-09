@@ -15,7 +15,6 @@
 <a href="https://scrutinizer-ci.com/g/sepandhaghighi/qpage/?branch=master"><img src="https://scrutinizer-ci.com/g/sepandhaghighi/qpage/badges/quality-score.png?b=master"/></a>
 <a href="https://zenodo.org/badge/latestdoi/43780325"><img src="https://zenodo.org/badge/43780325.svg" alt="DOI"></a>         
 <a href="https://www.codacy.com/app/sepand-haghighi/qpage?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/qpage&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/4d3f9b490b9a42c282b745ae8e2a122c"/></a>
-<a href="https://travis-ci.org/sepandhaghighi/qpage"><img src="https://travis-ci.org/sepandhaghighi/qpage.svg?branch=master"/></a>
 
 </div>
 
