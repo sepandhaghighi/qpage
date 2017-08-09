@@ -87,6 +87,26 @@ QPage is written in Python3, in order to run it, you will need a python interper
 - You can preview your webpage
 
 - Finished!!! Now you can go and upload output folder contains directly in your host
+			
+## Automated Build
+				
+<div align="center">
+<table style="border:1px solid black">
+<tr>
+<th>Linux</th>
+<th>Windows</th>
+
+</tr>
+
+<tr>
+<td><a href="https://travis-ci.org/sepandhaghighi/qpage"><img src="https://travis-ci.org/sepandhaghighi/qpage.svg?branch=master"></a></td>
+<td> <a href="https://ci.appveyor.com/project/sepandhaghighi/qpage"><img src="https://ci.appveyor.com/api/projects/status/7q21ophn5d8p8a2q?svg=true"></a>	</td>
+
+</tr>	
+
+</table>
+
+</div>				
 
 ## Sample Sites
 - [Sample 1](http://www.qpage.ir/sample/sample-site1)

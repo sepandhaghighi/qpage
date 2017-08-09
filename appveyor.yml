@@ -15,8 +15,9 @@ environment:
 
 init:
   - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
-  - "%PYTHON%/Scripts/pip.exe install requests"
 
+install:
+  - "%PYTHON%/Scripts/pip.exe install -r requirements.txt"
 
 test_script:
   - "cd source"
