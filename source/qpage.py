@@ -136,7 +136,7 @@ def download_badge(address):
     :type address : str
     :return: None
     """
-    r = requests.get(address, stream=True)
+    r = requests.get(address, stream=True, timeout=30)
     with open(os.path.join(OUT_DIR, "badge.svg"), 'wb') as f:
         shutil.copyfileobj(r.raw, f)
 def random_badge_color():
@@ -174,7 +174,7 @@ def find_global_ip():
     :return: return the IP as string
     """
     try:
-        response = requests.get(IP_FINDER_API)
+        response = requests.get(IP_FINDER_API, timeout=30)
         return response.text[:-1]
     except Exception as e:
         error_log(e)
@@ -863,7 +863,7 @@ def server():
     headers = {'content-type': 'application/json', "NAME": meta_input, "VERSION": VERSION, "SYSTEM": system_details(),
                "IP": find_global_ip()}
     try:
-        response = requests.get(SERVER_API, headers=headers)
+        response = requests.get(SERVER_API, headers=headers, timeout=30)
         if response.status_code == 200:
             print("Installed Saved!")
     except Exception as e:
@@ -878,7 +878,7 @@ def version_control():
         # print_line(70)
         VERSION_pattern = r"last_VERSION:(.+)"
         if internet():
-            response = requests.get("http://www.qpage.ir/releases.html")
+            response = requests.get("http://www.qpage.ir/releases.html", timeout=30)
             body = response.text
             last_VERSION = float(re.findall(VERSION_pattern, body)[0][:-3])
             if last_VERSION > float(VERSION):
